@@ -9,6 +9,7 @@
 
 use std::collections::HashMap;
 use std::collections::hash_map::Entry;
+use std::error;
 use std::fmt;
 use std::hash;
 use std::hash::BuildHasherDefault;
@@ -181,44 +182,51 @@ impl UnsafeCommandBufferBuilder {
     ///
     /// # Panic
     ///
-    /// - Panicks if called within a render pass.
     /// - Panicks if one of the buffers was not allocated with the same device as this command
     ///   buffer.
-    /// - Panicks if one of the regions is too large for one of the buffers.
-    /// - Panicks if the source buffer doesn't have the `transfer_source` usage.
-    /// - Panicks if the destination buffer doesn't have the `transfer_destination` usage.
-    /// - Panicks if two regions overlap.
     ///
-    pub fn copy_buffer_untyped<Bs, Bd, I>(&mut self, src: &Arc<Bs>, dest: &Arc<Bd>, regions: I)
+    pub fn copy_buffer_untyped<Bs, Bd, I>(mut self, src: &Arc<Bs>, dest: &Arc<Bd>, regions: I)
+                                          -> Result<UnsafeCommandBufferBuilder, BufferCopyError>
         where Bs: Buffer + Send + Sync + 'static,
               Bd: Buffer + Send + Sync + 'static,
               I: IntoIterator<Item = BufferCopyRegion>
     {
         unsafe {
             // Various safety checks.
-            assert!(!self.within_render_pass);
+            if self.within_render_pass { return Err(BufferCopyError::ForbiddenWithinRenderPass); }
             assert_eq!(src.inner_buffer().device().internal_object(),
                        self.pool.device().internal_object());
             assert_eq!(dest.inner_buffer().device().internal_object(),
                        self.pool.device().internal_object());
-            assert!(src.inner_buffer().usage_transfer_src());
-            assert!(dest.inner_buffer().usage_transfer_dest());
+            if !src.inner_buffer().usage_transfer_src() ||
+               !dest.inner_buffer().usage_transfer_dest()
+            {
+                return Err(BufferCopyError::WrongUsageFlag);
+            }
 
             // Building the list of regions.
-            let regions: SmallVec<[_; 4]> = regions.into_iter().filter_map(|region| {
-                assert!(region.source_offset + region.size <= src.size());
-                assert!(region.destination_offset + region.size <= dest.size());
-                if region.size == 0 { return None; }
+            let regions: SmallVec<[_; 4]> = {
+                let mut res = SmallVec::new();
+                for region in regions.into_iter() {
+                    if region.source_offset + region.size > src.size() {
+                        return Err(BufferCopyError::OutOfRange);
+                    }
+                    if region.destination_offset + region.size > dest.size() {
+                        return Err(BufferCopyError::OutOfRange);
+                    }
+                    if region.size == 0 { continue; }
 
-                Some(vk::BufferCopy {
-                    srcOffset: region.source_offset as vk::DeviceSize,
-                    dstOffset: region.destination_offset as vk::DeviceSize,
-                    size: region.size as vk::DeviceSize,
-                })
-            }).collect();
+                    res.push(vk::BufferCopy {
+                        srcOffset: region.source_offset as vk::DeviceSize,
+                        dstOffset: region.destination_offset as vk::DeviceSize,
+                        size: region.size as vk::DeviceSize,
+                    });
+                }
+                res
+            };
 
             // Vulkan requires that the number of regions must always be >= 1.
-            if regions.is_empty() { return; }
+            if regions.is_empty() { return Ok(self); }
 
             // Checking for overlaps.
             for r1 in 0 .. regions.len() {
@@ -226,18 +234,28 @@ impl UnsafeCommandBufferBuilder {
                     let r1 = &regions[r1];
                     let r2 = &regions[r2];
 
-                    assert!(r1.srcOffset > r2.srcOffset || r1.srcOffset + r1.size < r2.srcOffset);
-                    assert!(r2.srcOffset > r1.srcOffset || r2.srcOffset + r2.size < r1.srcOffset);
-                    assert!(r1.dstOffset > r2.dstOffset || r1.dstOffset + r1.size < r2.dstOffset);
-                    assert!(r2.dstOffset > r1.dstOffset || r2.dstOffset + r2.size < r1.dstOffset);
+                    if r1.srcOffset <= r2.srcOffset && r1.srcOffset + r1.size >= r2.srcOffset {
+                        return Err(BufferCopyError::OverlappingRegions);
+                    }
+                    if r2.srcOffset <= r1.srcOffset && r2.srcOffset + r2.size >= r1.srcOffset {
+                        return Err(BufferCopyError::OverlappingRegions);
+                    }
+                    if r1.dstOffset <= r2.dstOffset && r1.dstOffset + r1.size >= r2.dstOffset {
+                        return Err(BufferCopyError::OverlappingRegions);
+                    }
+                    if r2.dstOffset <= r1.dstOffset && r2.dstOffset + r2.size >= r1.dstOffset {
+                        return Err(BufferCopyError::OverlappingRegions);
+                    }
 
                     if src.inner_buffer().internal_object() ==
                        dest.inner_buffer().internal_object()
                     {
-                        assert!(r1.srcOffset > r2.dstOffset ||
-                                r1.srcOffset + r1.size < r2.dstOffset);
-                        assert!(r2.srcOffset > r1.dstOffset ||
-                                r2.srcOffset + r2.size < r1.dstOffset);
+                        if r1.srcOffset <= r2.dstOffset && r1.srcOffset + r1.size >= r2.dstOffset {
+                            return Err(BufferCopyError::OverlappingRegions);
+                        }
+                        if r2.srcOffset <= r1.dstOffset && r2.srcOffset + r2.size >= r1.dstOffset {
+                            return Err(BufferCopyError::OverlappingRegions);
+                        }
                     }
                 }
             }
@@ -246,11 +264,15 @@ impl UnsafeCommandBufferBuilder {
             self.keep_alive.push(src.clone());
             self.keep_alive.push(dest.clone());
 
-            let vk = self.device.pointers();
-            let cmd = self.cmd.clone().unwrap();
-            vk.CmdCopyBuffer(cmd, src.inner_buffer().internal_object(),
-                             dest.inner_buffer().internal_object(), regions.len() as u32,
-                             regions.as_ptr());
+            {
+                let vk = self.device.pointers();
+                let cmd = self.cmd.clone().unwrap();
+                vk.CmdCopyBuffer(cmd, src.inner_buffer().internal_object(),
+                                 dest.inner_buffer().internal_object(), regions.len() as u32,
+                                 regions.as_ptr());
+            }
+
+            Ok(self)
         }
     }
 }
@@ -264,6 +286,44 @@ pub struct BufferCopyRegion {
     pub destination_offset: usize,
     /// Size in bytes of the copy.
     pub size: usize,
+}
+
+macro_rules! error_ty {
+    ($err_name:ident => $doc:expr, $($member:ident => $desc:expr,)*) => {
+        #[doc = $doc]
+        #[derive(Clone, Debug, PartialEq, Eq)]
+        pub enum $err_name {
+            $(
+                #[doc = $desc]
+                $member
+            ),*
+        }
+
+        impl error::Error for $err_name {
+            #[inline]
+            fn description(&self) -> &str {
+                match *self {
+                    $(
+                        $err_name::$member => $desc,
+                    )*
+                }
+            }
+        }
+
+        impl fmt::Display for $err_name {
+            #[inline]
+            fn fmt(&self, fmt: &mut fmt::Formatter) -> Result<(), fmt::Error> {
+                write!(fmt, "{}", error::Error::description(self))
+            }
+        }
+    };
+}
+
+error_ty!{BufferCopyError => "Error that can happen when copying between buffers.",
+    ForbiddenWithinRenderPass => "can't copy buffers from within a render pass",
+    OutOfRange => "one of regions is out of range of the buffer",
+    WrongUsageFlag => "one of the buffers doesn't have the correct usage flag",
+    OverlappingRegions => "some regions are overlapping",
 }
 
 /// Dummy trait that is implemented on everything and that allows us to keep Arcs alive.
