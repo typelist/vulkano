@@ -89,11 +89,35 @@ impl UnsafeCommandBufferBuilder {
     ///
     /// - Panicks if the buffer was not allocated with the same device as this command buffer.
     ///
+    #[inline]
+    pub fn update_buffer<'a, S, T: ?Sized, B>(mut self, buffer: S, data: &T)
+                                              -> Result<UnsafeCommandBufferBuilder,
+                                                        BufferUpdateError>
+        where S: Into<BufferSlice<'a, T, B>>,
+              B: Buffer + Send + Sync + 'static,
+              T: 'static    // TODO: this bound should be removed eventually, because it would be enforced by the BufferSlice
+    {
+        self.update_buffer_untyped(buffer, data)
+    }
+
+    /// Adds a command that writes the content of a buffer.
+    ///
+    /// The size of the buffer slice is what is taken into account when determining the size. If
+    /// `data` is larger than the slice, then the remaining will be ignored. If `data` is smaller,
+    /// an error is returned.
+    ///
+    /// If the size of the slice is 0, no command is added.
+    ///
+    /// # Panic
+    ///
+    /// - Panicks if the buffer was not allocated with the same device as this command buffer.
+    ///
     pub fn update_buffer_untyped<'a, S, T: ?Sized, B, D: ?Sized>(mut self, buffer: S, data: &D)
                                                                  -> Result<UnsafeCommandBufferBuilder,
                                                                            BufferUpdateError>
         where S: Into<BufferSlice<'a, T, B>>,
-              B: Buffer + Send + Sync + 'static
+              B: Buffer + Send + Sync + 'static,
+              D: 'static    // FIXME: needs BufferContent bound or something
     {
         unsafe {
             let buffer = buffer.into();
