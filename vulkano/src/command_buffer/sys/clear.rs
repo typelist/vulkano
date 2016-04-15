@@ -48,7 +48,10 @@ impl UnsafeCommandBufferBuilder {
             if !buffer.buffer().inner_buffer().usage_transfer_src() {
                 return Err(BufferFillError::WrongUsageFlag);
             }
-            if (buffer.offset() % 4) != 0 || (buffer.size() % 4) != 0 {
+            if (buffer.offset() % 4) != 0 {
+                return Err(BufferFillError::WrongAlignment);
+            }
+            if buffer.size() != buffer.buffer().size() && (buffer.size() % 4) != 0 {
                 return Err(BufferFillError::WrongAlignment);
             }
             if buffer.size() == 0 { return Ok(self); }
@@ -64,9 +67,10 @@ impl UnsafeCommandBufferBuilder {
             {
                 let vk = self.device.pointers();
                 let cmd = self.cmd.clone().unwrap();
+                let size_param = if (buffer.size() % 4) == 0 { buffer.size() as vk::DeviceSize }
+                                 else { vk::WHOLE_SIZE };
                 vk.CmdFillBuffer(cmd, buffer.buffer().inner_buffer().internal_object(),
-                                 buffer.offset() as vk::DeviceSize,
-                                 buffer.size() as vk::DeviceSize, data);
+                                 buffer.offset() as vk::DeviceSize, size_param, data);
             }
 
             Ok(self)
