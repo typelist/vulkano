@@ -30,6 +30,7 @@ use buffer::traits::AccessRange as BufferAccessRange;
 use command_buffer::CommandBufferPool;
 use command_buffer::DrawIndirectCommand;
 use command_buffer::DynamicState;
+use command_buffer::sys::UnsafeCommandBufferBuilder;
 use descriptor::descriptor_set::DescriptorSetsCollection;
 use descriptor::PipelineLayout;
 use device::Queue;
@@ -64,116 +65,7 @@ use VulkanPointers;
 use check_errors;
 use vk;
 
-pub struct UnsafeCommandBufferBuilder {
-    cmd: Option<vk::CommandBuffer>,
-    device: Arc<Device>,
-    pool: Arc<CommandBufferPool>,
-
-    // List of resources that must be kept alive because they are used by this command buffer.
-    keep_alive: Vec<Arc<KeepAlive>>,
-
-    // Current pipeline object binded to the graphics bind point. Includes all staging commands.
-    current_graphics_pipeline: Option<vk::Pipeline>,
-
-    // Current pipeline object binded to the compute bind point. Includes all staging commands.
-    current_compute_pipeline: Option<vk::Pipeline>,
-
-    // Current state of the dynamic state within the command buffer. Includes all staging commands.
-    current_dynamic_state: DynamicState,
-
-    // True if we are a secondary command buffer.
-    secondary_cb: bool,
-
-    // True if we are within a render pass.
-    within_render_pass: bool,
-}
-
 impl UnsafeCommandBufferBuilder {
-    /*/// Creates a new builder.
-    pub fn new<R>(pool: &Arc<CommandBufferPool>, secondary: bool, secondary_cont: Option<Subpass<R>>,
-                  secondary_cont_fb: Option<&Arc<Framebuffer<R>>>)
-                  -> Result<UnsafeCommandBufferBuilder, OomError>
-        where R: RenderPass + 'static + Send + Sync
-    {
-        let device = pool.device();
-        let vk = device.pointers();
-
-        let pool_obj = pool.internal_object_guard();
-
-        let cmd = unsafe {
-            let infos = vk::CommandBufferAllocateInfo {
-                sType: vk::STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO,
-                pNext: ptr::null(),
-                commandPool: *pool_obj,
-                level: if secondary {
-                    assert!(secondary_cont.is_some());
-                    vk::COMMAND_BUFFER_LEVEL_SECONDARY
-                } else {
-                    vk::COMMAND_BUFFER_LEVEL_PRIMARY
-                },
-                // vulkan can allocate multiple command buffers at once, hence the 1
-                commandBufferCount: 1,
-            };
-
-            let mut output = mem::uninitialized();
-            try!(check_errors(vk.AllocateCommandBuffers(device.internal_object(), &infos,
-                                                        &mut output)));
-            output
-        };
-
-        let mut keep_alive = Vec::new();
-
-        unsafe {
-            // TODO: one time submit
-            let flags = vk::COMMAND_BUFFER_USAGE_SIMULTANEOUS_USE_BIT |     // TODO:
-                        if secondary_cont.is_some() { vk::COMMAND_BUFFER_USAGE_RENDER_PASS_CONTINUE_BIT } else { 0 };
-
-            let (rp, sp) = if let Some(ref sp) = secondary_cont {
-                keep_alive.push(sp.render_pass().clone() as Arc<_>);
-                (sp.render_pass().render_pass().internal_object(), sp.index())
-            } else {
-                (0, 0)
-            };
-
-            let framebuffer = if let Some(fb) = secondary_cont_fb {
-                keep_alive.push(fb.clone() as Arc<_>);
-                fb.internal_object()
-            } else {
-                0
-            };
-
-            let inheritance = vk::CommandBufferInheritanceInfo {
-                sType: vk::STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_INFO,
-                pNext: ptr::null(),
-                renderPass: rp,
-                subpass: sp,
-                framebuffer: framebuffer,
-                occlusionQueryEnable: 0,            // TODO:
-                queryFlags: 0,          // TODO:
-                pipelineStatistics: 0,          // TODO:
-            };
-
-            let infos = vk::CommandBufferBeginInfo {
-                sType: vk::STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO,
-                pNext: ptr::null(),
-                flags: flags,
-                pInheritanceInfo: &inheritance,
-            };
-
-            try!(check_errors(vk.BeginCommandBuffer(cmd, &infos)));
-        }
-
-        Ok(UnsafeCommandBufferBuilder {
-            device: device.clone(),
-            pool: pool.clone(),
-            cmd: Some(cmd),
-            keep_alive: keep_alive,
-            current_graphics_pipeline: None,
-            current_compute_pipeline: None,
-            current_dynamic_state: DynamicState::none(),
-        })
-    }*/
-
     /// Adds a command that copies regions between a source and a destination buffer. Does not
     /// check the type of the content, contrary to `copy_buffer`.
     ///
@@ -288,44 +180,9 @@ pub struct BufferCopyRegion {
     pub size: usize,
 }
 
-macro_rules! error_ty {
-    ($err_name:ident => $doc:expr, $($member:ident => $desc:expr,)*) => {
-        #[doc = $doc]
-        #[derive(Clone, Debug, PartialEq, Eq)]
-        pub enum $err_name {
-            $(
-                #[doc = $desc]
-                $member
-            ),*
-        }
-
-        impl error::Error for $err_name {
-            #[inline]
-            fn description(&self) -> &str {
-                match *self {
-                    $(
-                        $err_name::$member => $desc,
-                    )*
-                }
-            }
-        }
-
-        impl fmt::Display for $err_name {
-            #[inline]
-            fn fmt(&self, fmt: &mut fmt::Formatter) -> Result<(), fmt::Error> {
-                write!(fmt, "{}", error::Error::description(self))
-            }
-        }
-    };
-}
-
 error_ty!{BufferCopyError => "Error that can happen when copying between buffers.",
     ForbiddenWithinRenderPass => "can't copy buffers from within a render pass",
     OutOfRange => "one of regions is out of range of the buffer",
     WrongUsageFlag => "one of the buffers doesn't have the correct usage flag",
     OverlappingRegions => "some regions are overlapping",
 }
-
-/// Dummy trait that is implemented on everything and that allows us to keep Arcs alive.
-trait KeepAlive: 'static + Send + Sync {}
-impl<T> KeepAlive for T where T: 'static + Send + Sync {}
