@@ -155,17 +155,6 @@ impl UnsafeCommandBufferBuilder {
     }
 }
 
-/// A copy between two buffers.
-#[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
-pub struct BufferCopyRegion {
-    /// Offset of the first byte to read from the source buffer.
-    pub source_offset: usize,
-    /// Offset of the first byte to write to the destination buffer.
-    pub destination_offset: usize,
-    /// Size in bytes of the copy.
-    pub size: usize,
-}
-
 error_ty!{BufferFillError => "Error that can happen when filling a buffer.",
     ForbiddenWithinRenderPass => "can't copy buffers from within a render pass",
     NotSupportedByQueueFamily => "the queue family this command buffer belongs to does not \
