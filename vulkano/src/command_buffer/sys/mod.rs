@@ -64,6 +64,7 @@ use VulkanPointers;
 use check_errors;
 use vk;
 
+pub use self::clear::BufferFillError;
 pub use self::copy::BufferCopyError;
 pub use self::copy::BufferCopyRegion;
 
@@ -99,6 +100,7 @@ macro_rules! error_ty {
 }
 
 // The submodules contain additional methods on `UnsafeCommandBufferBuilder`.
+mod clear;
 mod copy;
 
 pub struct UnsafeCommandBufferBuilder {
