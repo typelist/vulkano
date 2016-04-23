@@ -17,6 +17,7 @@ use command_buffer::sys::KeepAlive;
 use command_buffer::sys::UnsafeCommandBufferBuilder;
 use command_buffer::DynamicState;
 use pipeline::GraphicsPipeline;
+use pipeline::ComputePipeline;
 
 use VulkanObject;
 use VulkanPointers;
@@ -99,7 +100,7 @@ impl GraphicsPipelineBindCommand {
     /// # Panic
     ///
     /// - Panicks if the command buffer is not within a render pass.
-    /// - Panicks if the buffers were not allocated with the same device as the command buffer.
+    /// - Panicks if the pipeline was not allocated with the same device as the command buffer.
     /// - Panicks if the queue doesn't not support graphics operations.
     ///
     pub fn submit(self, mut cb: UnsafeCommandBufferBuilder) -> UnsafeCommandBufferBuilder {
@@ -214,4 +215,56 @@ impl GraphicsPipelineBindCommand {
 
 error_ty!{GfxPipelineBindError => "Error that can happen when binding a graphics pipeline.",
     LineWidthOutOfRange => "the requested line width is out of range",
+}
+
+/// Prototype for a command that copies data between buffers.
+pub struct ComputePipelineBindCommand {
+    keep_alive: Arc<KeepAlive + 'static>,
+    device: vk::Device,
+    pipeline: vk::Pipeline,
+}
+
+impl ComputePipelineBindCommand {
+    /// Builds a new compute pipeline binding command.
+    #[inline]
+    pub fn new<Pl>(pipeline: &Arc<ComputePipeline<Pl>>) -> ComputePipelineBindCommand
+        where Pl: Send + Sync + 'static,
+    {
+        ComputePipelineBindCommand {
+            keep_alive: pipeline.clone(),
+            device: pipeline.device().internal_object(),
+            pipeline: pipeline.internal_object(),
+        }
+    }
+
+    /// Submits the command to the command buffer.
+    ///
+    /// # Panic
+    ///
+    /// - Panicks if the command buffer is within a render pass.
+    /// - Panicks if the pipeline was not allocated with the same device as the command buffer.
+    /// - Panicks if the queue doesn't not support compute operations.
+    ///
+    pub fn submit(self, mut cb: UnsafeCommandBufferBuilder) -> UnsafeCommandBufferBuilder {
+        unsafe {
+            // Various checks.
+            assert!(!cb.within_render_pass);
+            assert_eq!(self.device, cb.pool.device().internal_object());
+            assert!(cb.pool.queue_family().supports_compute());
+
+            cb.keep_alive.push(self.keep_alive);
+
+            {
+                let vk = cb.device.pointers();
+                let cmd = cb.cmd.clone().unwrap();
+
+                if cb.current_compute_pipeline != Some(self.pipeline) {
+                    vk.CmdBindPipeline(cmd, vk::PIPELINE_BIND_POINT_COMPUTE, self.pipeline);
+                    cb.current_compute_pipeline = Some(self.pipeline);
+                }
+            }
+
+            cb
+        }
+    }
 }
