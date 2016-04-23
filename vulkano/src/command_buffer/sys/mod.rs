@@ -100,6 +100,7 @@ macro_rules! error_ty {
 }
 
 // The submodules contain additional methods on `UnsafeCommandBufferBuilder`.
+mod bind;
 mod clear;
 mod copy;
 
