@@ -118,6 +118,7 @@ pub unsafe trait ImageClearValue<T>: Image {
     fn decode(&self, T) -> Option<ClearValue>;
 }
 
+// TODO: rename to `ImageBufferTransfer`
 pub unsafe trait ImageContent<P>: Image {
     /// Checks whether pixels of type `P` match the format of the image.
     fn matches_format(&self) -> bool;
