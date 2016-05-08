@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `descriptor` mod in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, descriptor">
+
+    <title>vulkano::descriptor - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vulkano</a></p><script>window.sidebarCurrent = {name: 'descriptor', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>vulkano</a>::<wbr><a class='mod' href=''>descriptor</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-3210' class='srclink' href='../../src/vulkano/vulkano/src/descriptor/mod.rs.html#10-61' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Collection of data and resources accessed by the shaders.</p>
+
+<p>In order to read the content of a buffer or an image from a shader, that buffer or image
+must be put in a <em>descriptor</em>. Each descriptor contains one or several buffers or images
+alongside with the way that it can be accessed.</p>
+
+<p>Descriptors are grouped in what is called <em>descriptor sets</em>. In Vulkan you don&#39;t bind
+individual descriptors one by one, but you bind descriptor sets one by one. Therefore you are
+encouraged to put descriptors that are often used together in the same set.</p>
+
+<p>In addition to descriptors, you also have the possibility to feed raw data to your shaders.
+Each variable that you pass to a shader is called a <em>push constant</em>.</p>
+
+<p>The layout of all the descriptors and the push constants used by a pipeline is grouped in
+a <em>pipeline layout</em>.</p>
+
+<h1 id='pipeline-initialization' class='section-header'><a href='#pipeline-initialization'>Pipeline initialization</a></h1>
+<p>When you build a pipeline object (a <code>GraphicsPipeline</code> or a <code>ComputePipeline</code>), you have to
+pass a pointer to a struct that implements the <code>PipelineLayout</code> trait. This object will
+describe to the Vulkan implementation the types and layouts of the descriptors and push
+constants that are going to be accessed by the shaders of the pipeline.</p>
+
+<p>The <code>PipelineLayout</code> trait is unsafe. You are encouraged not to implemented it yourself, but
+instead use one of the already-existing implementations that are available to you:</p>
+
+<ul>
+<li>The shader analyser (from the <code>vulkano-shaders</code> crate) will generate an object named
+<code>Layout</code> for each shader module.</li>
+<li>You can merge multiple implementations of <code>PipelineLayout</code> into one with the
+<code>merge_pipelines!</code> macro.</li>
+<li>You can create a pipeline layout whose content is only known at runtime with the Foo object.
+This is the most costly solution, as vulkano will need to perform runtime checks.</li>
+</ul>
+
+<h1 id='descriptor-sets' class='section-header'><a href='#descriptor-sets'>Descriptor sets</a></h1>
+<p>When you draw, you have to pass two parameters (two parameters that are relevant here): the
+list of descriptor sets to use, and the push constants. Vulkano will check that what you
+passed is compatible with the pipeline layout that you used when creating the pipeline.</p>
+
+<p>Descriptor sets have to be created in advance from a descriptor pool. You can use the same
+descriptor set multiple time with multiple draw commands, and keep alive descriptor sets
+between frames. Creating a descriptor set is quite cheap, so it won&#39;t kill your performances
+to create new sets at each frame.</p>
+
+<p>TODO: talk about perfs of changing sets</p>
+</div><h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
+<table><tr><td><code>pub use self::<a class='mod'
+                                       href='./descriptor_set/index.html'>descriptor_set</a>::<a class='trait' href='../../vulkano/descriptor/descriptor_set/trait.DescriptorSet.html' title='vulkano::descriptor::descriptor_set::DescriptorSet'>DescriptorSet</a>;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='descriptor/index.html'
+                                  title='vulkano::descriptor::descriptor'>descriptor</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='descriptor_set/index.html'
+                                  title='vulkano::descriptor::descriptor_set'>descriptor_set</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='pipeline_layout/index.html'
+                                  title='vulkano::descriptor::pipeline_layout'>pipeline_layout</a></td>
+                           <td class='docblock short'>
+                                <p>Describes the layout of descriptors and push constants used by a pipeline.</p>
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='trait' href='trait.PipelineLayout.html'
+                                  title='vulkano::descriptor::PipelineLayout'>PipelineLayout</a></td>
+                           <td class='docblock short'>
+                                <p>Trait for objects that describe the layout of the descriptors and push constants of a pipeline.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

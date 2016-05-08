@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `LayoutPassDescription` struct in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, LayoutPassDescription">
+
+    <title>vulkano::framebuffer::LayoutPassDescription - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>framebuffer</a></p><script>window.sidebarCurrent = {name: 'LayoutPassDescription', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>framebuffer</a>::<wbr><a class='struct' href=''>LayoutPassDescription</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-12551' class='srclink' href='../../src/vulkano/vulkano/src/framebuffer/traits.rs.html#356-374' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct LayoutPassDescription {
+    pub color_attachments: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>, <a class='enum' href='../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>ImageLayout</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;,
+    pub depth_stencil: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>, <a class='enum' href='../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>ImageLayout</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;,
+    pub input_attachments: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>, <a class='enum' href='../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>ImageLayout</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;,
+    pub resolve_attachments: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>, <a class='enum' href='../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>ImageLayout</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;,
+    pub preserve_attachments: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt;,
+}</pre><div class='docblock'><p>Describes one of the passes of a render pass.</p>
+
+<h1 id='restrictions' class='section-header'><a href='#restrictions'>Restrictions</a></h1>
+<p>All these restrictions are checked when the <code>UnsafeRenderPass</code> object is created.
+TODO: that&#39;s not the case ^</p>
+
+<ul>
+<li>The number of color attachments must be less than the limit of the physical device.</li>
+<li>All the attachments in <code>color_attachments</code> and <code>depth_stencil</code> must have the same
+samples count.</li>
+<li>If any attachment is used as both an input attachment and a color or
+depth/stencil attachment, then each use must use the same layout.</li>
+<li>Elements of <code>preserve_attachments</code> must not be used in any of the other members.</li>
+<li>If <code>resolve_attachments</code> is not empty, then all the resolve attachments must be attachments
+with 1 sample and all the color attachments must have more than 1 sample.</li>
+<li>If <code>resolve_attachments</code> is not empty, all the resolve attachments must have the same format
+as the color attachments.</li>
+<li>If the first use of an attachment in this renderpass is as an input attachment and the
+attachment is not also used as a color or depth/stencil attachment in the same subpass,
+then the loading operation must not be <code>Clear</code>.</li>
+</ul>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                             <td id='structfield.color_attachments'><code>color_attachments</code></td><td><div class='docblock'><p>Indices and layouts of attachments to use as color attachments.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.depth_stencil'><code>depth_stencil</code></td><td><div class='docblock'><p>Index and layout of the attachment to use as depth-stencil attachment.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.input_attachments'><code>input_attachments</code></td><td><div class='docblock'><p>Indices and layouts of attachments to use as input attachments.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.resolve_attachments'><code>resolve_attachments</code></td><td><div class='docblock'><p>If not empty, each color attachment will be resolved into each corresponding entry of
+this list.</p>
+
+<p>If this value is not empty, it <strong>must</strong> be the same length as <code>color_attachments</code>.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.preserve_attachments'><code>preserve_attachments</code></td><td><div class='docblock'><p>Indices of attachments that will be preserved during this pass.</p>
+</div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../vulkano/framebuffer/struct.LayoutPassDescription.html' title='vulkano::framebuffer::LayoutPassDescription'>LayoutPassDescription</a></code></span><span class='out-of-band'><a id='src-12557' class='srclink' href='../../src/vulkano/vulkano/src/framebuffer/traits.rs.html#355' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../vulkano/framebuffer/struct.LayoutPassDescription.html' title='vulkano::framebuffer::LayoutPassDescription'>LayoutPassDescription</a></code></h4>
+<h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><span class="since">1.0.0</span></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../vulkano/framebuffer/struct.LayoutPassDescription.html' title='vulkano::framebuffer::LayoutPassDescription'>LayoutPassDescription</a></code></span><span class='out-of-band'><a id='src-12565' class='srclink' href='../../src/vulkano/vulkano/src/framebuffer/traits.rs.html#355' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

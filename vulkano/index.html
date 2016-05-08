@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `vulkano` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, vulkano">
+
+    <title>vulkano - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'></p><script>window.sidebarCurrent = {name: 'vulkano', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Crate <a class='mod' href=''>vulkano</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-0' class='srclink' href='../src/vulkano/vulkano/src/lib.rs.html#10-235' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'>
+<h1 id='brief-summary-of-vulkan' class='section-header'><a href='#brief-summary-of-vulkan'>Brief summary of Vulkan</a></h1>
+<ul>
+<li><p>The <code>Instance</code> object is the API entry point. It is the first object you must create before
+starting to use Vulkan.</p></li>
+<li><p>The <code>PhysicalDevice</code> object represents an implementation of Vulkan available on the system
+(eg. a graphics card, a CPU implementation, multiple graphics card working together, etc.).
+Physical devices can be enumerated from an instance with <code>PhysicalDevice::enumerate()</code>.</p></li>
+<li><p>Once you have chosen a physical device to use, you must a <code>Device</code> object from it. The
+<code>Device</code> is another very important object, as it represents an open channel of
+communicaton with the physical device.</p></li>
+<li><p><code>Buffer</code>s and <code>Image</code>s can be used to store data on memory accessible from the GPU (or
+Vulkan implementation). Buffers are usually used to store vertices, lights, etc. or
+arbitrary data, while images are used to store textures or multi-dimensional data.</p></li>
+<li><p>In order to show something on the screen, you need a <code>Swapchain</code>. A <code>Swapchain</code> contains a
+special <code>Image</code> that corresponds to the content of the window or the monitor. When you
+<em>present</em> a swapchain, the content of that special image is shown on the screen.</p></li>
+<li><p><code>ComputePipeline</code>s and <code>GraphicsPipeline</code>s describe the way the GPU must perform a certain
+operation. <code>Shader</code>s are programs that the GPU will execute as part of a pipeline.</p></li>
+<li><p><code>RenderPass</code>es and <code>Framebuffer</code>s describe on which attachments the implementation must draw
+on. They are only used for graphical operations.</p></li>
+<li><p>In order to ask the GPU to do something, you must create a <code>CommandBuffer</code>. A <code>CommandBuffer</code>
+contains a list of commands that the GPU must perform. This can include copies between
+buffers, compute operations, or graphics operations. For the work to start, the
+<code>CommandBuffer</code> must then be submitted to a <code>Queue</code>, which is obtained when you create
+the <code>Device</code>.</p></li>
+</ul>
+</div><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='buffer/index.html'
+                                  title='vulkano::buffer'>buffer</a></td>
+                           <td class='docblock short'>
+                                <p>Location in memory that contains data.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='command_buffer/index.html'
+                                  title='vulkano::command_buffer'>command_buffer</a></td>
+                           <td class='docblock short'>
+                                <p>Commands that the GPU will execute (includes draw commands).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='descriptor/index.html'
+                                  title='vulkano::descriptor'>descriptor</a></td>
+                           <td class='docblock short'>
+                                <p>Collection of data and resources accessed by the shaders.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='device/index.html'
+                                  title='vulkano::device'>device</a></td>
+                           <td class='docblock short'>
+                                <p>Communication channel with a physical device.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='format/index.html'
+                                  title='vulkano::format'>format</a></td>
+                           <td class='docblock short'>
+                                <p>Declares all the formats of data and images supported by Vulkan.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='framebuffer/index.html'
+                                  title='vulkano::framebuffer'>framebuffer</a></td>
+                           <td class='docblock short'>
+                                <p>Targets on which your draw commands are executed.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='image/index.html'
+                                  title='vulkano::image'>image</a></td>
+                           <td class='docblock short'>
+                                <p>Images storage (1D, 2D, 3D, arrays, etc.).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='instance/index.html'
+                                  title='vulkano::instance'>instance</a></td>
+                           <td class='docblock short'>
+                                <p>API entry point.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='memory/index.html'
+                                  title='vulkano::memory'>memory</a></td>
+                           <td class='docblock short'>
+                                <p>GPU-visible memory allocation.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='pipeline/index.html'
+                                  title='vulkano::pipeline'>pipeline</a></td>
+                           <td class='docblock short'>
+                                <p>Tells the Vulkan implementation how it should perform a graphical or compute operation.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='query/index.html'
+                                  title='vulkano::query'>query</a></td>
+                           <td class='docblock short'>
+                                <p>This module provides support for query pools.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='sampler/index.html'
+                                  title='vulkano::sampler'>sampler</a></td>
+                           <td class='docblock short'>
+                                <p>How to retreive data from an image within a shader.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='swapchain/index.html'
+                                  title='vulkano::swapchain'>swapchain</a></td>
+                           <td class='docblock short'>
+                                <p>Link between Vulkan and a window and/or the screen.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='sync/index.html'
+                                  title='vulkano::sync'>sync</a></td>
+                           <td class='docblock short'>
+                                <p>Synchronization primitives for Vulkan objects.</p>
+                           </td>
+                       </tr></table><h2 id='macros' class='section-header'><a href="#macros">Macros</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='macro' href='macro.buffer_slice_field!.html'
+                                  title='vulkano::buffer_slice_field!'>buffer_slice_field!</a></td>
+                           <td class='docblock short'>
+                                <p>Takes a <code>BufferSlice</code> that points to a struct, and returns a <code>BufferSlice</code> that points to
+a specific field of that struct.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='macro' href='macro.impl_vertex!.html'
+                                  title='vulkano::impl_vertex!'>impl_vertex!</a></td>
+                           <td class='docblock short'>
+                                <p>Implements the <code>Vertex</code> trait on a struct.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='macro' href='macro.ordered_passes_renderpass!.html'
+                                  title='vulkano::ordered_passes_renderpass!'>ordered_passes_renderpass!</a></td>
+                           <td class='docblock short'>
+                                <p>Builds a <code>CustomRenderPass</code> object that provides a safe wrapper around <code>UnsafeRenderPass</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='macro' href='macro.pipeline_layout!.html'
+                                  title='vulkano::pipeline_layout!'>pipeline_layout!</a></td>
+                           <td class='docblock short'>
+                                <p>Call this macro with the layout of a pipeline to generate some helper structs that wrap around
+vulkano&#39;s unsafe APIs.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='macro' href='macro.single_pass_renderpass!.html'
+                                  title='vulkano::single_pass_renderpass!'>single_pass_renderpass!</a></td>
+                           <td class='docblock short'>
+                                <p>Builds a <code>CustomRenderPass</code> object that provides a safe wrapper around <code>UnsafeRenderPass</code>.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OomError.html'
+                                  title='vulkano::OomError'>OomError</a></td>
+                           <td class='docblock short'>
+                                <p>Error type returned by most Vulkan functions.</p>
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='trait' href='trait.SafeDeref.html'
+                                  title='vulkano::SafeDeref'>SafeDeref</a></td>
+                           <td class='docblock short'>
+                                <p>Alternative to the <code>Deref</code> trait. Contrary to <code>Deref</code>, must always return the same object.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='trait' href='trait.SynchronizedVulkanObject.html'
+                                  title='vulkano::SynchronizedVulkanObject'>SynchronizedVulkanObject</a></td>
+                           <td class='docblock short'>
+                                <p>Gives access to the internal identifier of an object.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='trait' href='trait.VulkanObject.html'
+                                  title='vulkano::VulkanObject'>VulkanObject</a></td>
+                           <td class='docblock short'>
+                                <p>Gives access to the internal identifier of an object.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='trait' href='trait.VulkanObjectU64.html'
+                                  title='vulkano::VulkanObjectU64'>VulkanObjectU64</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='trait' href='trait.VulkanObjectUsize.html'
+                                  title='vulkano::VulkanObjectUsize'>VulkanObjectUsize</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

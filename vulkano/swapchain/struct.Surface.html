@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Surface` struct in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Surface">
+
+    <title>vulkano::swapchain::Surface - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>swapchain</a></p><script>window.sidebarCurrent = {name: 'Surface', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>swapchain</a>::<wbr><a class='struct' href=''>Surface</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-18642' class='srclink' href='../../src/vulkano/vulkano/src/swapchain/surface.rs.html#36-39' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Surface {
+    // some fields omitted
+}</pre><div class='docblock'><p>Represents a surface on the screen.</p>
+
+<p>Creating a <code>Surface</code> is platform-specific.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../vulkano/swapchain/struct.Surface.html' title='vulkano::swapchain::Surface'>Surface</a></code></span><span class='out-of-band'><a id='src-18652' class='srclink' href='../../src/vulkano/vulkano/src/swapchain/surface.rs.html#41-420' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from_display_mode' class='method'><code>fn <a href='#method.from_display_mode' class='fnname'>from_display_mode</a>(display_mode: &amp;<a class='struct' href='../../vulkano/swapchain/display/struct.DisplayMode.html' title='vulkano::swapchain::display::DisplayMode'>DisplayMode</a>, plane: &amp;<a class='struct' href='../../vulkano/swapchain/display/struct.DisplayPlane.html' title='vulkano::swapchain::display::DisplayPlane'>DisplayPlane</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/swapchain/struct.Surface.html' title='vulkano::swapchain::Surface'>Surface</a>&gt;, <a class='enum' href='../../vulkano/swapchain/enum.SurfaceCreationError.html' title='vulkano::swapchain::SurfaceCreationError'>SurfaceCreationError</a>&gt;</code></h4>
+<div class='docblock'><p>Creates a <code>Surface</code> that covers a display mode.</p>
+
+<h1 id='panic' class='section-header'><a href='#panic'>Panic</a></h1>
+<ul>
+<li>Panicks if <code>display_mode</code> and <code>plane</code> don&#39;t belong to the same physical device.</li>
+<li>Panicks if <code>plane</code> doesn&#39;t support the display of <code>display_mode</code>.</li>
+</ul>
+</div><h4 id='method.from_hwnd' class='method'><code>unsafe fn <a href='#method.from_hwnd' class='fnname'>from_hwnd</a>&lt;T, U&gt;(instance: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/instance/struct.Instance.html' title='vulkano::instance::Instance'>Instance</a>&gt;, hinstance: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const T</a>, hwnd: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const U</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/swapchain/struct.Surface.html' title='vulkano::swapchain::Surface'>Surface</a>&gt;, <a class='enum' href='../../vulkano/swapchain/enum.SurfaceCreationError.html' title='vulkano::swapchain::SurfaceCreationError'>SurfaceCreationError</a>&gt;</code></h4>
+<div class='docblock'><p>Creates a <code>Surface</code> from a Win32 window.</p>
+
+<p>The surface&#39;s min, max and current extent will always match the window&#39;s dimensions.</p>
+
+<h1 id='safety' class='section-header'><a href='#safety'>Safety</a></h1>
+<p>The caller must ensure that the <code>hinstance</code> and the <code>hwnd</code> are both correct and stay
+alive for the entire lifetime of the surface.</p>
+</div><h4 id='method.from_xcb' class='method'><code>unsafe fn <a href='#method.from_xcb' class='fnname'>from_xcb</a>&lt;C, W&gt;(instance: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/instance/struct.Instance.html' title='vulkano::instance::Instance'>Instance</a>&gt;, connection: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const C</a>, window: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const W</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/swapchain/struct.Surface.html' title='vulkano::swapchain::Surface'>Surface</a>&gt;, <a class='enum' href='../../vulkano/swapchain/enum.SurfaceCreationError.html' title='vulkano::swapchain::SurfaceCreationError'>SurfaceCreationError</a>&gt;</code></h4>
+<div class='docblock'><p>Creates a <code>Surface</code> from an XCB window.</p>
+
+<p>The surface&#39;s min, max and current extent will always match the window&#39;s dimensions.</p>
+
+<h1 id='safety-1' class='section-header'><a href='#safety-1'>Safety</a></h1>
+<p>The caller must ensure that the <code>connection</code> and the <code>window</code> are both correct and stay
+alive for the entire lifetime of the surface.</p>
+</div><h4 id='method.from_xlib' class='method'><code>unsafe fn <a href='#method.from_xlib' class='fnname'>from_xlib</a>&lt;D, W&gt;(instance: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/instance/struct.Instance.html' title='vulkano::instance::Instance'>Instance</a>&gt;, display: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const D</a>, window: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const W</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/swapchain/struct.Surface.html' title='vulkano::swapchain::Surface'>Surface</a>&gt;, <a class='enum' href='../../vulkano/swapchain/enum.SurfaceCreationError.html' title='vulkano::swapchain::SurfaceCreationError'>SurfaceCreationError</a>&gt;</code></h4>
+<div class='docblock'><p>Creates a <code>Surface</code> from an Xlib window.</p>
+
+<p>The surface&#39;s min, max and current extent will always match the window&#39;s dimensions.</p>
+
+<h1 id='safety-2' class='section-header'><a href='#safety-2'>Safety</a></h1>
+<p>The caller must ensure that the <code>display</code> and the <code>window</code> are both correct and stay
+alive for the entire lifetime of the surface.</p>
+</div><h4 id='method.from_wayland' class='method'><code>unsafe fn <a href='#method.from_wayland' class='fnname'>from_wayland</a>&lt;D, S&gt;(instance: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/instance/struct.Instance.html' title='vulkano::instance::Instance'>Instance</a>&gt;, display: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const D</a>, surface: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const S</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/swapchain/struct.Surface.html' title='vulkano::swapchain::Surface'>Surface</a>&gt;, <a class='enum' href='../../vulkano/swapchain/enum.SurfaceCreationError.html' title='vulkano::swapchain::SurfaceCreationError'>SurfaceCreationError</a>&gt;</code></h4>
+<div class='docblock'><p>Creates a <code>Surface</code> from a Wayland window.</p>
+
+<p>The window&#39;s dimensions will be set to the size of the swapchain.</p>
+
+<h1 id='safety-3' class='section-header'><a href='#safety-3'>Safety</a></h1>
+<p>The caller must ensure that the <code>display</code> and the <code>surface</code> are both correct and stay
+alive for the entire lifetime of the surface.</p>
+</div><h4 id='method.from_mir' class='method'><code>unsafe fn <a href='#method.from_mir' class='fnname'>from_mir</a>&lt;C, S&gt;(instance: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/instance/struct.Instance.html' title='vulkano::instance::Instance'>Instance</a>&gt;, connection: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const C</a>, surface: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const S</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/swapchain/struct.Surface.html' title='vulkano::swapchain::Surface'>Surface</a>&gt;, <a class='enum' href='../../vulkano/swapchain/enum.SurfaceCreationError.html' title='vulkano::swapchain::SurfaceCreationError'>SurfaceCreationError</a>&gt;</code></h4>
+<div class='docblock'><p>Creates a <code>Surface</code> from a MIR window.</p>
+
+<p>If the swapchain&#39;s dimensions does not match the window&#39;s dimensions, the image will
+automatically be scaled during presentation.</p>
+
+<h1 id='safety-4' class='section-header'><a href='#safety-4'>Safety</a></h1>
+<p>The caller must ensure that the <code>connection</code> and the <code>surface</code> are both correct and stay
+alive for the entire lifetime of the surface.</p>
+</div><h4 id='method.from_anativewindow' class='method'><code>unsafe fn <a href='#method.from_anativewindow' class='fnname'>from_anativewindow</a>&lt;T&gt;(instance: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/instance/struct.Instance.html' title='vulkano::instance::Instance'>Instance</a>&gt;, window: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const T</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/swapchain/struct.Surface.html' title='vulkano::swapchain::Surface'>Surface</a>&gt;, <a class='enum' href='../../vulkano/swapchain/enum.SurfaceCreationError.html' title='vulkano::swapchain::SurfaceCreationError'>SurfaceCreationError</a>&gt;</code></h4>
+<div class='docblock'><p>Creates a <code>Surface</code> from an Android window.</p>
+
+<h1 id='safety-5' class='section-header'><a href='#safety-5'>Safety</a></h1>
+<p>The caller must ensure that the <code>window</code> is correct and stays alive for the entire
+lifetime of the surface.</p>
+</div><h4 id='method.is_supported' class='method'><code>fn <a href='#method.is_supported' class='fnname'>is_supported</a>(&amp;self, queue: &amp;<a class='struct' href='../../vulkano/instance/struct.QueueFamily.html' title='vulkano::instance::QueueFamily'>QueueFamily</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>, <a class='enum' href='../../vulkano/enum.OomError.html' title='vulkano::OomError'>OomError</a>&gt;</code></h4>
+<div class='docblock'><p>Returns true if the given queue family can draw on this surface.</p>
+</div><h4 id='method.get_capabilities' class='method'><code>fn <a href='#method.get_capabilities' class='fnname'>get_capabilities</a>(&amp;self, device: &amp;<a class='struct' href='../../vulkano/instance/struct.PhysicalDevice.html' title='vulkano::instance::PhysicalDevice'>PhysicalDevice</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../vulkano/swapchain/struct.Capabilities.html' title='vulkano::swapchain::Capabilities'>Capabilities</a>, <a class='enum' href='../../vulkano/enum.OomError.html' title='vulkano::OomError'>OomError</a>&gt;</code></h4>
+<div class='docblock'><p>Retreives the capabilities of a surface when used by a certain device.</p>
+
+<h1 id='panic-1' class='section-header'><a href='#panic-1'>Panic</a></h1>
+<ul>
+<li>Panicks if the device and the surface don&#39;t belong to the same instance.</li>
+</ul>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../vulkano/trait.VulkanObject.html' title='vulkano::VulkanObject'>VulkanObject</a> for <a class='struct' href='../../vulkano/swapchain/struct.Surface.html' title='vulkano::swapchain::Surface'>Surface</a></code></span><span class='out-of-band'><a id='src-18769' class='srclink' href='../../src/vulkano/vulkano/src/swapchain/surface.rs.html#422-429' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Object' class='type'><code>type <a href='../../vulkano/trait.VulkanObject.html#associatedtype.Object' class='type'>Object</a> = <a class='type' href='../../vk_sys/type.SurfaceKHR.html' title='vk_sys::SurfaceKHR'>SurfaceKHR</a></code></h4>
+<h4 id='method.internal_object' class='method'><code>fn <a href='../../vulkano/trait.VulkanObject.html#tymethod.internal_object' class='fnname'>internal_object</a>(&amp;self) -&gt; <a class='type' href='../../vk_sys/type.SurfaceKHR.html' title='vk_sys::SurfaceKHR'>SurfaceKHR</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../vulkano/swapchain/struct.Surface.html' title='vulkano::swapchain::Surface'>Surface</a></code></span><span class='out-of-band'><a id='src-18773' class='srclink' href='../../src/vulkano/vulkano/src/swapchain/surface.rs.html#431-439' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../vulkano/swapchain/struct.Surface.html' title='vulkano::swapchain::Surface'>Surface</a></code></span><span class='out-of-band'><a id='src-18645' class='srclink' href='../../src/vulkano/vulkano/src/swapchain/surface.rs.html#35' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

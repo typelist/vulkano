@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DescriptorWrite","Represents a single write entry to a descriptor set."],["UnsafeDescriptorSet","Low-level descriptor set."]]});

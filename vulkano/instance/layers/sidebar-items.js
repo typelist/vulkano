@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["layers_list","Queries the list of layers that are available when creating an instance."]],"struct":[["LayerProperties","Properties of an available layer."],["LayersIterator","Iterator that produces the list of layers that are available."]]});

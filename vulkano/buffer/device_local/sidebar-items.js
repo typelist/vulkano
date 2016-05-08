@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DeviceLocalBuffer","Buffer whose content is accessible by the CPU."]]});

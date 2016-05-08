@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Swapchain` struct in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Swapchain">
+
+    <title>vulkano::swapchain::Swapchain - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>swapchain</a></p><script>window.sidebarCurrent = {name: 'Swapchain', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>swapchain</a>::<wbr><a class='struct' href=''>Swapchain</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-19365' class='srclink' href='../../src/vulkano/vulkano/src/swapchain/swapchain.rs.html#45-65' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Swapchain {
+    // some fields omitted
+}</pre><div class='docblock'><p>Contains the swapping system and the images that can be shown on a surface.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../vulkano/swapchain/struct.Swapchain.html' title='vulkano::swapchain::Swapchain'>Swapchain</a></code></span><span class='out-of-band'><a id='src-19372' class='srclink' href='../../src/vulkano/vulkano/src/swapchain/swapchain.rs.html#67-326' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;F, S&gt;(device: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;, surface: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/swapchain/struct.Surface.html' title='vulkano::swapchain::Surface'>Surface</a>&gt;, num_images: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, format: F, dimensions: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 2]</a>, layers: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, usage: &amp;<a class='struct' href='../../vulkano/image/sys/struct.Usage.html' title='vulkano::image::sys::Usage'>ImageUsage</a>, sharing: S, transform: <a class='enum' href='../../vulkano/swapchain/enum.SurfaceTransform.html' title='vulkano::swapchain::SurfaceTransform'>SurfaceTransform</a>, alpha: <a class='enum' href='../../vulkano/swapchain/enum.CompositeAlpha.html' title='vulkano::swapchain::CompositeAlpha'>CompositeAlpha</a>, mode: <a class='enum' href='../../vulkano/swapchain/enum.PresentMode.html' title='vulkano::swapchain::PresentMode'>PresentMode</a>, clipped: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>, old_swapchain: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/swapchain/struct.Swapchain.html' title='vulkano::swapchain::Swapchain'>Swapchain</a>&gt;&gt;) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/swapchain/struct.Swapchain.html' title='vulkano::swapchain::Swapchain'>Swapchain</a>&gt;, <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/image/swapchain/struct.SwapchainImage.html' title='vulkano::image::swapchain::SwapchainImage'>SwapchainImage</a>&gt;&gt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>, <a class='enum' href='../../vulkano/enum.OomError.html' title='vulkano::OomError'>OomError</a>&gt; <span class='where'>where F: <a class='trait' href='../../vulkano/format/trait.FormatDesc.html' title='vulkano::format::FormatDesc'>FormatDesc</a>, S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='enum' href='../../vulkano/sync/enum.SharingMode.html' title='vulkano::sync::SharingMode'>SharingMode</a>&gt;</span></code></h4>
+<div class='docblock'><p>Builds a new swapchain. Allocates images who content can be made visible on a surface.</p>
+
+<p>See also the <code>Surface::get_capabilities</code> function which returns the values that are
+supported by the implementation. All the parameters that you pass to <code>Swapchain::new</code>
+must be supported. </p>
+
+<p>The <code>clipped</code> parameter indicates whether the implementation is allowed to discard 
+rendering operations that affect regions of the surface which aren&#39;t visible. This is
+important to take into account if your fragment shader has side-effects or if you want to
+read back the content of the image afterwards.</p>
+
+<p>This function returns the swapchain plus a list of the images that belong to the
+swapchain. The order in which the images are returned is important for the
+<code>acquire_next_image</code> and <code>present</code> functions.</p>
+
+<h1 id='panic' class='section-header'><a href='#panic'>Panic</a></h1>
+<ul>
+<li>Panicks if the device and the surface don&#39;t belong to the same instance.</li>
+<li>Panicks if <code>color_attachment</code> is false in <code>usage</code>.</li>
+</ul>
+</div><h4 id='method.acquire_next_image' class='method'><code>fn <a href='#method.acquire_next_image' class='fnname'>acquire_next_image</a>(&amp;self, timeout: <a class='struct' href='https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html' title='std::time::duration::Duration'>Duration</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>, <a class='enum' href='../../vulkano/swapchain/enum.AcquireError.html' title='vulkano::swapchain::AcquireError'>AcquireError</a>&gt;</code></h4>
+<div class='docblock'><p>Tries to take ownership of an image in order to draw on it.</p>
+
+<p>The function returns the index of the image in the array of images that was returned
+when creating the swapchain.</p>
+
+<p>If you try to draw on an image without acquiring it first, the execution will block. (TODO
+behavior may change).</p>
+</div><h4 id='method.present' class='method'><code>fn <a href='#method.present' class='fnname'>present</a>(&amp;self, queue: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/device/struct.Queue.html' title='vulkano::device::Queue'>Queue</a>&gt;, index: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../../vulkano/swapchain/enum.PresentError.html' title='vulkano::swapchain::PresentError'>PresentError</a>&gt;</code></h4>
+<div class='docblock'><p>Presents an image on the screen.</p>
+
+<p>The parameter is the same index as what <code>acquire_next_image</code> returned. The image must
+have been acquired first.</p>
+
+<p>The actual behavior depends on the present mode that you passed when creating the
+swapchain.</p>
+</div><h4 id='method.image_semaphore' class='method'><code>fn <a href='#method.image_semaphore' class='fnname'>image_semaphore</a>(&amp;self, id: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, semaphore: <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/sync/struct.Semaphore.html' title='vulkano::sync::Semaphore'>Semaphore</a>&gt;) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/sync/struct.Semaphore.html' title='vulkano::sync::Semaphore'>Semaphore</a>&gt;&gt;</code></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../vulkano/swapchain/struct.Swapchain.html' title='vulkano::swapchain::Swapchain'>Swapchain</a></code></span><span class='out-of-band'><a id='src-19489' class='srclink' href='../../src/vulkano/vulkano/src/swapchain/swapchain.rs.html#328-336' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

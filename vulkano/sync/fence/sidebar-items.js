@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["FenceWaitError","Error that can be returned when waiting on a fence."]],"struct":[["Fence","A fence is used to know when a command buffer submission has finished its execution."]]});

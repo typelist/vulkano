@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="Source to the Rust file `vulkano/src/descriptor/mod.rs`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang">
+
+    <title>mod.rs.html -- source</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content source"><pre class="line-numbers"><span id="1"> 1</span>
+<span id="2"> 2</span>
+<span id="3"> 3</span>
+<span id="4"> 4</span>
+<span id="5"> 5</span>
+<span id="6"> 6</span>
+<span id="7"> 7</span>
+<span id="8"> 8</span>
+<span id="9"> 9</span>
+<span id="10">10</span>
+<span id="11">11</span>
+<span id="12">12</span>
+<span id="13">13</span>
+<span id="14">14</span>
+<span id="15">15</span>
+<span id="16">16</span>
+<span id="17">17</span>
+<span id="18">18</span>
+<span id="19">19</span>
+<span id="20">20</span>
+<span id="21">21</span>
+<span id="22">22</span>
+<span id="23">23</span>
+<span id="24">24</span>
+<span id="25">25</span>
+<span id="26">26</span>
+<span id="27">27</span>
+<span id="28">28</span>
+<span id="29">29</span>
+<span id="30">30</span>
+<span id="31">31</span>
+<span id="32">32</span>
+<span id="33">33</span>
+<span id="34">34</span>
+<span id="35">35</span>
+<span id="36">36</span>
+<span id="37">37</span>
+<span id="38">38</span>
+<span id="39">39</span>
+<span id="40">40</span>
+<span id="41">41</span>
+<span id="42">42</span>
+<span id="43">43</span>
+<span id="44">44</span>
+<span id="45">45</span>
+<span id="46">46</span>
+<span id="47">47</span>
+<span id="48">48</span>
+<span id="49">49</span>
+<span id="50">50</span>
+<span id="51">51</span>
+<span id="52">52</span>
+<span id="53">53</span>
+<span id="54">54</span>
+<span id="55">55</span>
+<span id="56">56</span>
+<span id="57">57</span>
+<span id="58">58</span>
+<span id="59">59</span>
+<span id="60">60</span>
+<span id="61">61</span>
+</pre><pre class='rust '>
+<span class='comment'>// Copyright (c) 2016 The vulkano developers</span>
+<span class='comment'>// Licensed under the Apache License, Version 2.0</span>
+<span class='comment'>// &lt;LICENSE-APACHE or</span>
+<span class='comment'>// http://www.apache.org/licenses/LICENSE-2.0&gt; or the MIT</span>
+<span class='comment'>// license &lt;LICENSE-MIT or http://opensource.org/licenses/MIT&gt;,</span>
+<span class='comment'>// at your option. All files in the project carrying such</span>
+<span class='comment'>// notice may not be copied, modified, or distributed except</span>
+<span class='comment'>// according to those terms.</span>
+
+<span class='doccomment'>//! Collection of data and resources accessed by the shaders.</span>
+<span class='doccomment'>//!</span>
+<span class='doccomment'>//! In order to read the content of a buffer or an image from a shader, that buffer or image</span>
+<span class='doccomment'>//! must be put in a *descriptor*. Each descriptor contains one or several buffers or images</span>
+<span class='doccomment'>//! alongside with the way that it can be accessed.</span>
+<span class='doccomment'>//!</span>
+<span class='doccomment'>//! Descriptors are grouped in what is called *descriptor sets*. In Vulkan you don&#39;t bind</span>
+<span class='doccomment'>//! individual descriptors one by one, but you bind descriptor sets one by one. Therefore you are</span>
+<span class='doccomment'>//! encouraged to put descriptors that are often used together in the same set.</span>
+<span class='doccomment'>//!</span>
+<span class='doccomment'>//! In addition to descriptors, you also have the possibility to feed raw data to your shaders.</span>
+<span class='doccomment'>//! Each variable that you pass to a shader is called a *push constant*.</span>
+<span class='doccomment'>//!</span>
+<span class='doccomment'>//! The layout of all the descriptors and the push constants used by a pipeline is grouped in</span>
+<span class='doccomment'>//! a *pipeline layout*.</span>
+<span class='doccomment'>//!</span>
+<span class='doccomment'>//! # Pipeline initialization</span>
+<span class='doccomment'>//!</span>
+<span class='doccomment'>//! When you build a pipeline object (a `GraphicsPipeline` or a `ComputePipeline`), you have to</span>
+<span class='doccomment'>//! pass a pointer to a struct that implements the `PipelineLayout` trait. This object will</span>
+<span class='doccomment'>//! describe to the Vulkan implementation the types and layouts of the descriptors and push</span>
+<span class='doccomment'>//! constants that are going to be accessed by the shaders of the pipeline.</span>
+<span class='doccomment'>//!</span>
+<span class='doccomment'>//! The `PipelineLayout` trait is unsafe. You are encouraged not to implemented it yourself, but</span>
+<span class='doccomment'>//! instead use one of the already-existing implementations that are available to you:</span>
+<span class='doccomment'>//! </span>
+<span class='doccomment'>//! - The shader analyser (from the `vulkano-shaders` crate) will generate an object named</span>
+<span class='doccomment'>//!   `Layout` for each shader module.</span>
+<span class='doccomment'>//! - You can merge multiple implementations of `PipelineLayout` into one with the</span>
+<span class='doccomment'>//!   `merge_pipelines!` macro.</span>
+<span class='doccomment'>//! - You can create a pipeline layout whose content is only known at runtime with the Foo object.</span>
+<span class='doccomment'>//!   This is the most costly solution, as vulkano will need to perform runtime checks.</span>
+<span class='doccomment'>//!</span>
+<span class='doccomment'>//! # Descriptor sets</span>
+<span class='doccomment'>//! </span>
+<span class='doccomment'>//! When you draw, you have to pass two parameters (two parameters that are relevant here): the</span>
+<span class='doccomment'>//! list of descriptor sets to use, and the push constants. Vulkano will check that what you</span>
+<span class='doccomment'>//! passed is compatible with the pipeline layout that you used when creating the pipeline.</span>
+<span class='doccomment'>//! </span>
+<span class='doccomment'>//! Descriptor sets have to be created in advance from a descriptor pool. You can use the same</span>
+<span class='doccomment'>//! descriptor set multiple time with multiple draw commands, and keep alive descriptor sets</span>
+<span class='doccomment'>//! between frames. Creating a descriptor set is quite cheap, so it won&#39;t kill your performances</span>
+<span class='doccomment'>//! to create new sets at each frame.</span>
+<span class='doccomment'>//! </span>
+<span class='doccomment'>//! TODO: talk about perfs of changing sets</span>
+
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='self'>self</span>::<span class='ident'>descriptor_set</span>::<span class='ident'>DescriptorSet</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='self'>self</span>::<span class='ident'>pipeline_layout</span>::<span class='ident'>PipelineLayout</span>;
+
+<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>descriptor</span>;
+<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>descriptor_set</span>;
+<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>pipeline_layout</span>;
+</pre>
+</section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../../../jquery.js"></script>
+    <script src="../../../../../main.js"></script>
+    
+    <script defer src="../../../../../search-index.js"></script>
+</body>
+</html>

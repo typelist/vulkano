@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `EmptySinglePassRenderPass` struct in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, EmptySinglePassRenderPass">
+
+    <title>vulkano::framebuffer::EmptySinglePassRenderPass - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>framebuffer</a></p><script>window.sidebarCurrent = {name: 'EmptySinglePassRenderPass', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>framebuffer</a>::<wbr><a class='struct' href=''>EmptySinglePassRenderPass</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-12001' class='srclink' href='../../src/vulkano/vulkano/src/framebuffer/empty.rs.html#35-37' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct EmptySinglePassRenderPass {
+    // some fields omitted
+}</pre><div class='docblock'><p>Implementation of <code>RenderPass</code> with no attachment at all and a single pass.</p>
+
+<p>When you use a <code>EmptySinglePassRenderPass</code>, the list of attachments and clear values must
+be <code>()</code>.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../vulkano/framebuffer/struct.EmptySinglePassRenderPass.html' title='vulkano::framebuffer::EmptySinglePassRenderPass'>EmptySinglePassRenderPass</a></code></span><span class='out-of-band'><a id='src-12003' class='srclink' href='../../src/vulkano/vulkano/src/framebuffer/empty.rs.html#39-69' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.raw' class='method'><code>fn <a href='#method.raw' class='fnname'>raw</a>(device: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../vulkano/framebuffer/struct.EmptySinglePassRenderPass.html' title='vulkano::framebuffer::EmptySinglePassRenderPass'>EmptySinglePassRenderPass</a>, <a class='enum' href='../../vulkano/framebuffer/enum.RenderPassCreationError.html' title='vulkano::framebuffer::RenderPassCreationError'>RenderPassCreationError</a>&gt;</code></h4>
+<div class='docblock'><p>See the docs of new().</p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(device: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/framebuffer/struct.EmptySinglePassRenderPass.html' title='vulkano::framebuffer::EmptySinglePassRenderPass'>EmptySinglePassRenderPass</a>&gt;</code></h4>
+<div class='docblock'><p>Builds the render pass.</p>
+
+<h1 id='panic' class='section-header'><a href='#panic'>Panic</a></h1>
+<ul>
+<li>Panicks if the device or host ran out of memory.</li>
+</ul>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../vulkano/framebuffer/trait.RenderPass.html' title='vulkano::framebuffer::RenderPass'>RenderPass</a> for <a class='struct' href='../../vulkano/framebuffer/struct.EmptySinglePassRenderPass.html' title='vulkano::framebuffer::EmptySinglePassRenderPass'>EmptySinglePassRenderPass</a></code></span><span class='out-of-band'><a id='src-12012' class='srclink' href='../../src/vulkano/vulkano/src/framebuffer/empty.rs.html#71-76' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.render_pass' class='method'><code>fn <a href='../../vulkano/framebuffer/trait.RenderPass.html#tymethod.render_pass' class='fnname'>render_pass</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../vulkano/framebuffer/struct.UnsafeRenderPass.html' title='vulkano::framebuffer::UnsafeRenderPass'>UnsafeRenderPass</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../vulkano/framebuffer/trait.RenderPassDesc.html' title='vulkano::framebuffer::RenderPassDesc'>RenderPassDesc</a> for <a class='struct' href='../../vulkano/framebuffer/struct.EmptySinglePassRenderPass.html' title='vulkano::framebuffer::EmptySinglePassRenderPass'>EmptySinglePassRenderPass</a></code></span><span class='out-of-band'><a id='src-12015' class='srclink' href='../../src/vulkano/vulkano/src/framebuffer/empty.rs.html#78-167' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.AttachmentsIter' class='type'><code>type <a href='../../vulkano/framebuffer/trait.RenderPassDesc.html#associatedtype.AttachmentsIter' class='type'>AttachmentsIter</a> = <a class='struct' href='https://doc.rust-lang.org/nightly/core/iter/sources/struct.Empty.html' title='core::iter::sources::Empty'>EmptyIter</a>&lt;<a class='struct' href='../../vulkano/framebuffer/struct.LayoutAttachmentDescription.html' title='vulkano::framebuffer::LayoutAttachmentDescription'>LayoutAttachmentDescription</a>&gt;</code></h4>
+<h4 id='associatedtype.PassesIter' class='type'><code>type <a href='../../vulkano/framebuffer/trait.RenderPassDesc.html#associatedtype.PassesIter' class='type'>PassesIter</a> = <a class='struct' href='https://doc.rust-lang.org/nightly/core/option/struct.IntoIter.html' title='core::option::IntoIter'>OptionIntoIter</a>&lt;<a class='struct' href='../../vulkano/framebuffer/struct.LayoutPassDescription.html' title='vulkano::framebuffer::LayoutPassDescription'>LayoutPassDescription</a>&gt;</code></h4>
+<h4 id='associatedtype.DependenciesIter' class='type'><code>type <a href='../../vulkano/framebuffer/trait.RenderPassDesc.html#associatedtype.DependenciesIter' class='type'>DependenciesIter</a> = <a class='struct' href='https://doc.rust-lang.org/nightly/core/iter/sources/struct.Empty.html' title='core::iter::sources::Empty'>EmptyIter</a>&lt;<a class='struct' href='../../vulkano/framebuffer/struct.LayoutPassDependencyDescription.html' title='vulkano::framebuffer::LayoutPassDependencyDescription'>LayoutPassDependencyDescription</a>&gt;</code></h4>
+<h4 id='method.attachments' class='method'><code>fn <a href='../../vulkano/framebuffer/trait.RenderPassDesc.html#tymethod.attachments' class='fnname'>attachments</a>(&amp;self) -&gt; Self::<a class='trait' href='../../vulkano/framebuffer/trait.RenderPassDesc.html' title='vulkano::framebuffer::RenderPassDesc'>AttachmentsIter</a></code></h4>
+<h4 id='method.passes' class='method'><code>fn <a href='../../vulkano/framebuffer/trait.RenderPassDesc.html#tymethod.passes' class='fnname'>passes</a>(&amp;self) -&gt; Self::<a class='trait' href='../../vulkano/framebuffer/trait.RenderPassDesc.html' title='vulkano::framebuffer::RenderPassDesc'>PassesIter</a></code></h4>
+<h4 id='method.dependencies' class='method'><code>fn <a href='../../vulkano/framebuffer/trait.RenderPassDesc.html#tymethod.dependencies' class='fnname'>dependencies</a>(&amp;self) -&gt; Self::<a class='trait' href='../../vulkano/framebuffer/trait.RenderPassDesc.html' title='vulkano::framebuffer::RenderPassDesc'>DependenciesIter</a></code></h4>
+<h4 id='method.num_subpasses' class='method'><code>fn <a href='../../vulkano/framebuffer/trait.RenderPassDesc.html#method.num_subpasses' class='fnname'>num_subpasses</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
+<h4 id='method.num_color_attachments' class='method'><code>fn <a href='../../vulkano/framebuffer/trait.RenderPassDesc.html#method.num_color_attachments' class='fnname'>num_color_attachments</a>(&amp;self, subpass: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;</code></h4>
+<h4 id='method.num_samples' class='method'><code>fn <a href='../../vulkano/framebuffer/trait.RenderPassDesc.html#method.num_samples' class='fnname'>num_samples</a>(&amp;self, _: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;</code></h4>
+<h4 id='method.has_depth_stencil_attachment' class='method'><code>fn <a href='../../vulkano/framebuffer/trait.RenderPassDesc.html#method.has_depth_stencil_attachment' class='fnname'>has_depth_stencil_attachment</a>(&amp;self, subpass: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;</code></h4>
+<h4 id='method.has_depth' class='method'><code>fn <a href='../../vulkano/framebuffer/trait.RenderPassDesc.html#method.has_depth' class='fnname'>has_depth</a>(&amp;self, subpass: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>&gt;</code></h4>
+<h4 id='method.has_writable_depth' class='method'><code>fn <a href='../../vulkano/framebuffer/trait.RenderPassDesc.html#method.has_writable_depth' class='fnname'>has_writable_depth</a>(&amp;self, subpass: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>&gt;</code></h4>
+<h4 id='method.has_stencil' class='method'><code>fn <a href='../../vulkano/framebuffer/trait.RenderPassDesc.html#method.has_stencil' class='fnname'>has_stencil</a>(&amp;self, subpass: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>&gt;</code></h4>
+<h4 id='method.has_writable_stencil' class='method'><code>fn <a href='../../vulkano/framebuffer/trait.RenderPassDesc.html#method.has_writable_stencil' class='fnname'>has_writable_stencil</a>(&amp;self, subpass: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>&gt;</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../vulkano/framebuffer/trait.RenderPassAttachmentsList.html' title='vulkano::framebuffer::RenderPassAttachmentsList'>RenderPassAttachmentsList</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt; for <a class='struct' href='../../vulkano/framebuffer/struct.EmptySinglePassRenderPass.html' title='vulkano::framebuffer::EmptySinglePassRenderPass'>EmptySinglePassRenderPass</a></code></span><span class='out-of-band'><a id='src-12047' class='srclink' href='../../src/vulkano/vulkano/src/framebuffer/empty.rs.html#169-178' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.AttachmentsIter-1' class='type'><code>type <a href='../../vulkano/framebuffer/trait.RenderPassAttachmentsList.html#associatedtype.AttachmentsIter' class='type'>AttachmentsIter</a> = <a class='struct' href='https://doc.rust-lang.org/nightly/core/iter/sources/struct.Empty.html' title='core::iter::sources::Empty'>EmptyIter</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='trait' href='../../vulkano/image/traits/trait.ImageView.html' title='vulkano::image::traits::ImageView'>ImageView</a>&gt;, <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='trait' href='../../vulkano/image/traits/trait.Image.html' title='vulkano::image::traits::Image'>Image</a>&gt;, <a class='enum' href='../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>ImageLayout</a>, <a class='enum' href='../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>ImageLayout</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;</code></h4>
+<h4 id='method.convert_attachments_list' class='method'><code>fn <a href='../../vulkano/framebuffer/trait.RenderPassAttachmentsList.html#tymethod.convert_attachments_list' class='fnname'>convert_attachments_list</a>(&amp;self, _: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;Self::<a class='trait' href='../../vulkano/framebuffer/trait.RenderPassAttachmentsList.html' title='vulkano::framebuffer::RenderPassAttachmentsList'>AttachmentsIter</a>, <a class='enum' href='../../vulkano/framebuffer/enum.FramebufferCreationError.html' title='vulkano::framebuffer::FramebufferCreationError'>FramebufferCreationError</a>&gt;</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../vulkano/framebuffer/trait.RenderPassClearValues.html' title='vulkano::framebuffer::RenderPassClearValues'>RenderPassClearValues</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt; for <a class='struct' href='../../vulkano/framebuffer/struct.EmptySinglePassRenderPass.html' title='vulkano::framebuffer::EmptySinglePassRenderPass'>EmptySinglePassRenderPass</a></code></span><span class='out-of-band'><a id='src-12051' class='srclink' href='../../src/vulkano/vulkano/src/framebuffer/empty.rs.html#180-187' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.ClearValuesIter' class='type'><code>type <a href='../../vulkano/framebuffer/trait.RenderPassClearValues.html#associatedtype.ClearValuesIter' class='type'>ClearValuesIter</a> = <a class='struct' href='https://doc.rust-lang.org/nightly/core/iter/sources/struct.Empty.html' title='core::iter::sources::Empty'>EmptyIter</a>&lt;<a class='enum' href='../../vulkano/format/enum.ClearValue.html' title='vulkano::format::ClearValue'>ClearValue</a>&gt;</code></h4>
+<h4 id='method.convert_clear_values' class='method'><code>fn <a href='../../vulkano/framebuffer/trait.RenderPassClearValues.html#tymethod.convert_clear_values' class='fnname'>convert_clear_values</a>(&amp;self, _: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>) -&gt; Self::<a class='trait' href='../../vulkano/framebuffer/trait.RenderPassClearValues.html' title='vulkano::framebuffer::RenderPassClearValues'>ClearValuesIter</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Display` struct in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Display">
+
+    <title>vulkano::swapchain::display::Display - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>swapchain</a>::<wbr><a href='index.html'>display</a></p><script>window.sidebarCurrent = {name: 'Display', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>swapchain</a>::<wbr><a href='index.html'>display</a>::<wbr><a class='struct' href=''>Display</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-18550' class='srclink' href='../../../src/vulkano/vulkano/src/swapchain/display.rs.html#125-129' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Display {
+    // some fields omitted
+}</pre><div class='docblock'><p>Represents a monitor connected to a physical device.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../../vulkano/swapchain/display/struct.Display.html' title='vulkano::swapchain::display::Display'>Display</a></code></span><span class='out-of-band'><a id='src-18560' class='srclink' href='../../../src/vulkano/vulkano/src/swapchain/display.rs.html#131-239' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.enumerate_raw' class='method'><code>fn <a href='#method.enumerate_raw' class='fnname'>enumerate_raw</a>(device: &amp;<a class='struct' href='../../../vulkano/instance/struct.PhysicalDevice.html' title='vulkano::instance::PhysicalDevice'>PhysicalDevice</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.IntoIter.html' title='collections::vec::IntoIter'>IntoIter</a>&lt;<a class='struct' href='../../../vulkano/swapchain/display/struct.Display.html' title='vulkano::swapchain::display::Display'>Display</a>&gt;, <a class='enum' href='../../../vulkano/enum.OomError.html' title='vulkano::OomError'>OomError</a>&gt;</code></h4>
+<div class='docblock'><p>See the docs of enumerate().</p>
+</div><h4 id='method.enumerate' class='method'><code>fn <a href='#method.enumerate' class='fnname'>enumerate</a>(device: &amp;<a class='struct' href='../../../vulkano/instance/struct.PhysicalDevice.html' title='vulkano::instance::PhysicalDevice'>PhysicalDevice</a>) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.IntoIter.html' title='collections::vec::IntoIter'>IntoIter</a>&lt;<a class='struct' href='../../../vulkano/swapchain/display/struct.Display.html' title='vulkano::swapchain::display::Display'>Display</a>&gt;</code></h4>
+<div class='docblock'><p>Enumerates all the displays that are available on a given physical device.</p>
+
+<h1 id='panic' class='section-header'><a href='#panic'>Panic</a></h1>
+<ul>
+<li>Panicks if the device or host ran out of memory.</li>
+</ul>
+</div><h4 id='method.name' class='method'><code>fn <a href='#method.name' class='fnname'>name</a>(&amp;self) -&gt; &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
+<div class='docblock'><p>Returns the name of the display.</p>
+</div><h4 id='method.physical_device' class='method'><code>fn <a href='#method.physical_device' class='fnname'>physical_device</a>(&amp;self) -&gt; <a class='struct' href='../../../vulkano/instance/struct.PhysicalDevice.html' title='vulkano::instance::PhysicalDevice'>PhysicalDevice</a></code></h4>
+<div class='docblock'><p>Returns the physical device that was used to create this display.</p>
+</div><h4 id='method.physical_resolution' class='method'><code>fn <a href='#method.physical_resolution' class='fnname'>physical_resolution</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 2]</a></code></h4>
+<div class='docblock'><p>Returns the physical resolution of the display.</p>
+</div><h4 id='method.display_modes_raw' class='method'><code>fn <a href='#method.display_modes_raw' class='fnname'>display_modes_raw</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.IntoIter.html' title='collections::vec::IntoIter'>IntoIter</a>&lt;<a class='struct' href='../../../vulkano/swapchain/display/struct.DisplayMode.html' title='vulkano::swapchain::display::DisplayMode'>DisplayMode</a>&gt;, <a class='enum' href='../../../vulkano/enum.OomError.html' title='vulkano::OomError'>OomError</a>&gt;</code></h4>
+<div class='docblock'><p>See the docs of display_modes().</p>
+</div><h4 id='method.display_modes' class='method'><code>fn <a href='#method.display_modes' class='fnname'>display_modes</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.IntoIter.html' title='collections::vec::IntoIter'>IntoIter</a>&lt;<a class='struct' href='../../../vulkano/swapchain/display/struct.DisplayMode.html' title='vulkano::swapchain::display::DisplayMode'>DisplayMode</a>&gt;</code></h4>
+<div class='docblock'><p>Returns a list of all modes available on this display.</p>
+
+<h1 id='panic-1' class='section-header'><a href='#panic-1'>Panic</a></h1>
+<ul>
+<li>Panicks if the device or host ran out of memory.</li>
+</ul>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../../vulkano/trait.VulkanObject.html' title='vulkano::VulkanObject'>VulkanObject</a> for <a class='struct' href='../../../vulkano/swapchain/display/struct.Display.html' title='vulkano::swapchain::display::Display'>Display</a></code></span><span class='out-of-band'><a id='src-18601' class='srclink' href='../../../src/vulkano/vulkano/src/swapchain/display.rs.html#241-248' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Object' class='type'><code>type <a href='../../../vulkano/trait.VulkanObject.html#associatedtype.Object' class='type'>Object</a> = <a class='type' href='../../../vk_sys/type.DisplayKHR.html' title='vk_sys::DisplayKHR'>DisplayKHR</a></code></h4>
+<h4 id='method.internal_object' class='method'><code>fn <a href='../../../vulkano/trait.VulkanObject.html#tymethod.internal_object' class='fnname'>internal_object</a>(&amp;self) -&gt; <a class='type' href='../../../vk_sys/type.DisplayKHR.html' title='vk_sys::DisplayKHR'>DisplayKHR</a></code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../../vulkano/swapchain/display/struct.Display.html' title='vulkano::swapchain::display::Display'>Display</a></code></span><span class='out-of-band'><a id='src-18554' class='srclink' href='../../../src/vulkano/vulkano/src/swapchain/display.rs.html#124' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../../vulkano/swapchain/display/struct.Display.html' title='vulkano::swapchain::display::Display'>Display</a></code></h4>
+<h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><span class="since">1.0.0</span></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ImageView` trait in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ImageView">
+
+    <title>vulkano::image::traits::ImageView - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>image</a>::<wbr><a href='index.html'>traits</a></p><script>window.sidebarCurrent = {name: 'ImageView', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content trait">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>image</a>::<wbr><a href='index.html'>traits</a>::<wbr><a class='trait' href=''>ImageView</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-13829' class='srclink' href='../../../src/vulkano/vulkano/src/image/traits.rs.html#126-172' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub unsafe trait ImageView: 'static + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Send.html' title='core::marker::Send'>Send</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html' title='core::marker::Sync'>Sync</a> {
+    fn <a href='#tymethod.parent' class='fnname'>parent</a>(&amp;self) -&gt; &amp;<a class='trait' href='../../../vulkano/image/traits/trait.Image.html' title='vulkano::image::traits::Image'>Image</a>;
+    fn <a href='#tymethod.parent_arc' class='fnname'>parent_arc</a>(&amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;Self&gt;) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='trait' href='../../../vulkano/image/traits/trait.Image.html' title='vulkano::image::traits::Image'>Image</a>&gt; <span class='where'>where Self: <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a></span>;
+    fn <a href='#tymethod.inner_view' class='fnname'>inner_view</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../../vulkano/image/sys/struct.UnsafeImageView.html' title='vulkano::image::sys::UnsafeImageView'>UnsafeImageView</a>;
+    fn <a href='#tymethod.blocks' class='fnname'>blocks</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;;
+    fn <a href='#tymethod.descriptor_set_storage_image_layout' class='fnname'>descriptor_set_storage_image_layout</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a>;
+    fn <a href='#tymethod.descriptor_set_combined_image_sampler_layout' class='fnname'>descriptor_set_combined_image_sampler_layout</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a>;
+    fn <a href='#tymethod.descriptor_set_sampled_image_layout' class='fnname'>descriptor_set_sampled_image_layout</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a>;
+    fn <a href='#tymethod.descriptor_set_input_attachment_layout' class='fnname'>descriptor_set_input_attachment_layout</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a>;
+    fn <a href='#tymethod.identity_swizzle' class='fnname'>identity_swizzle</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>;
+
+    fn <a href='#method.format' class='fnname'>format</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a> { ... }
+    fn <a href='#method.samples' class='fnname'>samples</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a> { ... }
+    fn <a href='#method.can_be_sampled' class='fnname'>can_be_sampled</a>(&amp;self, sampler: &amp;<a class='struct' href='../../../vulkano/sampler/struct.Sampler.html' title='vulkano::sampler::Sampler'>Sampler</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> { ... }
+}</pre>
+            <h2 id='required-methods'>Required Methods</h2>
+            <div class='methods'>
+        <h3 id='tymethod.parent' class='method stab '><code>fn <a href='#tymethod.parent' class='fnname'>parent</a>(&amp;self) -&gt; &amp;<a class='trait' href='../../../vulkano/image/traits/trait.Image.html' title='vulkano::image::traits::Image'>Image</a></code></h3><h3 id='tymethod.parent_arc' class='method stab '><code>fn <a href='#tymethod.parent_arc' class='fnname'>parent_arc</a>(&amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;Self&gt;) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='trait' href='../../../vulkano/image/traits/trait.Image.html' title='vulkano::image::traits::Image'>Image</a>&gt; <span class='where'>where Self: <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a></span></code></h3><h3 id='tymethod.inner_view' class='method stab '><code>fn <a href='#tymethod.inner_view' class='fnname'>inner_view</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../../vulkano/image/sys/struct.UnsafeImageView.html' title='vulkano::image::sys::UnsafeImageView'>UnsafeImageView</a></code></h3><div class='docblock'><p>Returns the inner unsafe image view object used by this image view.</p>
+</div><h3 id='tymethod.blocks' class='method stab '><code>fn <a href='#tymethod.blocks' class='fnname'>blocks</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;</code></h3><div class='docblock'><p>Returns the blocks of the parent image this image view overlaps.</p>
+</div><h3 id='tymethod.descriptor_set_storage_image_layout' class='method stab '><code>fn <a href='#tymethod.descriptor_set_storage_image_layout' class='fnname'>descriptor_set_storage_image_layout</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a></code></h3><div class='docblock'><p>Returns the image layout to use in a descriptor with the given subresource.</p>
+</div><h3 id='tymethod.descriptor_set_combined_image_sampler_layout' class='method stab '><code>fn <a href='#tymethod.descriptor_set_combined_image_sampler_layout' class='fnname'>descriptor_set_combined_image_sampler_layout</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a></code></h3><div class='docblock'><p>Returns the image layout to use in a descriptor with the given subresource.</p>
+</div><h3 id='tymethod.descriptor_set_sampled_image_layout' class='method stab '><code>fn <a href='#tymethod.descriptor_set_sampled_image_layout' class='fnname'>descriptor_set_sampled_image_layout</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a></code></h3><div class='docblock'><p>Returns the image layout to use in a descriptor with the given subresource.</p>
+</div><h3 id='tymethod.descriptor_set_input_attachment_layout' class='method stab '><code>fn <a href='#tymethod.descriptor_set_input_attachment_layout' class='fnname'>descriptor_set_input_attachment_layout</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a></code></h3><div class='docblock'><p>Returns the image layout to use in a descriptor with the given subresource.</p>
+</div><h3 id='tymethod.identity_swizzle' class='method stab '><code>fn <a href='#tymethod.identity_swizzle' class='fnname'>identity_swizzle</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h3><div class='docblock'><p>Returns true if the view doesn&#39;t use components swizzling.</p>
+
+<p>Must be true when the view is used as a framebuffer attachment or TODO: I don&#39;t remember
+the other thing.</p>
+</div></div>
+            <h2 id='provided-methods'>Provided Methods</h2>
+            <div class='methods'>
+        <h3 id='method.format' class='method stab '><code>fn <a href='#method.format' class='fnname'>format</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></h3><div class='docblock'><p>Returns the format of this view. This can be different from the parent&#39;s format.</p>
+</div><h3 id='method.samples' class='method stab '><code>fn <a href='#method.samples' class='fnname'>samples</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h3><h3 id='method.can_be_sampled' class='method stab '><code>fn <a href='#method.can_be_sampled' class='fnname'>can_be_sampled</a>(&amp;self, sampler: &amp;<a class='struct' href='../../../vulkano/sampler/struct.Sampler.html' title='vulkano::sampler::Sampler'>Sampler</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h3><div class='docblock'><p>Returns true if the given sampler can be used with this image view.</p>
+
+<p>This method should check whether the sampler&#39;s configuration can be used with the format
+of the view.</p>
+</div></div>
+        <h2 id='implementors'>Implementors</h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><code>impl&lt;F, A&gt; ImageView for <a class='struct' href='../../../vulkano/image/attachment/struct.AttachmentImage.html' title='vulkano::image::attachment::AttachmentImage'>AttachmentImage</a>&lt;F, A&gt; <span class='where'>where F: 'static + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Send.html' title='core::marker::Send'>Send</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html' title='core::marker::Sync'>Sync</a>, A: <a class='trait' href='../../../vulkano/memory/pool/trait.MemoryPool.html' title='vulkano::memory::pool::MemoryPool'>MemoryPool</a></span></code></li>
+<li><code>impl&lt;F: 'static, A&gt; ImageView for <a class='struct' href='../../../vulkano/image/immutable/struct.ImmutableImage.html' title='vulkano::image::immutable::ImmutableImage'>ImmutableImage</a>&lt;F, A&gt; <span class='where'>where F: 'static + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Send.html' title='core::marker::Send'>Send</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html' title='core::marker::Sync'>Sync</a>, A: <a class='trait' href='../../../vulkano/memory/pool/trait.MemoryPool.html' title='vulkano::memory::pool::MemoryPool'>MemoryPool</a></span></code></li>
+<li><code>impl ImageView for <a class='struct' href='../../../vulkano/image/swapchain/struct.SwapchainImage.html' title='vulkano::image::swapchain::SwapchainImage'>SwapchainImage</a></code></li>
+</ul><script type="text/javascript" async
+                         src="../../../implementors/vulkano/image/traits/trait.ImageView.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

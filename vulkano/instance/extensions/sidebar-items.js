@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DeviceExtensions","List of extensions that are enabled or available."],["InstanceExtensions","List of extensions that are enabled or available."]]});

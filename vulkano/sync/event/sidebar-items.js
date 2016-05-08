@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Event","Used to block the GPU execution until an event on the CPU occurs."]]});

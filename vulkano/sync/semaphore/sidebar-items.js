@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Semaphore","Used to provide synchronization between command buffers during their execution."]]});

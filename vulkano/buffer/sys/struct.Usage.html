@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Usage` struct in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Usage">
+
+    <title>vulkano::buffer::sys::Usage - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>buffer</a>::<wbr><a href='index.html'>sys</a></p><script>window.sidebarCurrent = {name: 'Usage', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>buffer</a>::<wbr><a href='index.html'>sys</a>::<wbr><a class='struct' href=''>Usage</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1285' class='srclink' href='../../../src/vulkano/vulkano/src/buffer/sys.rs.html#297-307' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Usage {
+    pub transfer_source: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>,
+    pub transfer_dest: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>,
+    pub uniform_texel_buffer: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>,
+    pub storage_texel_buffer: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>,
+    pub uniform_buffer: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>,
+    pub storage_buffer: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>,
+    pub index_buffer: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>,
+    pub vertex_buffer: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>,
+    pub indirect_buffer: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>,
+}</pre><div class='docblock'><p>Describes how a buffer is going to be used. This is <strong>not</strong> an optimization.</p>
+
+<p>If you try to use a buffer in a way that you didn&#39;t declare, a panic will happen.</p>
+
+<p>Some methods are provided to build <code>Usage</code> structs for some common situations. However
+there is no restriction in the combination of usages that can be enabled.</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                             <td id='structfield.transfer_source'><code>transfer_source</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.transfer_dest'><code>transfer_dest</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.uniform_texel_buffer'><code>uniform_texel_buffer</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.storage_texel_buffer'><code>storage_texel_buffer</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.uniform_buffer'><code>uniform_buffer</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.storage_buffer'><code>storage_buffer</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.index_buffer'><code>index_buffer</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.vertex_buffer'><code>vertex_buffer</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.indirect_buffer'><code>indirect_buffer</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../../vulkano/buffer/sys/struct.Usage.html' title='vulkano::buffer::sys::Usage'>Usage</a></code></span><span class='out-of-band'><a id='src-1322' class='srclink' href='../../../src/vulkano/vulkano/src/buffer/sys.rs.html#309-443' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.none' class='method'><code>fn <a href='#method.none' class='fnname'>none</a>() -&gt; <a class='struct' href='../../../vulkano/buffer/sys/struct.Usage.html' title='vulkano::buffer::sys::Usage'>Usage</a></code></h4>
+<div class='docblock'><p>Builds a <code>Usage</code> with all values set to false.</p>
+</div><h4 id='method.all' class='method'><code>fn <a href='#method.all' class='fnname'>all</a>() -&gt; <a class='struct' href='../../../vulkano/buffer/sys/struct.Usage.html' title='vulkano::buffer::sys::Usage'>Usage</a></code></h4>
+<div class='docblock'><p>Builds a <code>Usage</code> with all values set to true. Can be used for quick prototyping.</p>
+</div><h4 id='method.transfer_source' class='method'><code>fn <a href='#method.transfer_source' class='fnname'>transfer_source</a>() -&gt; <a class='struct' href='../../../vulkano/buffer/sys/struct.Usage.html' title='vulkano::buffer::sys::Usage'>Usage</a></code></h4>
+<div class='docblock'><p>Builds a <code>Usage</code> with <code>transfer_source</code> set to true and the rest to false.</p>
+</div><h4 id='method.vertex_buffer' class='method'><code>fn <a href='#method.vertex_buffer' class='fnname'>vertex_buffer</a>() -&gt; <a class='struct' href='../../../vulkano/buffer/sys/struct.Usage.html' title='vulkano::buffer::sys::Usage'>Usage</a></code></h4>
+<div class='docblock'><p>Builds a <code>Usage</code> with <code>vertex_buffer</code> set to true and the rest to false.</p>
+</div><h4 id='method.vertex_buffer_transfer_dest' class='method'><code>fn <a href='#method.vertex_buffer_transfer_dest' class='fnname'>vertex_buffer_transfer_dest</a>() -&gt; <a class='struct' href='../../../vulkano/buffer/sys/struct.Usage.html' title='vulkano::buffer::sys::Usage'>Usage</a></code></h4>
+<div class='docblock'><p>Builds a <code>Usage</code> with <code>vertex_buffer</code> and <code>transfer_dest</code> set to true and the rest to false.</p>
+</div><h4 id='method.index_buffer' class='method'><code>fn <a href='#method.index_buffer' class='fnname'>index_buffer</a>() -&gt; <a class='struct' href='../../../vulkano/buffer/sys/struct.Usage.html' title='vulkano::buffer::sys::Usage'>Usage</a></code></h4>
+<div class='docblock'><p>Builds a <code>Usage</code> with <code>index_buffer</code> set to true and the rest to false.</p>
+</div><h4 id='method.index_buffer_transfer_dest' class='method'><code>fn <a href='#method.index_buffer_transfer_dest' class='fnname'>index_buffer_transfer_dest</a>() -&gt; <a class='struct' href='../../../vulkano/buffer/sys/struct.Usage.html' title='vulkano::buffer::sys::Usage'>Usage</a></code></h4>
+<div class='docblock'><p>Builds a <code>Usage</code> with <code>index_buffer</code> and <code>transfer_dest</code> set to true and the rest to false.</p>
+</div><h4 id='method.uniform_buffer' class='method'><code>fn <a href='#method.uniform_buffer' class='fnname'>uniform_buffer</a>() -&gt; <a class='struct' href='../../../vulkano/buffer/sys/struct.Usage.html' title='vulkano::buffer::sys::Usage'>Usage</a></code></h4>
+<div class='docblock'><p>Builds a <code>Usage</code> with <code>uniform_buffer</code> set to true and the rest to false.</p>
+</div><h4 id='method.uniform_buffer_transfer_dest' class='method'><code>fn <a href='#method.uniform_buffer_transfer_dest' class='fnname'>uniform_buffer_transfer_dest</a>() -&gt; <a class='struct' href='../../../vulkano/buffer/sys/struct.Usage.html' title='vulkano::buffer::sys::Usage'>Usage</a></code></h4>
+<div class='docblock'><p>Builds a <code>Usage</code> with <code>uniform_buffer</code> and <code>transfer_dest</code> set to true and the rest
+to false.</p>
+</div><h4 id='method.indirect_buffer' class='method'><code>fn <a href='#method.indirect_buffer' class='fnname'>indirect_buffer</a>() -&gt; <a class='struct' href='../../../vulkano/buffer/sys/struct.Usage.html' title='vulkano::buffer::sys::Usage'>Usage</a></code></h4>
+<div class='docblock'><p>Builds a <code>Usage</code> with <code>indirect_buffer</code> set to true and the rest to false.</p>
+</div><h4 id='method.indirect_buffer_transfer_dest' class='method'><code>fn <a href='#method.indirect_buffer_transfer_dest' class='fnname'>indirect_buffer_transfer_dest</a>() -&gt; <a class='struct' href='../../../vulkano/buffer/sys/struct.Usage.html' title='vulkano::buffer::sys::Usage'>Usage</a></code></h4>
+<div class='docblock'><p>Builds a <code>Usage</code> with <code>indirect_buffer</code> and <code>transfer_dest</code> set to true and the rest
+to false.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../../vulkano/buffer/sys/struct.Usage.html' title='vulkano::buffer::sys::Usage'>Usage</a></code></span><span class='out-of-band'><a id='src-1295' class='srclink' href='../../../src/vulkano/vulkano/src/buffer/sys.rs.html#296' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../../vulkano/buffer/sys/struct.Usage.html' title='vulkano::buffer::sys::Usage'>Usage</a></code></h4>
+<h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><span class="since">1.0.0</span></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../../vulkano/buffer/sys/struct.Usage.html' title='vulkano::buffer::sys::Usage'>Usage</a></code></span><span class='out-of-band'><a id='src-1307' class='srclink' href='../../../src/vulkano/vulkano/src/buffer/sys.rs.html#296' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../../vulkano/buffer/sys/struct.Usage.html' title='vulkano::buffer::sys::Usage'>Usage</a></code></span><span class='out-of-band'><a id='src-1308' class='srclink' href='../../../src/vulkano/vulkano/src/buffer/sys.rs.html#296' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

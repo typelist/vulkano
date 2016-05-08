@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ImmutableBuffer","Buffer that is written once then read for as long as it is alive."]]});

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `swapchain` mod in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, swapchain">
+
+    <title>vulkano::swapchain - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vulkano</a></p><script>window.sidebarCurrent = {name: 'swapchain', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>vulkano</a>::<wbr><a class='mod' href=''>swapchain</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-18488' class='srclink' href='../../src/vulkano/vulkano/src/swapchain/mod.rs.html#10-54' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Link between Vulkan and a window and/or the screen.</p>
+
+<p>In order to draw on the screen or a window, you have to use two steps:</p>
+
+<ul>
+<li>Create a <code>Surface</code> object that represents the location where the image will show up.</li>
+<li>Create a <code>Swapchain</code> using that <code>Surface</code>.</li>
+</ul>
+
+<p>Creating a surface can be done with only an <code>Instance</code> object. However creating a swapchain
+requires a <code>Device</code> object.</p>
+
+<p>Once you have a swapchain, you can retreive <code>Image</code> objects from it and draw to them. However
+due to double-buffering or other caching mechanism, the rendering will not automatically be
+shown on screen. In order to show the output on screen, you have to <em>present</em> the swapchain
+by using the method with the same name.</p>
+
+<h1 id='extensions' class='section-header'><a href='#extensions'>Extensions</a></h1>
+<p>Theses capabilities depend on some extensions:</p>
+
+<ul>
+<li><code>VK_KHR_surface</code></li>
+<li><code>VK_KHR_swapchain</code></li>
+<li><code>VK_KHR_display</code></li>
+<li><code>VK_KHR_display_swapchain</code></li>
+<li><code>VK_KHR_xlib_surface</code></li>
+<li><code>VK_KHR_xcb_surface</code></li>
+<li><code>VK_KHR_wayland_surface</code></li>
+<li><code>VK_KHR_mir_surface</code></li>
+<li><code>VK_KHR_android_surface</code></li>
+<li><code>VK_KHR_win32_surface</code></li>
+</ul>
+</div><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='display/index.html'
+                                  title='vulkano::swapchain::display'>display</a></td>
+                           <td class='docblock short'>
+                                <p>Allows you to create surfaces that fill a whole display, outside of the windowing system.</p>
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Capabilities.html'
+                                  title='vulkano::swapchain::Capabilities'>Capabilities</a></td>
+                           <td class='docblock short'>
+                                <p>The capabilities of a surface when used by a physical device.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Surface.html'
+                                  title='vulkano::swapchain::Surface'>Surface</a></td>
+                           <td class='docblock short'>
+                                <p>Represents a surface on the screen.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Swapchain.html'
+                                  title='vulkano::swapchain::Swapchain'>Swapchain</a></td>
+                           <td class='docblock short'>
+                                <p>Contains the swapping system and the images that can be shown on a surface.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.AcquireError.html'
+                                  title='vulkano::swapchain::AcquireError'>AcquireError</a></td>
+                           <td class='docblock short'>
+                                <p>Error that can happen when calling <code>acquire_next_image</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.ColorSpace.html'
+                                  title='vulkano::swapchain::ColorSpace'>ColorSpace</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.CompositeAlpha.html'
+                                  title='vulkano::swapchain::CompositeAlpha'>CompositeAlpha</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.PresentError.html'
+                                  title='vulkano::swapchain::PresentError'>PresentError</a></td>
+                           <td class='docblock short'>
+                                <p>Error that can happen when calling <code>acquire_next_image</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.PresentMode.html'
+                                  title='vulkano::swapchain::PresentMode'>PresentMode</a></td>
+                           <td class='docblock short'>
+                                <p>The way presenting a swapchain is accomplished.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.SurfaceCreationError.html'
+                                  title='vulkano::swapchain::SurfaceCreationError'>SurfaceCreationError</a></td>
+                           <td class='docblock short'>
+                                <p>Error that can happen when creating a debug callback.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.SurfaceTransform.html'
+                                  title='vulkano::swapchain::SurfaceTransform'>SurfaceTransform</a></td>
+                           <td class='docblock short'>
+                                <p>A transformation to apply to the image before showing it on the screen.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

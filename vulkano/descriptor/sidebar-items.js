@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["descriptor",""],["descriptor_set",""],["pipeline_layout","Describes the layout of descriptors and push constants used by a pipeline."]],"trait":[["PipelineLayout","Trait for objects that describe the layout of the descriptors and push constants of a pipeline."]]});

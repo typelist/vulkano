@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["AttachmentsBlend",""],["BlendFactor",""],["BlendOp",""],["LogicOp","Which logical operation to apply to the output values."]],"struct":[["AttachmentBlend",""],["Blend",""]]});

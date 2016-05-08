@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `SwapchainCreateInfoKHR` struct in crate `vk_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, SwapchainCreateInfoKHR">
+
+    <title>vk_sys::SwapchainCreateInfoKHR - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>vk_sys</a></p><script>window.sidebarCurrent = {name: 'SwapchainCreateInfoKHR', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>vk_sys</a>::<wbr><a class='struct' href=''>SwapchainCreateInfoKHR</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1769' class='srclink' href='../src/vk_sys/vk-sys/src/lib.rs.html#2182-2201' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct SwapchainCreateInfoKHR {
+    pub sType: <a class='type' href='../vk_sys/type.StructureType.html' title='vk_sys::StructureType'>StructureType</a>,
+    pub pNext: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='https://doc.rust-lang.org/nightly/std/os/raw/enum.c_void.html' title='std::os::raw::c_void'>c_void</a>,
+    pub flags: <a class='type' href='../vk_sys/type.SwapchainCreateFlagsKHR.html' title='vk_sys::SwapchainCreateFlagsKHR'>SwapchainCreateFlagsKHR</a>,
+    pub surface: <a class='type' href='../vk_sys/type.SurfaceKHR.html' title='vk_sys::SurfaceKHR'>SurfaceKHR</a>,
+    pub minImageCount: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub imageFormat: <a class='type' href='../vk_sys/type.Format.html' title='vk_sys::Format'>Format</a>,
+    pub imageColorSpace: <a class='type' href='../vk_sys/type.ColorSpaceKHR.html' title='vk_sys::ColorSpaceKHR'>ColorSpaceKHR</a>,
+    pub imageExtent: <a class='struct' href='../vk_sys/struct.Extent2D.html' title='vk_sys::Extent2D'>Extent2D</a>,
+    pub imageArrayLayers: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub imageUsage: <a class='type' href='../vk_sys/type.ImageUsageFlags.html' title='vk_sys::ImageUsageFlags'>ImageUsageFlags</a>,
+    pub imageSharingMode: <a class='type' href='../vk_sys/type.SharingMode.html' title='vk_sys::SharingMode'>SharingMode</a>,
+    pub queueFamilyIndexCount: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub pQueueFamilyIndices: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub preTransform: <a class='type' href='../vk_sys/type.SurfaceTransformFlagBitsKHR.html' title='vk_sys::SurfaceTransformFlagBitsKHR'>SurfaceTransformFlagBitsKHR</a>,
+    pub compositeAlpha: <a class='type' href='../vk_sys/type.CompositeAlphaFlagBitsKHR.html' title='vk_sys::CompositeAlphaFlagBitsKHR'>CompositeAlphaFlagBitsKHR</a>,
+    pub presentMode: <a class='type' href='../vk_sys/type.PresentModeKHR.html' title='vk_sys::PresentModeKHR'>PresentModeKHR</a>,
+    pub clipped: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub oldSwapchain: <a class='type' href='../vk_sys/type.SwapchainKHR.html' title='vk_sys::SwapchainKHR'>SwapchainKHR</a>,
+}</pre><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                             <td id='structfield.sType'><code>sType</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.pNext'><code>pNext</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.flags'><code>flags</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.surface'><code>surface</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.minImageCount'><code>minImageCount</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.imageFormat'><code>imageFormat</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.imageColorSpace'><code>imageColorSpace</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.imageExtent'><code>imageExtent</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.imageArrayLayers'><code>imageArrayLayers</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.imageUsage'><code>imageUsage</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.imageSharingMode'><code>imageSharingMode</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.queueFamilyIndexCount'><code>queueFamilyIndexCount</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.pQueueFamilyIndices'><code>pQueueFamilyIndices</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.preTransform'><code>preTransform</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.compositeAlpha'><code>compositeAlpha</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.presentMode'><code>presentMode</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.clipped'><code>clipped</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.oldSwapchain'><code>oldSwapchain</code></td><td></td></tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "vk_sys";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

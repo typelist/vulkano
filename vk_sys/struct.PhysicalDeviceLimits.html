@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PhysicalDeviceLimits` struct in crate `vk_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PhysicalDeviceLimits">
+
+    <title>vk_sys::PhysicalDeviceLimits - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>vk_sys</a></p><script>window.sidebarCurrent = {name: 'PhysicalDeviceLimits', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>vk_sys</a>::<wbr><a class='struct' href=''>PhysicalDeviceLimits</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-965' class='srclink' href='../src/vk_sys/vk-sys/src/lib.rs.html#1082-1189' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct PhysicalDeviceLimits {
+    pub maxImageDimension1D: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxImageDimension2D: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxImageDimension3D: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxImageDimensionCube: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxImageArrayLayers: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxTexelBufferElements: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxUniformBufferRange: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxStorageBufferRange: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxPushConstantsSize: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxMemoryAllocationCount: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxSamplerAllocationCount: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub bufferImageGranularity: <a class='type' href='../vk_sys/type.DeviceSize.html' title='vk_sys::DeviceSize'>DeviceSize</a>,
+    pub sparseAddressSpaceSize: <a class='type' href='../vk_sys/type.DeviceSize.html' title='vk_sys::DeviceSize'>DeviceSize</a>,
+    pub maxBoundDescriptorSets: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxPerStageDescriptorSamplers: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxPerStageDescriptorUniformBuffers: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxPerStageDescriptorStorageBuffers: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxPerStageDescriptorSampledImages: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxPerStageDescriptorStorageImages: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxPerStageDescriptorInputAttachments: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxPerStageResources: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxDescriptorSetSamplers: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxDescriptorSetUniformBuffers: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxDescriptorSetUniformBuffersDynamic: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxDescriptorSetStorageBuffers: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxDescriptorSetStorageBuffersDynamic: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxDescriptorSetSampledImages: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxDescriptorSetStorageImages: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxDescriptorSetInputAttachments: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxVertexInputAttributes: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxVertexInputBindings: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxVertexInputAttributeOffset: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxVertexInputBindingStride: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxVertexOutputComponents: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxTessellationGenerationLevel: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxTessellationPatchSize: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxTessellationControlPerVertexInputComponents: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxTessellationControlPerVertexOutputComponents: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxTessellationControlPerPatchOutputComponents: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxTessellationControlTotalOutputComponents: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxTessellationEvaluationInputComponents: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxTessellationEvaluationOutputComponents: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxGeometryShaderInvocations: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxGeometryInputComponents: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxGeometryOutputComponents: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxGeometryOutputVertices: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxGeometryTotalOutputComponents: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxFragmentInputComponents: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxFragmentOutputAttachments: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxFragmentDualSrcAttachments: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxFragmentCombinedOutputResources: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxComputeSharedMemorySize: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxComputeWorkGroupCount: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 3]</a>,
+    pub maxComputeWorkGroupInvocations: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxComputeWorkGroupSize: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 3]</a>,
+    pub subPixelPrecisionBits: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub subTexelPrecisionBits: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub mipmapPrecisionBits: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxDrawIndexedIndexValue: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxDrawIndirectCount: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxSamplerLodBias: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub maxSamplerAnisotropy: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub maxViewports: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxViewportDimensions: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 2]</a>,
+    pub viewportBoundsRange: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 2]</a>,
+    pub viewportSubPixelBits: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub minMemoryMapAlignment: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>,
+    pub minTexelBufferOffsetAlignment: <a class='type' href='../vk_sys/type.DeviceSize.html' title='vk_sys::DeviceSize'>DeviceSize</a>,
+    pub minUniformBufferOffsetAlignment: <a class='type' href='../vk_sys/type.DeviceSize.html' title='vk_sys::DeviceSize'>DeviceSize</a>,
+    pub minStorageBufferOffsetAlignment: <a class='type' href='../vk_sys/type.DeviceSize.html' title='vk_sys::DeviceSize'>DeviceSize</a>,
+    pub minTexelOffset: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub maxTexelOffset: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub minTexelGatherOffset: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub maxTexelGatherOffset: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub minInterpolationOffset: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub maxInterpolationOffset: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub subPixelInterpolationOffsetBits: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxFramebufferWidth: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxFramebufferHeight: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxFramebufferLayers: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub framebufferColorSampleCounts: <a class='type' href='../vk_sys/type.SampleCountFlags.html' title='vk_sys::SampleCountFlags'>SampleCountFlags</a>,
+    pub framebufferDepthSampleCounts: <a class='type' href='../vk_sys/type.SampleCountFlags.html' title='vk_sys::SampleCountFlags'>SampleCountFlags</a>,
+    pub framebufferStencilSampleCounts: <a class='type' href='../vk_sys/type.SampleCountFlags.html' title='vk_sys::SampleCountFlags'>SampleCountFlags</a>,
+    pub framebufferNoAttachmentsSampleCounts: <a class='type' href='../vk_sys/type.SampleCountFlags.html' title='vk_sys::SampleCountFlags'>SampleCountFlags</a>,
+    pub maxColorAttachments: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub sampledImageColorSampleCounts: <a class='type' href='../vk_sys/type.SampleCountFlags.html' title='vk_sys::SampleCountFlags'>SampleCountFlags</a>,
+    pub sampledImageIntegerSampleCounts: <a class='type' href='../vk_sys/type.SampleCountFlags.html' title='vk_sys::SampleCountFlags'>SampleCountFlags</a>,
+    pub sampledImageDepthSampleCounts: <a class='type' href='../vk_sys/type.SampleCountFlags.html' title='vk_sys::SampleCountFlags'>SampleCountFlags</a>,
+    pub sampledImageStencilSampleCounts: <a class='type' href='../vk_sys/type.SampleCountFlags.html' title='vk_sys::SampleCountFlags'>SampleCountFlags</a>,
+    pub storageImageSampleCounts: <a class='type' href='../vk_sys/type.SampleCountFlags.html' title='vk_sys::SampleCountFlags'>SampleCountFlags</a>,
+    pub maxSampleMaskWords: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub timestampComputeAndGraphics: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub timestampPeriod: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub maxClipDistances: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxCullDistances: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub maxCombinedClipAndCullDistances: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub discreteQueuePriorities: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub pointSizeRange: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 2]</a>,
+    pub lineWidthRange: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 2]</a>,
+    pub pointSizeGranularity: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub lineWidthGranularity: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub strictLines: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub standardSampleLocations: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub optimalBufferCopyOffsetAlignment: <a class='type' href='../vk_sys/type.DeviceSize.html' title='vk_sys::DeviceSize'>DeviceSize</a>,
+    pub optimalBufferCopyRowPitchAlignment: <a class='type' href='../vk_sys/type.DeviceSize.html' title='vk_sys::DeviceSize'>DeviceSize</a>,
+    pub nonCoherentAtomSize: <a class='type' href='../vk_sys/type.DeviceSize.html' title='vk_sys::DeviceSize'>DeviceSize</a>,
+}</pre><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                             <td id='structfield.maxImageDimension1D'><code>maxImageDimension1D</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxImageDimension2D'><code>maxImageDimension2D</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxImageDimension3D'><code>maxImageDimension3D</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxImageDimensionCube'><code>maxImageDimensionCube</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxImageArrayLayers'><code>maxImageArrayLayers</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxTexelBufferElements'><code>maxTexelBufferElements</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxUniformBufferRange'><code>maxUniformBufferRange</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxStorageBufferRange'><code>maxStorageBufferRange</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxPushConstantsSize'><code>maxPushConstantsSize</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxMemoryAllocationCount'><code>maxMemoryAllocationCount</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxSamplerAllocationCount'><code>maxSamplerAllocationCount</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.bufferImageGranularity'><code>bufferImageGranularity</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.sparseAddressSpaceSize'><code>sparseAddressSpaceSize</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxBoundDescriptorSets'><code>maxBoundDescriptorSets</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxPerStageDescriptorSamplers'><code>maxPerStageDescriptorSamplers</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxPerStageDescriptorUniformBuffers'><code>maxPerStageDescriptorUniformBuffers</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxPerStageDescriptorStorageBuffers'><code>maxPerStageDescriptorStorageBuffers</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxPerStageDescriptorSampledImages'><code>maxPerStageDescriptorSampledImages</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxPerStageDescriptorStorageImages'><code>maxPerStageDescriptorStorageImages</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxPerStageDescriptorInputAttachments'><code>maxPerStageDescriptorInputAttachments</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxPerStageResources'><code>maxPerStageResources</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxDescriptorSetSamplers'><code>maxDescriptorSetSamplers</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxDescriptorSetUniformBuffers'><code>maxDescriptorSetUniformBuffers</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxDescriptorSetUniformBuffersDynamic'><code>maxDescriptorSetUniformBuffersDynamic</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxDescriptorSetStorageBuffers'><code>maxDescriptorSetStorageBuffers</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxDescriptorSetStorageBuffersDynamic'><code>maxDescriptorSetStorageBuffersDynamic</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxDescriptorSetSampledImages'><code>maxDescriptorSetSampledImages</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxDescriptorSetStorageImages'><code>maxDescriptorSetStorageImages</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxDescriptorSetInputAttachments'><code>maxDescriptorSetInputAttachments</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxVertexInputAttributes'><code>maxVertexInputAttributes</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxVertexInputBindings'><code>maxVertexInputBindings</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxVertexInputAttributeOffset'><code>maxVertexInputAttributeOffset</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxVertexInputBindingStride'><code>maxVertexInputBindingStride</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxVertexOutputComponents'><code>maxVertexOutputComponents</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxTessellationGenerationLevel'><code>maxTessellationGenerationLevel</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxTessellationPatchSize'><code>maxTessellationPatchSize</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxTessellationControlPerVertexInputComponents'><code>maxTessellationControlPerVertexInputComponents</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxTessellationControlPerVertexOutputComponents'><code>maxTessellationControlPerVertexOutputComponents</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxTessellationControlPerPatchOutputComponents'><code>maxTessellationControlPerPatchOutputComponents</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxTessellationControlTotalOutputComponents'><code>maxTessellationControlTotalOutputComponents</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxTessellationEvaluationInputComponents'><code>maxTessellationEvaluationInputComponents</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxTessellationEvaluationOutputComponents'><code>maxTessellationEvaluationOutputComponents</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxGeometryShaderInvocations'><code>maxGeometryShaderInvocations</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxGeometryInputComponents'><code>maxGeometryInputComponents</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxGeometryOutputComponents'><code>maxGeometryOutputComponents</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxGeometryOutputVertices'><code>maxGeometryOutputVertices</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxGeometryTotalOutputComponents'><code>maxGeometryTotalOutputComponents</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxFragmentInputComponents'><code>maxFragmentInputComponents</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxFragmentOutputAttachments'><code>maxFragmentOutputAttachments</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxFragmentDualSrcAttachments'><code>maxFragmentDualSrcAttachments</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxFragmentCombinedOutputResources'><code>maxFragmentCombinedOutputResources</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxComputeSharedMemorySize'><code>maxComputeSharedMemorySize</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxComputeWorkGroupCount'><code>maxComputeWorkGroupCount</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxComputeWorkGroupInvocations'><code>maxComputeWorkGroupInvocations</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxComputeWorkGroupSize'><code>maxComputeWorkGroupSize</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.subPixelPrecisionBits'><code>subPixelPrecisionBits</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.subTexelPrecisionBits'><code>subTexelPrecisionBits</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.mipmapPrecisionBits'><code>mipmapPrecisionBits</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxDrawIndexedIndexValue'><code>maxDrawIndexedIndexValue</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxDrawIndirectCount'><code>maxDrawIndirectCount</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxSamplerLodBias'><code>maxSamplerLodBias</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxSamplerAnisotropy'><code>maxSamplerAnisotropy</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxViewports'><code>maxViewports</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxViewportDimensions'><code>maxViewportDimensions</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.viewportBoundsRange'><code>viewportBoundsRange</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.viewportSubPixelBits'><code>viewportSubPixelBits</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.minMemoryMapAlignment'><code>minMemoryMapAlignment</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.minTexelBufferOffsetAlignment'><code>minTexelBufferOffsetAlignment</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.minUniformBufferOffsetAlignment'><code>minUniformBufferOffsetAlignment</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.minStorageBufferOffsetAlignment'><code>minStorageBufferOffsetAlignment</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.minTexelOffset'><code>minTexelOffset</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxTexelOffset'><code>maxTexelOffset</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.minTexelGatherOffset'><code>minTexelGatherOffset</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxTexelGatherOffset'><code>maxTexelGatherOffset</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.minInterpolationOffset'><code>minInterpolationOffset</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxInterpolationOffset'><code>maxInterpolationOffset</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.subPixelInterpolationOffsetBits'><code>subPixelInterpolationOffsetBits</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxFramebufferWidth'><code>maxFramebufferWidth</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxFramebufferHeight'><code>maxFramebufferHeight</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxFramebufferLayers'><code>maxFramebufferLayers</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.framebufferColorSampleCounts'><code>framebufferColorSampleCounts</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.framebufferDepthSampleCounts'><code>framebufferDepthSampleCounts</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.framebufferStencilSampleCounts'><code>framebufferStencilSampleCounts</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.framebufferNoAttachmentsSampleCounts'><code>framebufferNoAttachmentsSampleCounts</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxColorAttachments'><code>maxColorAttachments</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.sampledImageColorSampleCounts'><code>sampledImageColorSampleCounts</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.sampledImageIntegerSampleCounts'><code>sampledImageIntegerSampleCounts</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.sampledImageDepthSampleCounts'><code>sampledImageDepthSampleCounts</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.sampledImageStencilSampleCounts'><code>sampledImageStencilSampleCounts</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.storageImageSampleCounts'><code>storageImageSampleCounts</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxSampleMaskWords'><code>maxSampleMaskWords</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.timestampComputeAndGraphics'><code>timestampComputeAndGraphics</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.timestampPeriod'><code>timestampPeriod</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxClipDistances'><code>maxClipDistances</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxCullDistances'><code>maxCullDistances</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxCombinedClipAndCullDistances'><code>maxCombinedClipAndCullDistances</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.discreteQueuePriorities'><code>discreteQueuePriorities</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.pointSizeRange'><code>pointSizeRange</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.lineWidthRange'><code>lineWidthRange</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.pointSizeGranularity'><code>pointSizeGranularity</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.lineWidthGranularity'><code>lineWidthGranularity</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.strictLines'><code>strictLines</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.standardSampleLocations'><code>standardSampleLocations</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.optimalBufferCopyOffsetAlignment'><code>optimalBufferCopyOffsetAlignment</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.optimalBufferCopyRowPitchAlignment'><code>optimalBufferCopyRowPitchAlignment</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.nonCoherentAtomSize'><code>nonCoherentAtomSize</code></td><td></td></tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "vk_sys";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

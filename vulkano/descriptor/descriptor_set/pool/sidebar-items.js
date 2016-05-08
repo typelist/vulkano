@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DescriptorPool","Pool from which descriptor sets are allocated from."]]});

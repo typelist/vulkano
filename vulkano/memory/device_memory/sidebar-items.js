@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CpuAccess","Object that can be used to read or write the content of a `MappedDeviceMemory`."],["DeviceMemory","Represents memory that has been allocated."],["MappedDeviceMemory","Represents memory that has been allocated and mapped in CPU accessible space."]]});

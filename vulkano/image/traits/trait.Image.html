@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Image` trait in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Image">
+
+    <title>vulkano::image::traits::Image - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>image</a>::<wbr><a href='index.html'>traits</a></p><script>window.sidebarCurrent = {name: 'Image', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content trait">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>image</a>::<wbr><a href='index.html'>traits</a>::<wbr><a class='trait' href=''>Image</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-13782' class='srclink' href='../../../src/vulkano/vulkano/src/image/traits.rs.html#23-115' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub unsafe trait Image: 'static + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Send.html' title='core::marker::Send'>Send</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html' title='core::marker::Sync'>Sync</a> {
+    fn <a href='#tymethod.inner_image' class='fnname'>inner_image</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../../vulkano/image/sys/struct.UnsafeImage.html' title='vulkano::image::sys::UnsafeImage'>UnsafeImage</a>;
+    fn <a href='#tymethod.blocks' class='fnname'>blocks</a>(&amp;self, mipmap_levels: <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;, array_layers: <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;;
+    fn <a href='#tymethod.block_mipmap_levels_range' class='fnname'>block_mipmap_levels_range</a>(&amp;self, block: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;;
+    fn <a href='#tymethod.block_array_layers_range' class='fnname'>block_array_layers_range</a>(&amp;self, block: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;;
+    fn <a href='#tymethod.initial_layout' class='fnname'>initial_layout</a>(&amp;self, block: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>, first_required_layout: <a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>;
+    fn <a href='#tymethod.final_layout' class='fnname'>final_layout</a>(&amp;self, block: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>, last_required_layout: <a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>;
+    fn <a href='#tymethod.needs_fence' class='fnname'>needs_fence</a>(&amp;self, access: &amp;mut <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html' title='core::iter::iterator::Iterator'>Iterator</a>&lt;Item=<a class='struct' href='../../../vulkano/image/traits/struct.AccessRange.html' title='vulkano::image::traits::AccessRange'>AccessRange</a>&gt;) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>&gt;;
+    unsafe fn <a href='#tymethod.gpu_access' class='fnname'>gpu_access</a>(&amp;self, access: &amp;mut <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html' title='core::iter::iterator::Iterator'>Iterator</a>&lt;Item=<a class='struct' href='../../../vulkano/image/traits/struct.AccessRange.html' title='vulkano::image::traits::AccessRange'>AccessRange</a>&gt;, submission: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../../vulkano/command_buffer/struct.Submission.html' title='vulkano::command_buffer::Submission'>Submission</a>&gt;) -&gt; <a class='struct' href='../../../vulkano/image/traits/struct.GpuAccessResult.html' title='vulkano::image::traits::GpuAccessResult'>GpuAccessResult</a>;
+
+    fn <a href='#method.format' class='fnname'>format</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a> { ... }
+    fn <a href='#method.samples' class='fnname'>samples</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a> { ... }
+    fn <a href='#method.dimensions' class='fnname'>dimensions</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/image/sys/enum.Dimensions.html' title='vulkano::image::sys::Dimensions'>Dimensions</a> { ... }
+    fn <a href='#method.supports_blit_source' class='fnname'>supports_blit_source</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> { ... }
+    fn <a href='#method.supports_blit_destination' class='fnname'>supports_blit_destination</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> { ... }
+}</pre>
+            <h2 id='required-methods'>Required Methods</h2>
+            <div class='methods'>
+        <h3 id='tymethod.inner_image' class='method stab '><code>fn <a href='#tymethod.inner_image' class='fnname'>inner_image</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../../vulkano/image/sys/struct.UnsafeImage.html' title='vulkano::image::sys::UnsafeImage'>UnsafeImage</a></code></h3><div class='docblock'><p>Returns the inner unsafe image object used by this image.</p>
+</div><h3 id='tymethod.blocks' class='method stab '><code>fn <a href='#tymethod.blocks' class='fnname'>blocks</a>(&amp;self, mipmap_levels: <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;, array_layers: <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;</code></h3><div class='docblock'><p>Given a range, returns the list of blocks which each range is contained in.</p>
+
+<p>Each block must have a unique number. Hint: it can simply be the offset of the start of the
+mipmap and array layer.
+Calling this function multiple times with the same parameter must always return the same
+value.
+The return value must not be empty.</p>
+</div><h3 id='tymethod.block_mipmap_levels_range' class='method stab '><code>fn <a href='#tymethod.block_mipmap_levels_range' class='fnname'>block_mipmap_levels_range</a>(&amp;self, block: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;</code></h3><h3 id='tymethod.block_array_layers_range' class='method stab '><code>fn <a href='#tymethod.block_array_layers_range' class='fnname'>block_array_layers_range</a>(&amp;self, block: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;</code></h3><h3 id='tymethod.initial_layout' class='method stab '><code>fn <a href='#tymethod.initial_layout' class='fnname'>initial_layout</a>(&amp;self, block: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>, first_required_layout: <a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a></code></h3><div class='docblock'><p>Called when a command buffer that uses this image is being built. Given a block, this
+function should return the layout that the block will have when the command buffer is
+submitted.</p>
+
+<p>The <code>first_required_layout</code> is provided as a hint and corresponds to the first layout
+that the image will be used for. If this function returns a value different from
+<code>first_required_layout</code>, then a layout transition will be performed by the command buffer.</p>
+
+<p>The two additional elements are:</p>
+
+<ul>
+<li>Whether a pipeline barrier should be added in order to address a read or write from
+the host (VK_ACCESS_HOST_READ_BIT | VK_ACCESS_HOST_WRITE_BIT).</li>
+<li>Whether a pipeline barrier should be added in order to address a read or write from
+memory (VK_ACCESS_MEMORY_READ_BIT | VK_ACCESS_MEMORY_WRITE_BIT).</li>
+</ul>
+</div><h3 id='tymethod.final_layout' class='method stab '><code>fn <a href='#tymethod.final_layout' class='fnname'>final_layout</a>(&amp;self, block: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>, last_required_layout: <a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a></code></h3><div class='docblock'><p>Called when a command buffer that uses this image is being built. Given a block, this
+function should return the layout that the block must have when the command buffer is
+end.</p>
+
+<p>The <code>last_required_layout</code> is provided as a hint and corresponds to the last layout
+that the image will be in at the end of the command buffer. If this function returns a
+value different from <code>last_required_layout</code>, then a layout transition will be performed
+by the command buffer.</p>
+
+<p>The two additional elements are:</p>
+
+<ul>
+<li>Whether a pipeline barrier should be added in order to address a read or write from
+the host (VK_ACCESS_HOST_READ_BIT | VK_ACCESS_HOST_WRITE_BIT).</li>
+<li>Whether a pipeline barrier should be added in order to address a read or write from
+memory (VK_ACCESS_MEMORY_READ_BIT | VK_ACCESS_MEMORY_WRITE_BIT).</li>
+</ul>
+</div><h3 id='tymethod.needs_fence' class='method stab '><code>fn <a href='#tymethod.needs_fence' class='fnname'>needs_fence</a>(&amp;self, access: &amp;mut <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html' title='core::iter::iterator::Iterator'>Iterator</a>&lt;Item=<a class='struct' href='../../../vulkano/image/traits/struct.AccessRange.html' title='vulkano::image::traits::AccessRange'>AccessRange</a>&gt;) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>&gt;</code></h3><div class='docblock'><p>Returns whether accessing a subresource of that image should signal a fence.</p>
+</div><h3 id='tymethod.gpu_access' class='method stab '><code>unsafe fn <a href='#tymethod.gpu_access' class='fnname'>gpu_access</a>(&amp;self, access: &amp;mut <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html' title='core::iter::iterator::Iterator'>Iterator</a>&lt;Item=<a class='struct' href='../../../vulkano/image/traits/struct.AccessRange.html' title='vulkano::image::traits::AccessRange'>AccessRange</a>&gt;, submission: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../../vulkano/command_buffer/struct.Submission.html' title='vulkano::command_buffer::Submission'>Submission</a>&gt;) -&gt; <a class='struct' href='../../../vulkano/image/traits/struct.GpuAccessResult.html' title='vulkano::image::traits::GpuAccessResult'>GpuAccessResult</a></code></h3><div class='docblock'><p>The <code>Submission</code> object likely holds an <code>Arc</code> to <code>self</code>. Therefore you
+should store the <code>Submission</code> in the form of a <code>Weak&lt;Submission&gt;</code> and not
+of an <code>Arc&lt;Submission&gt;</code> to avoid cyclic references.</p>
+</div></div>
+            <h2 id='provided-methods'>Provided Methods</h2>
+            <div class='methods'>
+        <h3 id='method.format' class='method stab '><code>fn <a href='#method.format' class='fnname'>format</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></h3><div class='docblock'><p>Returns the format of this image.</p>
+</div><h3 id='method.samples' class='method stab '><code>fn <a href='#method.samples' class='fnname'>samples</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h3><h3 id='method.dimensions' class='method stab '><code>fn <a href='#method.dimensions' class='fnname'>dimensions</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/image/sys/enum.Dimensions.html' title='vulkano::image::sys::Dimensions'>Dimensions</a></code></h3><div class='docblock'><p>Returns the dimensions of the image.</p>
+</div><h3 id='method.supports_blit_source' class='method stab '><code>fn <a href='#method.supports_blit_source' class='fnname'>supports_blit_source</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h3><div class='docblock'><p>Returns true if the image can be used as a source for blits.</p>
+</div><h3 id='method.supports_blit_destination' class='method stab '><code>fn <a href='#method.supports_blit_destination' class='fnname'>supports_blit_destination</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h3><div class='docblock'><p>Returns true if the image can be used as a destination for blits.</p>
+</div></div>
+        <h2 id='implementors'>Implementors</h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><code>impl&lt;F, A&gt; Image for <a class='struct' href='../../../vulkano/image/attachment/struct.AttachmentImage.html' title='vulkano::image::attachment::AttachmentImage'>AttachmentImage</a>&lt;F, A&gt; <span class='where'>where F: 'static + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Send.html' title='core::marker::Send'>Send</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html' title='core::marker::Sync'>Sync</a>, A: <a class='trait' href='../../../vulkano/memory/pool/trait.MemoryPool.html' title='vulkano::memory::pool::MemoryPool'>MemoryPool</a></span></code></li>
+<li><code>impl&lt;F, A&gt; Image for <a class='struct' href='../../../vulkano/image/immutable/struct.ImmutableImage.html' title='vulkano::image::immutable::ImmutableImage'>ImmutableImage</a>&lt;F, A&gt; <span class='where'>where F: 'static + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Send.html' title='core::marker::Send'>Send</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html' title='core::marker::Sync'>Sync</a>, A: <a class='trait' href='../../../vulkano/memory/pool/trait.MemoryPool.html' title='vulkano::memory::pool::MemoryPool'>MemoryPool</a></span></code></li>
+<li><code>impl Image for <a class='struct' href='../../../vulkano/image/swapchain/struct.SwapchainImage.html' title='vulkano::image::swapchain::SwapchainImage'>SwapchainImage</a></code></li>
+</ul><script type="text/javascript" async
+                         src="../../../implementors/vulkano/image/traits/trait.Image.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

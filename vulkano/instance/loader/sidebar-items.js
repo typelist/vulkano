@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["LoadingError","Error that can happen when loading the Vulkan loader."]]});

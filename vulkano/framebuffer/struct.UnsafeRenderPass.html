@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `UnsafeRenderPass` struct in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, UnsafeRenderPass">
+
+    <title>vulkano::framebuffer::UnsafeRenderPass - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>framebuffer</a></p><script>window.sidebarCurrent = {name: 'UnsafeRenderPass', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>framebuffer</a>::<wbr><a class='struct' href=''>UnsafeRenderPass</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-12215' class='srclink' href='../../src/vulkano/vulkano/src/framebuffer/sys.rs.html#35-38' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct UnsafeRenderPass {
+    // some fields omitted
+}</pre><div class='docblock'><p>Defines the layout of multiple subpasses.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../vulkano/framebuffer/struct.UnsafeRenderPass.html' title='vulkano::framebuffer::UnsafeRenderPass'>UnsafeRenderPass</a></code></span><span class='out-of-band'><a id='src-12218' class='srclink' href='../../src/vulkano/vulkano/src/framebuffer/sys.rs.html#40-277' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>unsafe fn <a href='#method.new' class='fnname'>new</a>&lt;Ia, Ip, Id&gt;(device: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;, attachments: Ia, passes: Ip, pass_dependencies: Id) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../vulkano/framebuffer/struct.UnsafeRenderPass.html' title='vulkano::framebuffer::UnsafeRenderPass'>UnsafeRenderPass</a>, <a class='enum' href='../../vulkano/framebuffer/enum.RenderPassCreationError.html' title='vulkano::framebuffer::RenderPassCreationError'>RenderPassCreationError</a>&gt; <span class='where'>where Ia: <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.ExactSizeIterator.html' title='core::iter::traits::ExactSizeIterator'>ExactSizeIterator</a>&lt;Item=<a class='struct' href='../../vulkano/framebuffer/struct.LayoutAttachmentDescription.html' title='vulkano::framebuffer::LayoutAttachmentDescription'>LayoutAttachmentDescription</a>&gt; + <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a>, Ip: <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.ExactSizeIterator.html' title='core::iter::traits::ExactSizeIterator'>ExactSizeIterator</a>&lt;Item=<a class='struct' href='../../vulkano/framebuffer/struct.LayoutPassDescription.html' title='vulkano::framebuffer::LayoutPassDescription'>LayoutPassDescription</a>&gt; + <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a>, Id: <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.ExactSizeIterator.html' title='core::iter::traits::ExactSizeIterator'>ExactSizeIterator</a>&lt;Item=<a class='struct' href='../../vulkano/framebuffer/struct.LayoutPassDependencyDescription.html' title='vulkano::framebuffer::LayoutPassDependencyDescription'>LayoutPassDependencyDescription</a>&gt;</span></code></h4>
+<div class='docblock'><p>Builds a new renderpass.</p>
+
+<h1 id='safety' class='section-header'><a href='#safety'>Safety</a></h1>
+<p>This function doesn&#39;t check whether all the restrictions in the attachments, passes and
+passes dependencies were enforced.</p>
+
+<p>See the documentation of the structs of this module for more info about these restrictions.</p>
+
+<h1 id='panic' class='section-header'><a href='#panic'>Panic</a></h1>
+<ul>
+<li>Can panick if it detects some violations in the restrictions. Only unexpensive checks are
+performed. <code>debug_assert!</code> is used, so some restrictions are only checked in debug
+mode.</li>
+</ul>
+</div><h4 id='method.device' class='method'><code>fn <a href='#method.device' class='fnname'>device</a>(&amp;self) -&gt; &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;</code></h4>
+<div class='docblock'><p>Returns the device that was used to create this render pass.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../vulkano/trait.VulkanObject.html' title='vulkano::VulkanObject'>VulkanObject</a> for <a class='struct' href='../../vulkano/framebuffer/struct.UnsafeRenderPass.html' title='vulkano::framebuffer::UnsafeRenderPass'>UnsafeRenderPass</a></code></span><span class='out-of-band'><a id='src-12317' class='srclink' href='../../src/vulkano/vulkano/src/framebuffer/sys.rs.html#279-286' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Object' class='type'><code>type <a href='../../vulkano/trait.VulkanObject.html#associatedtype.Object' class='type'>Object</a> = <a class='type' href='../../vk_sys/type.RenderPass.html' title='vk_sys::RenderPass'>RenderPass</a></code></h4>
+<h4 id='method.internal_object' class='method'><code>fn <a href='../../vulkano/trait.VulkanObject.html#tymethod.internal_object' class='fnname'>internal_object</a>(&amp;self) -&gt; <a class='type' href='../../vk_sys/type.RenderPass.html' title='vk_sys::RenderPass'>RenderPass</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../vulkano/framebuffer/trait.RenderPass.html' title='vulkano::framebuffer::RenderPass'>RenderPass</a> for <a class='struct' href='../../vulkano/framebuffer/struct.UnsafeRenderPass.html' title='vulkano::framebuffer::UnsafeRenderPass'>UnsafeRenderPass</a></code></span><span class='out-of-band'><a id='src-12321' class='srclink' href='../../src/vulkano/vulkano/src/framebuffer/sys.rs.html#288-293' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.render_pass' class='method'><code>fn <a href='../../vulkano/framebuffer/trait.RenderPass.html#tymethod.render_pass' class='fnname'>render_pass</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../vulkano/framebuffer/struct.UnsafeRenderPass.html' title='vulkano::framebuffer::UnsafeRenderPass'>UnsafeRenderPass</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../vulkano/framebuffer/struct.UnsafeRenderPass.html' title='vulkano::framebuffer::UnsafeRenderPass'>UnsafeRenderPass</a></code></span><span class='out-of-band'><a id='src-12324' class='srclink' href='../../src/vulkano/vulkano/src/framebuffer/sys.rs.html#295-303' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

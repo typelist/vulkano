@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `DeviceMemory` struct in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, DeviceMemory">
+
+    <title>vulkano::memory::DeviceMemory - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>memory</a></p><script>window.sidebarCurrent = {name: 'DeviceMemory', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>memory</a>::<wbr><a class='struct' href=''>DeviceMemory</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-15273' class='srclink' href='../../src/vulkano/vulkano/src/memory/device_memory.rs.html#30-35' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct DeviceMemory&lt;D = <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;&gt; <span class='where'>where D: <a class='trait' href='../../vulkano/trait.SafeDeref.html' title='vulkano::SafeDeref'>SafeDeref</a>&lt;Target=<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;</span> {
+    // some fields omitted
+}</pre><div class='docblock'><p>Represents memory that has been allocated.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;D&gt; <a class='struct' href='../../vulkano/memory/struct.DeviceMemory.html' title='vulkano::memory::DeviceMemory'>DeviceMemory</a>&lt;D&gt; <span class='where'>where D: <a class='trait' href='../../vulkano/trait.SafeDeref.html' title='vulkano::SafeDeref'>SafeDeref</a>&lt;Target=<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;</span></code></span><span class='out-of-band'><a id='src-15289' class='srclink' href='../../src/vulkano/vulkano/src/memory/device_memory.rs.html#37-136' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.alloc' class='method'><code>fn <a href='#method.alloc' class='fnname'>alloc</a>(device: &amp;D, memory_type: &amp;<a class='struct' href='../../vulkano/instance/struct.MemoryType.html' title='vulkano::instance::MemoryType'>MemoryType</a>, size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../vulkano/memory/struct.DeviceMemory.html' title='vulkano::memory::DeviceMemory'>DeviceMemory</a>&lt;D&gt;, <a class='enum' href='../../vulkano/enum.OomError.html' title='vulkano::OomError'>OomError</a>&gt; <span class='where'>where D: <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a></span></code></h4>
+<div class='docblock'><p>Allocates a chunk of memory from the device.</p>
+
+<p>Some platforms may have a limit on the maximum size of a single allocation. For example,
+certain systems may fail to create allocations with a size greater than or equal to 4GB. </p>
+
+<h1 id='panic' class='section-header'><a href='#panic'>Panic</a></h1>
+<ul>
+<li>Panicks if <code>size</code> is 0.</li>
+<li>Panicks if <code>memory_type</code> doesn&#39;t belong to the same physical device as <code>device</code>.</li>
+</ul>
+</div><h4 id='method.alloc_and_map' class='method'><code>fn <a href='#method.alloc_and_map' class='fnname'>alloc_and_map</a>(device: &amp;D, memory_type: &amp;<a class='struct' href='../../vulkano/instance/struct.MemoryType.html' title='vulkano::instance::MemoryType'>MemoryType</a>, size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../vulkano/memory/struct.MappedDeviceMemory.html' title='vulkano::memory::MappedDeviceMemory'>MappedDeviceMemory</a>&lt;D&gt;, <a class='enum' href='../../vulkano/enum.OomError.html' title='vulkano::OomError'>OomError</a>&gt; <span class='where'>where D: <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a></span></code></h4>
+<div class='docblock'><p>Allocates a chunk of memory and maps it.</p>
+
+<h1 id='panic-1' class='section-header'><a href='#panic-1'>Panic</a></h1>
+<ul>
+<li>Panicks if <code>memory_type</code> doesn&#39;t belong to the same physical device as <code>device</code>.</li>
+<li>Panicks if the memory type is not host-visible.</li>
+</ul>
+</div><h4 id='method.memory_type' class='method'><code>fn <a href='#method.memory_type' class='fnname'>memory_type</a>(&amp;self) -&gt; <a class='struct' href='../../vulkano/instance/struct.MemoryType.html' title='vulkano::instance::MemoryType'>MemoryType</a></code></h4>
+<div class='docblock'><p>Returns the memory type this chunk was allocated on.</p>
+</div><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code></h4>
+<div class='docblock'><p>Returns the size in bytes of that memory chunk.</p>
+</div><h4 id='method.device' class='method'><code>fn <a href='#method.device' class='fnname'>device</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a></code></h4>
+<div class='docblock'><p>Returns the device associated with this allocation.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;D&gt; <a class='trait' href='../../vulkano/trait.VulkanObject.html' title='vulkano::VulkanObject'>VulkanObject</a> for <a class='struct' href='../../vulkano/memory/struct.DeviceMemory.html' title='vulkano::memory::DeviceMemory'>DeviceMemory</a>&lt;D&gt; <span class='where'>where D: <a class='trait' href='../../vulkano/trait.SafeDeref.html' title='vulkano::SafeDeref'>SafeDeref</a>&lt;Target=<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;</span></code></span><span class='out-of-band'><a id='src-15328' class='srclink' href='../../src/vulkano/vulkano/src/memory/device_memory.rs.html#138-145' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Object' class='type'><code>type <a href='../../vulkano/trait.VulkanObject.html#associatedtype.Object' class='type'>Object</a> = <a class='type' href='../../vk_sys/type.DeviceMemory.html' title='vk_sys::DeviceMemory'>DeviceMemory</a></code></h4>
+<h4 id='method.internal_object' class='method'><code>fn <a href='../../vulkano/trait.VulkanObject.html#tymethod.internal_object' class='fnname'>internal_object</a>(&amp;self) -&gt; <a class='type' href='../../vk_sys/type.DeviceMemory.html' title='vk_sys::DeviceMemory'>DeviceMemory</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;D&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../vulkano/memory/struct.DeviceMemory.html' title='vulkano::memory::DeviceMemory'>DeviceMemory</a>&lt;D&gt; <span class='where'>where D: <a class='trait' href='../../vulkano/trait.SafeDeref.html' title='vulkano::SafeDeref'>SafeDeref</a>&lt;Target=<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;</span></code></span><span class='out-of-band'><a id='src-15333' class='srclink' href='../../src/vulkano/vulkano/src/memory/device_memory.rs.html#147-156' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><span class='in-band'><code>impl&lt;D: <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a>&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../vulkano/memory/struct.DeviceMemory.html' title='vulkano::memory::DeviceMemory'>DeviceMemory</a>&lt;D&gt; <span class='where'>where D: <a class='trait' href='../../vulkano/trait.SafeDeref.html' title='vulkano::SafeDeref'>SafeDeref</a>&lt;Target=<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;</span></code></span><span class='out-of-band'><a id='src-15279' class='srclink' href='../../src/vulkano/vulkano/src/memory/device_memory.rs.html#29' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

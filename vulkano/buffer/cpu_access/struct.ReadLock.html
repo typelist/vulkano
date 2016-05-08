@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ReadLock` struct in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ReadLock">
+
+    <title>vulkano::buffer::cpu_access::ReadLock - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>buffer</a>::<wbr><a href='index.html'>cpu_access</a></p><script>window.sidebarCurrent = {name: 'ReadLock', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>buffer</a>::<wbr><a href='index.html'>cpu_access</a>::<wbr><a class='struct' href=''>ReadLock</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-819' class='srclink' href='../../../src/vulkano/vulkano/src/buffer/cpu_access.rs.html#324-327' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ReadLock&lt;'a, T: ?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a> + 'a&gt; {
+    // some fields omitted
+}</pre><div class='docblock'><p>Object that can be used to read or write the content of a <code>CpuAccessBuffer</code>.</p>
+
+<p>Note that this object holds a rwlock read guard on the chunk. If another thread tries to access
+this buffer&#39;s content or tries to submit a GPU command that uses this buffer, it will block.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a, T: ?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a> + 'a&gt; <a class='struct' href='../../../vulkano/buffer/cpu_access/struct.ReadLock.html' title='vulkano::buffer::cpu_access::ReadLock'>ReadLock</a>&lt;'a, T&gt;</code></span><span class='out-of-band'><a id='src-824' class='srclink' href='../../../src/vulkano/vulkano/src/buffer/cpu_access.rs.html#329-340' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.map' class='method'><code>fn <a href='#method.map' class='fnname'>map</a>&lt;U: ?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a> + 'a, F&gt;(self, f: F) -&gt; <a class='struct' href='../../../vulkano/buffer/cpu_access/struct.ReadLock.html' title='vulkano::buffer::cpu_access::ReadLock'>ReadLock</a>&lt;'a, U&gt; <span class='where'>where F: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.FnOnce.html' title='core::ops::FnOnce'>FnOnce</a>(&amp;mut T) -&gt; &amp;mut U</span></code></h4>
+<div class='docblock'><p>Makes a new <code>ReadLock</code> to access a sub-part of the current <code>ReadLock</code>.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a, T: ?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a> + 'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html' title='core::ops::Deref'>Deref</a> for <a class='struct' href='../../../vulkano/buffer/cpu_access/struct.ReadLock.html' title='vulkano::buffer::cpu_access::ReadLock'>ReadLock</a>&lt;'a, T&gt;</code></span><span class='out-of-band'><a id='src-834' class='srclink' href='../../../src/vulkano/vulkano/src/buffer/cpu_access.rs.html#342-349' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Target' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html#associatedtype.Target' class='type'>Target</a> = T</code></h4>
+<h4 id='method.deref' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html#tymethod.deref' class='fnname'>deref</a>(&amp;self) -&gt; &amp;T</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

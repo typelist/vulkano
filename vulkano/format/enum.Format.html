@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Format` enum in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Format">
+
+    <title>vulkano::format::Format - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>format</a></p><script>window.sidebarCurrent = {name: 'Format', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>format</a>::<wbr><a class='enum' href=''>Format</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-5652' class='srclink' href='../../src/vulkano/vulkano/src/format.rs.html#137-139' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum Format {
+    R4G4UnormPack8,
+    R4G4B4A4UnormPack16,
+    B4G4R4A4UnormPack16,
+    R5G6B5UnormPack16,
+    B5G6R5UnormPack16,
+    R5G5B5A1UnormPack16,
+    B5G5R5A1UnormPack16,
+    A1R5G5B5UnormPack16,
+    R8Unorm,
+    R8Snorm,
+    R8Uscaled,
+    R8Sscaled,
+    R8Uint,
+    R8Sint,
+    R8Srgb,
+    R8G8Unorm,
+    R8G8Snorm,
+    R8G8Uscaled,
+    R8G8Sscaled,
+    R8G8Uint,
+    R8G8Sint,
+    R8G8Srgb,
+    R8G8B8Unorm,
+    R8G8B8Snorm,
+    R8G8B8Uscaled,
+    R8G8B8Sscaled,
+    R8G8B8Uint,
+    R8G8B8Sint,
+    R8G8B8Srgb,
+    B8G8R8Unorm,
+    B8G8R8Snorm,
+    B8G8R8Uscaled,
+    B8G8R8Sscaled,
+    B8G8R8Uint,
+    B8G8R8Sint,
+    B8G8R8Srgb,
+    R8G8B8A8Unorm,
+    R8G8B8A8Snorm,
+    R8G8B8A8Uscaled,
+    R8G8B8A8Sscaled,
+    R8G8B8A8Uint,
+    R8G8B8A8Sint,
+    R8G8B8A8Srgb,
+    B8G8R8A8Unorm,
+    B8G8R8A8Snorm,
+    B8G8R8A8Uscaled,
+    B8G8R8A8Sscaled,
+    B8G8R8A8Uint,
+    B8G8R8A8Sint,
+    B8G8R8A8Srgb,
+    A8B8G8R8UnormPack32,
+    A8B8G8R8SnormPack32,
+    A8B8G8R8UscaledPack32,
+    A8B8G8R8SscaledPack32,
+    A8B8G8R8UintPack32,
+    A8B8G8R8SintPack32,
+    A8B8G8R8SrgbPack32,
+    A2R10G10B10UnormPack32,
+    A2R10G10B10SnormPack32,
+    A2R10G10B10UscaledPack32,
+    A2R10G10B10SscaledPack32,
+    A2R10G10B10UintPack32,
+    A2R10G10B10SintPack32,
+    A2B10G10R10UnormPack32,
+    A2B10G10R10SnormPack32,
+    A2B10G10R10UscaledPack32,
+    A2B10G10R10SscaledPack32,
+    A2B10G10R10UintPack32,
+    A2B10G10R10SintPack32,
+    R16Unorm,
+    R16Snorm,
+    R16Uscaled,
+    R16Sscaled,
+    R16Uint,
+    R16Sint,
+    R16Sfloat,
+    R16G16Unorm,
+    R16G16Snorm,
+    R16G16Uscaled,
+    R16G16Sscaled,
+    R16G16Uint,
+    R16G16Sint,
+    R16G16Sfloat,
+    R16G16B16Unorm,
+    R16G16B16Snorm,
+    R16G16B16Uscaled,
+    R16G16B16Sscaled,
+    R16G16B16Uint,
+    R16G16B16Sint,
+    R16G16B16Sfloat,
+    R16G16B16A16Unorm,
+    R16G16B16A16Snorm,
+    R16G16B16A16Uscaled,
+    R16G16B16A16Sscaled,
+    R16G16B16A16Uint,
+    R16G16B16A16Sint,
+    R16G16B16A16Sfloat,
+    R32Uint,
+    R32Sint,
+    R32Sfloat,
+    R32G32Uint,
+    R32G32Sint,
+    R32G32Sfloat,
+    R32G32B32Uint,
+    R32G32B32Sint,
+    R32G32B32Sfloat,
+    R32G32B32A32Uint,
+    R32G32B32A32Sint,
+    R32G32B32A32Sfloat,
+    R64Uint,
+    R64Sint,
+    R64Sfloat,
+    R64G64Uint,
+    R64G64Sint,
+    R64G64Sfloat,
+    R64G64B64Uint,
+    R64G64B64Sint,
+    R64G64B64Sfloat,
+    R64G64B64A64Uint,
+    R64G64B64A64Sint,
+    R64G64B64A64Sfloat,
+    B10G11R11UfloatPack32,
+    E5B9G9R9UfloatPack32,
+    D16Unorm,
+    X8_D24UnormPack32,
+    D32Sfloat,
+    S8Uint,
+    D16Unorm_S8Uint,
+    D24Unorm_S8Uint,
+    D32Sfloat_S8Uint,
+    BC1_RGBUnormBlock,
+    BC1_RGBSrgbBlock,
+    BC1_RGBAUnormBlock,
+    BC1_RGBASrgbBlock,
+    BC2UnormBlock,
+    BC2SrgbBlock,
+    BC3UnormBlock,
+    BC3SrgbBlock,
+    BC4UnormBlock,
+    BC4SnormBlock,
+    BC5UnormBlock,
+    BC5SnormBlock,
+    BC6HUfloatBlock,
+    BC6HSfloatBlock,
+    BC7UnormBlock,
+    BC7SrgbBlock,
+    ETC2_R8G8B8UnormBlock,
+    ETC2_R8G8B8SrgbBlock,
+    ETC2_R8G8B8A1UnormBlock,
+    ETC2_R8G8B8A1SrgbBlock,
+    ETC2_R8G8B8A8UnormBlock,
+    ETC2_R8G8B8A8SrgbBlock,
+    EAC_R11UnormBlock,
+    EAC_R11SnormBlock,
+    EAC_R11G11UnormBlock,
+    EAC_R11G11SnormBlock,
+    ASTC_4x4UnormBlock,
+    ASTC_4x4SrgbBlock,
+    ASTC_5x4UnormBlock,
+    ASTC_5x4SrgbBlock,
+    ASTC_5x5UnormBlock,
+    ASTC_5x5SrgbBlock,
+    ASTC_6x5UnormBlock,
+    ASTC_6x5SrgbBlock,
+    ASTC_6x6UnormBlock,
+    ASTC_6x6SrgbBlock,
+    ASTC_8x5UnormBlock,
+    ASTC_8x5SrgbBlock,
+    ASTC_8x6UnormBlock,
+    ASTC_8x6SrgbBlock,
+    ASTC_8x8UnormBlock,
+    ASTC_8x8SrgbBlock,
+    ASTC_10x5UnormBlock,
+    ASTC_10x5SrgbBlock,
+    ASTC_10x6UnormBlock,
+    ASTC_10x6SrgbBlock,
+    ASTC_10x8UnormBlock,
+    ASTC_10x8SrgbBlock,
+    ASTC_10x10UnormBlock,
+    ASTC_10x10SrgbBlock,
+    ASTC_12x10UnormBlock,
+    ASTC_12x10SrgbBlock,
+    ASTC_12x12UnormBlock,
+    ASTC_12x12SrgbBlock,
+}</pre><div class='docblock'><p>An enumeration of all the possible formats.</p>
+</div><h2 class='variants'>Variants</h2>
+<table class='variants_table'><tr><td id='variant.R4G4UnormPack8'><code>R4G4UnormPack8</code></td><td></td><td></td></tr><tr><td id='variant.R4G4B4A4UnormPack16'><code>R4G4B4A4UnormPack16</code></td><td></td><td></td></tr><tr><td id='variant.B4G4R4A4UnormPack16'><code>B4G4R4A4UnormPack16</code></td><td></td><td></td></tr><tr><td id='variant.R5G6B5UnormPack16'><code>R5G6B5UnormPack16</code></td><td></td><td></td></tr><tr><td id='variant.B5G6R5UnormPack16'><code>B5G6R5UnormPack16</code></td><td></td><td></td></tr><tr><td id='variant.R5G5B5A1UnormPack16'><code>R5G5B5A1UnormPack16</code></td><td></td><td></td></tr><tr><td id='variant.B5G5R5A1UnormPack16'><code>B5G5R5A1UnormPack16</code></td><td></td><td></td></tr><tr><td id='variant.A1R5G5B5UnormPack16'><code>A1R5G5B5UnormPack16</code></td><td></td><td></td></tr><tr><td id='variant.R8Unorm'><code>R8Unorm</code></td><td></td><td></td></tr><tr><td id='variant.R8Snorm'><code>R8Snorm</code></td><td></td><td></td></tr><tr><td id='variant.R8Uscaled'><code>R8Uscaled</code></td><td></td><td></td></tr><tr><td id='variant.R8Sscaled'><code>R8Sscaled</code></td><td></td><td></td></tr><tr><td id='variant.R8Uint'><code>R8Uint</code></td><td></td><td></td></tr><tr><td id='variant.R8Sint'><code>R8Sint</code></td><td></td><td></td></tr><tr><td id='variant.R8Srgb'><code>R8Srgb</code></td><td></td><td></td></tr><tr><td id='variant.R8G8Unorm'><code>R8G8Unorm</code></td><td></td><td></td></tr><tr><td id='variant.R8G8Snorm'><code>R8G8Snorm</code></td><td></td><td></td></tr><tr><td id='variant.R8G8Uscaled'><code>R8G8Uscaled</code></td><td></td><td></td></tr><tr><td id='variant.R8G8Sscaled'><code>R8G8Sscaled</code></td><td></td><td></td></tr><tr><td id='variant.R8G8Uint'><code>R8G8Uint</code></td><td></td><td></td></tr><tr><td id='variant.R8G8Sint'><code>R8G8Sint</code></td><td></td><td></td></tr><tr><td id='variant.R8G8Srgb'><code>R8G8Srgb</code></td><td></td><td></td></tr><tr><td id='variant.R8G8B8Unorm'><code>R8G8B8Unorm</code></td><td></td><td></td></tr><tr><td id='variant.R8G8B8Snorm'><code>R8G8B8Snorm</code></td><td></td><td></td></tr><tr><td id='variant.R8G8B8Uscaled'><code>R8G8B8Uscaled</code></td><td></td><td></td></tr><tr><td id='variant.R8G8B8Sscaled'><code>R8G8B8Sscaled</code></td><td></td><td></td></tr><tr><td id='variant.R8G8B8Uint'><code>R8G8B8Uint</code></td><td></td><td></td></tr><tr><td id='variant.R8G8B8Sint'><code>R8G8B8Sint</code></td><td></td><td></td></tr><tr><td id='variant.R8G8B8Srgb'><code>R8G8B8Srgb</code></td><td></td><td></td></tr><tr><td id='variant.B8G8R8Unorm'><code>B8G8R8Unorm</code></td><td></td><td></td></tr><tr><td id='variant.B8G8R8Snorm'><code>B8G8R8Snorm</code></td><td></td><td></td></tr><tr><td id='variant.B8G8R8Uscaled'><code>B8G8R8Uscaled</code></td><td></td><td></td></tr><tr><td id='variant.B8G8R8Sscaled'><code>B8G8R8Sscaled</code></td><td></td><td></td></tr><tr><td id='variant.B8G8R8Uint'><code>B8G8R8Uint</code></td><td></td><td></td></tr><tr><td id='variant.B8G8R8Sint'><code>B8G8R8Sint</code></td><td></td><td></td></tr><tr><td id='variant.B8G8R8Srgb'><code>B8G8R8Srgb</code></td><td></td><td></td></tr><tr><td id='variant.R8G8B8A8Unorm'><code>R8G8B8A8Unorm</code></td><td></td><td></td></tr><tr><td id='variant.R8G8B8A8Snorm'><code>R8G8B8A8Snorm</code></td><td></td><td></td></tr><tr><td id='variant.R8G8B8A8Uscaled'><code>R8G8B8A8Uscaled</code></td><td></td><td></td></tr><tr><td id='variant.R8G8B8A8Sscaled'><code>R8G8B8A8Sscaled</code></td><td></td><td></td></tr><tr><td id='variant.R8G8B8A8Uint'><code>R8G8B8A8Uint</code></td><td></td><td></td></tr><tr><td id='variant.R8G8B8A8Sint'><code>R8G8B8A8Sint</code></td><td></td><td></td></tr><tr><td id='variant.R8G8B8A8Srgb'><code>R8G8B8A8Srgb</code></td><td></td><td></td></tr><tr><td id='variant.B8G8R8A8Unorm'><code>B8G8R8A8Unorm</code></td><td></td><td></td></tr><tr><td id='variant.B8G8R8A8Snorm'><code>B8G8R8A8Snorm</code></td><td></td><td></td></tr><tr><td id='variant.B8G8R8A8Uscaled'><code>B8G8R8A8Uscaled</code></td><td></td><td></td></tr><tr><td id='variant.B8G8R8A8Sscaled'><code>B8G8R8A8Sscaled</code></td><td></td><td></td></tr><tr><td id='variant.B8G8R8A8Uint'><code>B8G8R8A8Uint</code></td><td></td><td></td></tr><tr><td id='variant.B8G8R8A8Sint'><code>B8G8R8A8Sint</code></td><td></td><td></td></tr><tr><td id='variant.B8G8R8A8Srgb'><code>B8G8R8A8Srgb</code></td><td></td><td></td></tr><tr><td id='variant.A8B8G8R8UnormPack32'><code>A8B8G8R8UnormPack32</code></td><td></td><td></td></tr><tr><td id='variant.A8B8G8R8SnormPack32'><code>A8B8G8R8SnormPack32</code></td><td></td><td></td></tr><tr><td id='variant.A8B8G8R8UscaledPack32'><code>A8B8G8R8UscaledPack32</code></td><td></td><td></td></tr><tr><td id='variant.A8B8G8R8SscaledPack32'><code>A8B8G8R8SscaledPack32</code></td><td></td><td></td></tr><tr><td id='variant.A8B8G8R8UintPack32'><code>A8B8G8R8UintPack32</code></td><td></td><td></td></tr><tr><td id='variant.A8B8G8R8SintPack32'><code>A8B8G8R8SintPack32</code></td><td></td><td></td></tr><tr><td id='variant.A8B8G8R8SrgbPack32'><code>A8B8G8R8SrgbPack32</code></td><td></td><td></td></tr><tr><td id='variant.A2R10G10B10UnormPack32'><code>A2R10G10B10UnormPack32</code></td><td></td><td></td></tr><tr><td id='variant.A2R10G10B10SnormPack32'><code>A2R10G10B10SnormPack32</code></td><td></td><td></td></tr><tr><td id='variant.A2R10G10B10UscaledPack32'><code>A2R10G10B10UscaledPack32</code></td><td></td><td></td></tr><tr><td id='variant.A2R10G10B10SscaledPack32'><code>A2R10G10B10SscaledPack32</code></td><td></td><td></td></tr><tr><td id='variant.A2R10G10B10UintPack32'><code>A2R10G10B10UintPack32</code></td><td></td><td></td></tr><tr><td id='variant.A2R10G10B10SintPack32'><code>A2R10G10B10SintPack32</code></td><td></td><td></td></tr><tr><td id='variant.A2B10G10R10UnormPack32'><code>A2B10G10R10UnormPack32</code></td><td></td><td></td></tr><tr><td id='variant.A2B10G10R10SnormPack32'><code>A2B10G10R10SnormPack32</code></td><td></td><td></td></tr><tr><td id='variant.A2B10G10R10UscaledPack32'><code>A2B10G10R10UscaledPack32</code></td><td></td><td></td></tr><tr><td id='variant.A2B10G10R10SscaledPack32'><code>A2B10G10R10SscaledPack32</code></td><td></td><td></td></tr><tr><td id='variant.A2B10G10R10UintPack32'><code>A2B10G10R10UintPack32</code></td><td></td><td></td></tr><tr><td id='variant.A2B10G10R10SintPack32'><code>A2B10G10R10SintPack32</code></td><td></td><td></td></tr><tr><td id='variant.R16Unorm'><code>R16Unorm</code></td><td></td><td></td></tr><tr><td id='variant.R16Snorm'><code>R16Snorm</code></td><td></td><td></td></tr><tr><td id='variant.R16Uscaled'><code>R16Uscaled</code></td><td></td><td></td></tr><tr><td id='variant.R16Sscaled'><code>R16Sscaled</code></td><td></td><td></td></tr><tr><td id='variant.R16Uint'><code>R16Uint</code></td><td></td><td></td></tr><tr><td id='variant.R16Sint'><code>R16Sint</code></td><td></td><td></td></tr><tr><td id='variant.R16Sfloat'><code>R16Sfloat</code></td><td></td><td></td></tr><tr><td id='variant.R16G16Unorm'><code>R16G16Unorm</code></td><td></td><td></td></tr><tr><td id='variant.R16G16Snorm'><code>R16G16Snorm</code></td><td></td><td></td></tr><tr><td id='variant.R16G16Uscaled'><code>R16G16Uscaled</code></td><td></td><td></td></tr><tr><td id='variant.R16G16Sscaled'><code>R16G16Sscaled</code></td><td></td><td></td></tr><tr><td id='variant.R16G16Uint'><code>R16G16Uint</code></td><td></td><td></td></tr><tr><td id='variant.R16G16Sint'><code>R16G16Sint</code></td><td></td><td></td></tr><tr><td id='variant.R16G16Sfloat'><code>R16G16Sfloat</code></td><td></td><td></td></tr><tr><td id='variant.R16G16B16Unorm'><code>R16G16B16Unorm</code></td><td></td><td></td></tr><tr><td id='variant.R16G16B16Snorm'><code>R16G16B16Snorm</code></td><td></td><td></td></tr><tr><td id='variant.R16G16B16Uscaled'><code>R16G16B16Uscaled</code></td><td></td><td></td></tr><tr><td id='variant.R16G16B16Sscaled'><code>R16G16B16Sscaled</code></td><td></td><td></td></tr><tr><td id='variant.R16G16B16Uint'><code>R16G16B16Uint</code></td><td></td><td></td></tr><tr><td id='variant.R16G16B16Sint'><code>R16G16B16Sint</code></td><td></td><td></td></tr><tr><td id='variant.R16G16B16Sfloat'><code>R16G16B16Sfloat</code></td><td></td><td></td></tr><tr><td id='variant.R16G16B16A16Unorm'><code>R16G16B16A16Unorm</code></td><td></td><td></td></tr><tr><td id='variant.R16G16B16A16Snorm'><code>R16G16B16A16Snorm</code></td><td></td><td></td></tr><tr><td id='variant.R16G16B16A16Uscaled'><code>R16G16B16A16Uscaled</code></td><td></td><td></td></tr><tr><td id='variant.R16G16B16A16Sscaled'><code>R16G16B16A16Sscaled</code></td><td></td><td></td></tr><tr><td id='variant.R16G16B16A16Uint'><code>R16G16B16A16Uint</code></td><td></td><td></td></tr><tr><td id='variant.R16G16B16A16Sint'><code>R16G16B16A16Sint</code></td><td></td><td></td></tr><tr><td id='variant.R16G16B16A16Sfloat'><code>R16G16B16A16Sfloat</code></td><td></td><td></td></tr><tr><td id='variant.R32Uint'><code>R32Uint</code></td><td></td><td></td></tr><tr><td id='variant.R32Sint'><code>R32Sint</code></td><td></td><td></td></tr><tr><td id='variant.R32Sfloat'><code>R32Sfloat</code></td><td></td><td></td></tr><tr><td id='variant.R32G32Uint'><code>R32G32Uint</code></td><td></td><td></td></tr><tr><td id='variant.R32G32Sint'><code>R32G32Sint</code></td><td></td><td></td></tr><tr><td id='variant.R32G32Sfloat'><code>R32G32Sfloat</code></td><td></td><td></td></tr><tr><td id='variant.R32G32B32Uint'><code>R32G32B32Uint</code></td><td></td><td></td></tr><tr><td id='variant.R32G32B32Sint'><code>R32G32B32Sint</code></td><td></td><td></td></tr><tr><td id='variant.R32G32B32Sfloat'><code>R32G32B32Sfloat</code></td><td></td><td></td></tr><tr><td id='variant.R32G32B32A32Uint'><code>R32G32B32A32Uint</code></td><td></td><td></td></tr><tr><td id='variant.R32G32B32A32Sint'><code>R32G32B32A32Sint</code></td><td></td><td></td></tr><tr><td id='variant.R32G32B32A32Sfloat'><code>R32G32B32A32Sfloat</code></td><td></td><td></td></tr><tr><td id='variant.R64Uint'><code>R64Uint</code></td><td></td><td></td></tr><tr><td id='variant.R64Sint'><code>R64Sint</code></td><td></td><td></td></tr><tr><td id='variant.R64Sfloat'><code>R64Sfloat</code></td><td></td><td></td></tr><tr><td id='variant.R64G64Uint'><code>R64G64Uint</code></td><td></td><td></td></tr><tr><td id='variant.R64G64Sint'><code>R64G64Sint</code></td><td></td><td></td></tr><tr><td id='variant.R64G64Sfloat'><code>R64G64Sfloat</code></td><td></td><td></td></tr><tr><td id='variant.R64G64B64Uint'><code>R64G64B64Uint</code></td><td></td><td></td></tr><tr><td id='variant.R64G64B64Sint'><code>R64G64B64Sint</code></td><td></td><td></td></tr><tr><td id='variant.R64G64B64Sfloat'><code>R64G64B64Sfloat</code></td><td></td><td></td></tr><tr><td id='variant.R64G64B64A64Uint'><code>R64G64B64A64Uint</code></td><td></td><td></td></tr><tr><td id='variant.R64G64B64A64Sint'><code>R64G64B64A64Sint</code></td><td></td><td></td></tr><tr><td id='variant.R64G64B64A64Sfloat'><code>R64G64B64A64Sfloat</code></td><td></td><td></td></tr><tr><td id='variant.B10G11R11UfloatPack32'><code>B10G11R11UfloatPack32</code></td><td></td><td></td></tr><tr><td id='variant.E5B9G9R9UfloatPack32'><code>E5B9G9R9UfloatPack32</code></td><td></td><td></td></tr><tr><td id='variant.D16Unorm'><code>D16Unorm</code></td><td></td><td></td></tr><tr><td id='variant.X8_D24UnormPack32'><code>X8_D24UnormPack32</code></td><td></td><td></td></tr><tr><td id='variant.D32Sfloat'><code>D32Sfloat</code></td><td></td><td></td></tr><tr><td id='variant.S8Uint'><code>S8Uint</code></td><td></td><td></td></tr><tr><td id='variant.D16Unorm_S8Uint'><code>D16Unorm_S8Uint</code></td><td></td><td></td></tr><tr><td id='variant.D24Unorm_S8Uint'><code>D24Unorm_S8Uint</code></td><td></td><td></td></tr><tr><td id='variant.D32Sfloat_S8Uint'><code>D32Sfloat_S8Uint</code></td><td></td><td></td></tr><tr><td id='variant.BC1_RGBUnormBlock'><code>BC1_RGBUnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.BC1_RGBSrgbBlock'><code>BC1_RGBSrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.BC1_RGBAUnormBlock'><code>BC1_RGBAUnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.BC1_RGBASrgbBlock'><code>BC1_RGBASrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.BC2UnormBlock'><code>BC2UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.BC2SrgbBlock'><code>BC2SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.BC3UnormBlock'><code>BC3UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.BC3SrgbBlock'><code>BC3SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.BC4UnormBlock'><code>BC4UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.BC4SnormBlock'><code>BC4SnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.BC5UnormBlock'><code>BC5UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.BC5SnormBlock'><code>BC5SnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.BC6HUfloatBlock'><code>BC6HUfloatBlock</code></td><td></td><td></td></tr><tr><td id='variant.BC6HSfloatBlock'><code>BC6HSfloatBlock</code></td><td></td><td></td></tr><tr><td id='variant.BC7UnormBlock'><code>BC7UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.BC7SrgbBlock'><code>BC7SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.ETC2_R8G8B8UnormBlock'><code>ETC2_R8G8B8UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.ETC2_R8G8B8SrgbBlock'><code>ETC2_R8G8B8SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.ETC2_R8G8B8A1UnormBlock'><code>ETC2_R8G8B8A1UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.ETC2_R8G8B8A1SrgbBlock'><code>ETC2_R8G8B8A1SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.ETC2_R8G8B8A8UnormBlock'><code>ETC2_R8G8B8A8UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.ETC2_R8G8B8A8SrgbBlock'><code>ETC2_R8G8B8A8SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.EAC_R11UnormBlock'><code>EAC_R11UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.EAC_R11SnormBlock'><code>EAC_R11SnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.EAC_R11G11UnormBlock'><code>EAC_R11G11UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.EAC_R11G11SnormBlock'><code>EAC_R11G11SnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_4x4UnormBlock'><code>ASTC_4x4UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_4x4SrgbBlock'><code>ASTC_4x4SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_5x4UnormBlock'><code>ASTC_5x4UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_5x4SrgbBlock'><code>ASTC_5x4SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_5x5UnormBlock'><code>ASTC_5x5UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_5x5SrgbBlock'><code>ASTC_5x5SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_6x5UnormBlock'><code>ASTC_6x5UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_6x5SrgbBlock'><code>ASTC_6x5SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_6x6UnormBlock'><code>ASTC_6x6UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_6x6SrgbBlock'><code>ASTC_6x6SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_8x5UnormBlock'><code>ASTC_8x5UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_8x5SrgbBlock'><code>ASTC_8x5SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_8x6UnormBlock'><code>ASTC_8x6UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_8x6SrgbBlock'><code>ASTC_8x6SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_8x8UnormBlock'><code>ASTC_8x8UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_8x8SrgbBlock'><code>ASTC_8x8SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_10x5UnormBlock'><code>ASTC_10x5UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_10x5SrgbBlock'><code>ASTC_10x5SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_10x6UnormBlock'><code>ASTC_10x6UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_10x6SrgbBlock'><code>ASTC_10x6SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_10x8UnormBlock'><code>ASTC_10x8UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_10x8SrgbBlock'><code>ASTC_10x8SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_10x10UnormBlock'><code>ASTC_10x10UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_10x10SrgbBlock'><code>ASTC_10x10SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_12x10UnormBlock'><code>ASTC_12x10UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_12x10SrgbBlock'><code>ASTC_12x10SrgbBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_12x12UnormBlock'><code>ASTC_12x12UnormBlock</code></td><td></td><td></td></tr><tr><td id='variant.ASTC_12x12SrgbBlock'><code>ASTC_12x12SrgbBlock</code></td><td></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></span><span class='out-of-band'><a id='src-6038' class='srclink' href='../../src/vulkano/vulkano/src/format.rs.html#141-179' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt;</code></h4>
+<div class='docblock'><p>Returns the size in bytes of an element of this format. Returns <code>None</code> if the
+size is irrelevant (for example for compressed formats).</p>
+</div><h4 id='method.ty' class='method'><code>fn <a href='#method.ty' class='fnname'>ty</a>(&amp;self) -&gt; <a class='enum' href='../../vulkano/format/enum.FormatTy.html' title='vulkano::format::FormatTy'>FormatTy</a></code></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../vulkano/format/trait.FormatDesc.html' title='vulkano::format::FormatDesc'>FormatDesc</a> for <a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></span><span class='out-of-band'><a id='src-10927' class='srclink' href='../../src/vulkano/vulkano/src/format.rs.html#558-578' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.ClearValue' class='type'><code>type <a href='../../vulkano/format/trait.FormatDesc.html#associatedtype.ClearValue' class='type'>ClearValue</a> = <a class='enum' href='../../vulkano/format/enum.ClearValue.html' title='vulkano::format::ClearValue'>ClearValue</a></code></h4>
+<h4 id='method.format' class='method'><code>fn <a href='../../vulkano/format/trait.FormatDesc.html#tymethod.format' class='fnname'>format</a>(&amp;self) -&gt; <a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></h4>
+<h4 id='method.decode_clear_value' class='method'><code>fn <a href='../../vulkano/format/trait.FormatDesc.html#tymethod.decode_clear_value' class='fnname'>decode_clear_value</a>(&amp;self, value: Self::<a class='trait' href='../../vulkano/format/trait.FormatDesc.html' title='vulkano::format::FormatDesc'>ClearValue</a>) -&gt; <a class='enum' href='../../vulkano/format/enum.ClearValue.html' title='vulkano::format::ClearValue'>ClearValue</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../vulkano/format/trait.PossibleFloatFormatDesc.html' title='vulkano::format::PossibleFloatFormatDesc'>PossibleFloatFormatDesc</a> for <a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></span><span class='out-of-band'><a id='src-10945' class='srclink' href='../../src/vulkano/vulkano/src/format.rs.html#586-589' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.is_float' class='method'><code>fn <a href='../../vulkano/format/trait.PossibleFloatFormatDesc.html#tymethod.is_float' class='fnname'>is_float</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../vulkano/format/trait.PossibleUintFormatDesc.html' title='vulkano::format::PossibleUintFormatDesc'>PossibleUintFormatDesc</a> for <a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></span><span class='out-of-band'><a id='src-10951' class='srclink' href='../../src/vulkano/vulkano/src/format.rs.html#595-598' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.is_uint' class='method'><code>fn <a href='../../vulkano/format/trait.PossibleUintFormatDesc.html#tymethod.is_uint' class='fnname'>is_uint</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../vulkano/format/trait.PossibleSintFormatDesc.html' title='vulkano::format::PossibleSintFormatDesc'>PossibleSintFormatDesc</a> for <a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></span><span class='out-of-band'><a id='src-10957' class='srclink' href='../../src/vulkano/vulkano/src/format.rs.html#604-607' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.is_sint' class='method'><code>fn <a href='../../vulkano/format/trait.PossibleSintFormatDesc.html#tymethod.is_sint' class='fnname'>is_sint</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../vulkano/format/trait.PossibleDepthFormatDesc.html' title='vulkano::format::PossibleDepthFormatDesc'>PossibleDepthFormatDesc</a> for <a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></span><span class='out-of-band'><a id='src-10963' class='srclink' href='../../src/vulkano/vulkano/src/format.rs.html#613-616' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.is_depth' class='method'><code>fn <a href='../../vulkano/format/trait.PossibleDepthFormatDesc.html#tymethod.is_depth' class='fnname'>is_depth</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../vulkano/format/trait.PossibleStencilFormatDesc.html' title='vulkano::format::PossibleStencilFormatDesc'>PossibleStencilFormatDesc</a> for <a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></span><span class='out-of-band'><a id='src-10969' class='srclink' href='../../src/vulkano/vulkano/src/format.rs.html#622-625' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.is_stencil' class='method'><code>fn <a href='../../vulkano/format/trait.PossibleStencilFormatDesc.html#tymethod.is_stencil' class='fnname'>is_stencil</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../vulkano/format/trait.PossibleDepthStencilFormatDesc.html' title='vulkano::format::PossibleDepthStencilFormatDesc'>PossibleDepthStencilFormatDesc</a> for <a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></span><span class='out-of-band'><a id='src-10975' class='srclink' href='../../src/vulkano/vulkano/src/format.rs.html#631-634' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.is_depth_stencil' class='method'><code>fn <a href='../../vulkano/format/trait.PossibleDepthStencilFormatDesc.html#tymethod.is_depth_stencil' class='fnname'>is_depth_stencil</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../vulkano/format/trait.PossibleCompressedFormatDesc.html' title='vulkano::format::PossibleCompressedFormatDesc'>PossibleCompressedFormatDesc</a> for <a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></span><span class='out-of-band'><a id='src-10981' class='srclink' href='../../src/vulkano/vulkano/src/format.rs.html#640-643' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.is_compressed' class='method'><code>fn <a href='../../vulkano/format/trait.PossibleCompressedFormatDesc.html#tymethod.is_compressed' class='fnname'>is_compressed</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../vulkano/format/trait.PossibleFloatOrCompressedFormatDesc.html' title='vulkano::format::PossibleFloatOrCompressedFormatDesc'>PossibleFloatOrCompressedFormatDesc</a> for <a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></span><span class='out-of-band'><a id='src-10987' class='srclink' href='../../src/vulkano/vulkano/src/format.rs.html#651-656' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.is_float_or_compressed' class='method'><code>fn <a href='../../vulkano/format/trait.PossibleFloatOrCompressedFormatDesc.html#tymethod.is_float_or_compressed' class='fnname'>is_float_or_compressed</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></span><span class='out-of-band'><a id='src-5837' class='srclink' href='../../src/vulkano/vulkano/src/format.rs.html#133' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></span><span class='out-of-band'><a id='src-5840' class='srclink' href='../../src/vulkano/vulkano/src/format.rs.html#133' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><span class="since">1.0.0</span></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></span><span class='out-of-band'><a id='src-5846' class='srclink' href='../../src/vulkano/vulkano/src/format.rs.html#133' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></span><span class='out-of-band'><a id='src-6034' class='srclink' href='../../src/vulkano/vulkano/src/format.rs.html#133' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></h4>
+<h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><span class="since">1.0.0</span></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></span><span class='out-of-band'><a id='src-6037' class='srclink' href='../../src/vulkano/vulkano/src/format.rs.html#133' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

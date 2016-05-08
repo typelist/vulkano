@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AccessRange",""],["GpuAccessResult",""]],"trait":[["Buffer",""],["TypedBuffer",""]]});

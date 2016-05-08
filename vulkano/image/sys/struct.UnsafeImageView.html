@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `UnsafeImageView` struct in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, UnsafeImageView">
+
+    <title>vulkano::image::sys::UnsafeImageView - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>image</a>::<wbr><a href='index.html'>sys</a></p><script>window.sidebarCurrent = {name: 'UnsafeImageView', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>image</a>::<wbr><a href='index.html'>sys</a>::<wbr><a class='struct' href=''>UnsafeImageView</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-13421' class='srclink' href='../../../src/vulkano/vulkano/src/image/sys.rs.html#622-628' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct UnsafeImageView {
+    // some fields omitted
+}</pre><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../../vulkano/image/sys/struct.UnsafeImageView.html' title='vulkano::image::sys::UnsafeImageView'>UnsafeImageView</a></code></span><span class='out-of-band'><a id='src-13437' class='srclink' href='../../../src/vulkano/vulkano/src/image/sys.rs.html#630-751' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.raw' class='method'><code>unsafe fn <a href='#method.raw' class='fnname'>raw</a>(image: &amp;<a class='struct' href='../../../vulkano/image/sys/struct.UnsafeImage.html' title='vulkano::image::sys::UnsafeImage'>UnsafeImage</a>, mipmap_levels: <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;, array_layers: <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../../vulkano/image/sys/struct.UnsafeImageView.html' title='vulkano::image::sys::UnsafeImageView'>UnsafeImageView</a>, <a class='enum' href='../../../vulkano/enum.OomError.html' title='vulkano::OomError'>OomError</a>&gt;</code></h4>
+<div class='docblock'><p>See the docs of new().</p>
+</div><h4 id='method.new' class='method'><code>unsafe fn <a href='#method.new' class='fnname'>new</a>(image: &amp;<a class='struct' href='../../../vulkano/image/sys/struct.UnsafeImage.html' title='vulkano::image::sys::UnsafeImage'>UnsafeImage</a>, mipmap_levels: <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;, array_layers: <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;) -&gt; <a class='struct' href='../../../vulkano/image/sys/struct.UnsafeImageView.html' title='vulkano::image::sys::UnsafeImageView'>UnsafeImageView</a></code></h4>
+<div class='docblock'><p>Creates a new view from an image.</p>
+
+<p>Note that you must create the view with identity swizzling if you want to use this view
+as a framebuffer attachment.</p>
+
+<h1 id='panic' class='section-header'><a href='#panic'>Panic</a></h1>
+<ul>
+<li>Panicks if the device or host ran out of memory.</li>
+</ul>
+</div><h4 id='method.format' class='method'><code>fn <a href='#method.format' class='fnname'>format</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></h4>
+<h4 id='method.usage_transfer_src' class='method'><code>fn <a href='#method.usage_transfer_src' class='fnname'>usage_transfer_src</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.usage_transfer_dest' class='method'><code>fn <a href='#method.usage_transfer_dest' class='fnname'>usage_transfer_dest</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.usage_sampled' class='method'><code>fn <a href='#method.usage_sampled' class='fnname'>usage_sampled</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.usage_storage' class='method'><code>fn <a href='#method.usage_storage' class='fnname'>usage_storage</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.usage_color_attachment' class='method'><code>fn <a href='#method.usage_color_attachment' class='fnname'>usage_color_attachment</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.usage_depth_stencil_attachment' class='method'><code>fn <a href='#method.usage_depth_stencil_attachment' class='fnname'>usage_depth_stencil_attachment</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.usage_transient_attachment' class='method'><code>fn <a href='#method.usage_transient_attachment' class='fnname'>usage_transient_attachment</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.usage_input_attachment' class='method'><code>fn <a href='#method.usage_input_attachment' class='fnname'>usage_input_attachment</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../../vulkano/trait.VulkanObject.html' title='vulkano::VulkanObject'>VulkanObject</a> for <a class='struct' href='../../../vulkano/image/sys/struct.UnsafeImageView.html' title='vulkano::image::sys::UnsafeImageView'>UnsafeImageView</a></code></span><span class='out-of-band'><a id='src-13475' class='srclink' href='../../../src/vulkano/vulkano/src/image/sys.rs.html#753-760' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Object' class='type'><code>type <a href='../../../vulkano/trait.VulkanObject.html#associatedtype.Object' class='type'>Object</a> = <a class='type' href='../../../vk_sys/type.ImageView.html' title='vk_sys::ImageView'>ImageView</a></code></h4>
+<h4 id='method.internal_object' class='method'><code>fn <a href='../../../vulkano/trait.VulkanObject.html#tymethod.internal_object' class='fnname'>internal_object</a>(&amp;self) -&gt; <a class='type' href='../../../vk_sys/type.ImageView.html' title='vk_sys::ImageView'>ImageView</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../../vulkano/image/sys/struct.UnsafeImageView.html' title='vulkano::image::sys::UnsafeImageView'>UnsafeImageView</a></code></span><span class='out-of-band'><a id='src-13479' class='srclink' href='../../../src/vulkano/vulkano/src/image/sys.rs.html#762-770' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../../vulkano/image/sys/struct.UnsafeImageView.html' title='vulkano::image::sys::UnsafeImageView'>UnsafeImageView</a></code></span><span class='out-of-band'><a id='src-13427' class='srclink' href='../../../src/vulkano/vulkano/src/image/sys.rs.html#621' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

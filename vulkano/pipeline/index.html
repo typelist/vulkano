@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `pipeline` mod in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, pipeline">
+
+    <title>vulkano::pipeline - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vulkano</a></p><script>window.sidebarCurrent = {name: 'pipeline', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>vulkano</a>::<wbr><a class='mod' href=''>pipeline</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-15839' class='srclink' href='../../src/vulkano/vulkano/src/pipeline/mod.rs.html#10-36' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Tells the Vulkan implementation how it should perform a graphical or compute operation.</p>
+
+<p>There are two kinds of pipelines:</p>
+
+<ul>
+<li>Compute pipelines, for compute operations that reads/write raw pixels from images and
+buffers.</li>
+<li>Graphics pipelines, for graphical operations.</li>
+</ul>
+
+<p>All the sub-modules of this module (with the exception of <code>cache</code>) correspond to the various
+steps of pipelines.</p>
+</div><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='blend/index.html'
+                                  title='vulkano::pipeline::blend'>blend</a></td>
+                           <td class='docblock short'>
+                                <p>Defines how the color output of the fragment shader is written to the attachment.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='cache/index.html'
+                                  title='vulkano::pipeline::cache'>cache</a></td>
+                           <td class='docblock short'>
+                                <p>Cache the pipeline objects to disk for faster reloads.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='depth_stencil/index.html'
+                                  title='vulkano::pipeline::depth_stencil'>depth_stencil</a></td>
+                           <td class='docblock short'>
+                                <p>Depth and stencil operations description.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='input_assembly/index.html'
+                                  title='vulkano::pipeline::input_assembly'>input_assembly</a></td>
+                           <td class='docblock short'>
+                                <p>Assembling vertices into primitives.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='multisample/index.html'
+                                  title='vulkano::pipeline::multisample'>multisample</a></td>
+                           <td class='docblock short'>
+                                <p>State of multisampling.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='raster/index.html'
+                                  title='vulkano::pipeline::raster'>raster</a></td>
+                           <td class='docblock short'>
+                                <p>Stage when triangles are turned into pixels.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='shader/index.html'
+                                  title='vulkano::pipeline::shader'>shader</a></td>
+                           <td class='docblock short'>
+                                <p>Stage of a graphics pipeline.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='vertex/index.html'
+                                  title='vulkano::pipeline::vertex'>vertex</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='viewport/index.html'
+                                  title='vulkano::pipeline::viewport'>viewport</a></td>
+                           <td class='docblock short'>
+                                <p>Viewports and scissor boxes.</p>
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.ComputePipeline.html'
+                                  title='vulkano::pipeline::ComputePipeline'>ComputePipeline</a></td>
+                           <td class='docblock short'>
+                                <p>A pipeline object that describes to the Vulkan implementation how it should perform compute
+operations.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.GraphicsPipeline.html'
+                                  title='vulkano::pipeline::GraphicsPipeline'>GraphicsPipeline</a></td>
+                           <td class='docblock short'>
+                                <p>The template parameter contains the descriptor set to use with this pipeline, and the
+renderpass layout.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.GraphicsPipelineParams.html'
+                                  title='vulkano::pipeline::GraphicsPipelineParams'>GraphicsPipelineParams</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CommandBufferPool","A pool from which command buffers are created from."]]});

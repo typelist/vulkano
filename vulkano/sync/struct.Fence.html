@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Fence` struct in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Fence">
+
+    <title>vulkano::sync::Fence - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>sync</a></p><script>window.sidebarCurrent = {name: 'Fence', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>sync</a>::<wbr><a class='struct' href=''>Fence</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-19712' class='srclink' href='../../src/vulkano/vulkano/src/sync/fence.rs.html#36-45' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Fence&lt;D = <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;&gt; <span class='where'>where D: <a class='trait' href='../../vulkano/trait.SafeDeref.html' title='vulkano::SafeDeref'>SafeDeref</a>&lt;Target=<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;</span> {
+    // some fields omitted
+}</pre><div class='docblock'><p>A fence is used to know when a command buffer submission has finished its execution.</p>
+
+<p>When a command buffer accesses a ressource, you have to ensure that the CPU doesn&#39;t access
+the same ressource simultaneously (except for concurrent reads). Therefore in order to know
+when the CPU can access a ressource again, a fence has to be used.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;D&gt; <a class='struct' href='../../vulkano/sync/struct.Fence.html' title='vulkano::sync::Fence'>Fence</a>&lt;D&gt; <span class='where'>where D: <a class='trait' href='../../vulkano/trait.SafeDeref.html' title='vulkano::SafeDeref'>SafeDeref</a>&lt;Target=<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;</span></code></span><span class='out-of-band'><a id='src-19726' class='srclink' href='../../src/vulkano/vulkano/src/sync/fence.rs.html#47-247' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.raw' class='method'><code>fn <a href='#method.raw' class='fnname'>raw</a>(device: &amp;D) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../vulkano/sync/struct.Fence.html' title='vulkano::sync::Fence'>Fence</a>&lt;D&gt;, <a class='enum' href='../../vulkano/enum.OomError.html' title='vulkano::OomError'>OomError</a>&gt; <span class='where'>where D: <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a></span></code></h4>
+<div class='docblock'><p>See the docs of new().</p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(device: &amp;D) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/sync/struct.Fence.html' title='vulkano::sync::Fence'>Fence</a>&lt;D&gt;&gt; <span class='where'>where D: <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a></span></code></h4>
+<div class='docblock'><p>Builds a new fence.</p>
+
+<h1 id='panic' class='section-header'><a href='#panic'>Panic</a></h1>
+<ul>
+<li>Panicks if the device or host ran out of memory.</li>
+</ul>
+</div><h4 id='method.signaled_raw' class='method'><code>fn <a href='#method.signaled_raw' class='fnname'>signaled_raw</a>(device: &amp;D) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../vulkano/sync/struct.Fence.html' title='vulkano::sync::Fence'>Fence</a>&lt;D&gt;, <a class='enum' href='../../vulkano/enum.OomError.html' title='vulkano::OomError'>OomError</a>&gt; <span class='where'>where D: <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a></span></code></h4>
+<div class='docblock'><p>See the docs of signaled().</p>
+</div><h4 id='method.signaled' class='method'><code>fn <a href='#method.signaled' class='fnname'>signaled</a>(device: &amp;D) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/sync/struct.Fence.html' title='vulkano::sync::Fence'>Fence</a>&lt;D&gt;&gt; <span class='where'>where D: <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a></span></code></h4>
+<div class='docblock'><p>Builds a new fence already in the &quot;signaled&quot; state.</p>
+
+<h1 id='panic-1' class='section-header'><a href='#panic-1'>Panic</a></h1>
+<ul>
+<li>Panicks if the device or host ran out of memory.</li>
+</ul>
+</div><h4 id='method.ready' class='method'><code>fn <a href='#method.ready' class='fnname'>ready</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>, <a class='enum' href='../../vulkano/enum.OomError.html' title='vulkano::OomError'>OomError</a>&gt;</code></h4>
+<div class='docblock'><p>Returns true if the fence is signaled.</p>
+</div><h4 id='method.wait' class='method'><code>fn <a href='#method.wait' class='fnname'>wait</a>(&amp;self, timeout: <a class='struct' href='https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html' title='std::time::duration::Duration'>Duration</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../../vulkano/sync/enum.FenceWaitError.html' title='vulkano::sync::FenceWaitError'>FenceWaitError</a>&gt;</code></h4>
+<div class='docblock'><p>Waits until the fence is signaled, or at least until the number of nanoseconds of the
+timeout has elapsed.</p>
+
+<p>Returns <code>Ok</code> if the fence is now signaled. Returns <code>Err</code> if the timeout was reached instead.</p>
+</div><h4 id='method.multi_wait' class='method'><code>fn <a href='#method.multi_wait' class='fnname'>multi_wait</a>&lt;'a, I&gt;(iter: I, timeout: <a class='struct' href='https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html' title='std::time::duration::Duration'>Duration</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../../vulkano/sync/enum.FenceWaitError.html' title='vulkano::sync::FenceWaitError'>FenceWaitError</a>&gt; <span class='where'>where I: <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.IntoIterator.html' title='core::iter::traits::IntoIterator'>IntoIterator</a>&lt;Item=&amp;'a <a class='struct' href='../../vulkano/sync/struct.Fence.html' title='vulkano::sync::Fence'>Fence</a>&lt;D&gt;&gt;, D: 'a</span></code></h4>
+<div class='docblock'><p>Waits for multiple fences at once.</p>
+
+<h1 id='panic-2' class='section-header'><a href='#panic-2'>Panic</a></h1>
+<p>Panicks if not all fences belong to the same device.</p>
+</div><h4 id='method.reset' class='method'><code>fn <a href='#method.reset' class='fnname'>reset</a>(&amp;self)</code></h4>
+<div class='docblock'><p>Resets the fence.</p>
+</div><h4 id='method.multi_reset' class='method'><code>fn <a href='#method.multi_reset' class='fnname'>multi_reset</a>&lt;'a, I&gt;(iter: I) <span class='where'>where I: <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.IntoIterator.html' title='core::iter::traits::IntoIterator'>IntoIterator</a>&lt;Item=&amp;'a <a class='struct' href='../../vulkano/sync/struct.Fence.html' title='vulkano::sync::Fence'>Fence</a>&lt;D&gt;&gt;, D: 'a</span></code></h4>
+<div class='docblock'><p>Resets multiple fences at once.</p>
+
+<h1 id='panic-3' class='section-header'><a href='#panic-3'>Panic</a></h1>
+<p>Panicks if not all fences belong to the same device.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;D&gt; <a class='trait' href='../../vulkano/trait.VulkanObject.html' title='vulkano::VulkanObject'>VulkanObject</a> for <a class='struct' href='../../vulkano/sync/struct.Fence.html' title='vulkano::sync::Fence'>Fence</a>&lt;D&gt; <span class='where'>where D: <a class='trait' href='../../vulkano/trait.SafeDeref.html' title='vulkano::SafeDeref'>SafeDeref</a>&lt;Target=<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;</span></code></span><span class='out-of-band'><a id='src-19798' class='srclink' href='../../src/vulkano/vulkano/src/sync/fence.rs.html#249-256' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Object' class='type'><code>type <a href='../../vulkano/trait.VulkanObject.html#associatedtype.Object' class='type'>Object</a> = <a class='type' href='../../vk_sys/type.Fence.html' title='vk_sys::Fence'>Fence</a></code></h4>
+<h4 id='method.internal_object' class='method'><code>fn <a href='../../vulkano/trait.VulkanObject.html#tymethod.internal_object' class='fnname'>internal_object</a>(&amp;self) -&gt; <a class='type' href='../../vk_sys/type.Fence.html' title='vk_sys::Fence'>Fence</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;D&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../vulkano/sync/struct.Fence.html' title='vulkano::sync::Fence'>Fence</a>&lt;D&gt; <span class='where'>where D: <a class='trait' href='../../vulkano/trait.SafeDeref.html' title='vulkano::SafeDeref'>SafeDeref</a>&lt;Target=<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;</span></code></span><span class='out-of-band'><a id='src-19803' class='srclink' href='../../src/vulkano/vulkano/src/sync/fence.rs.html#258-266' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><span class='in-band'><code>impl&lt;D: <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a>&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../vulkano/sync/struct.Fence.html' title='vulkano::sync::Fence'>Fence</a>&lt;D&gt; <span class='where'>where D: <a class='trait' href='../../vulkano/trait.SafeDeref.html' title='vulkano::SafeDeref'>SafeDeref</a>&lt;Target=<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;</span></code></span><span class='out-of-band'><a id='src-19717' class='srclink' href='../../src/vulkano/vulkano/src/sync/fence.rs.html#35' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

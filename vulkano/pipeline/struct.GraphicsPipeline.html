@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `GraphicsPipeline` struct in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, GraphicsPipeline">
+
+    <title>vulkano::pipeline::GraphicsPipeline - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>pipeline</a></p><script>window.sidebarCurrent = {name: 'GraphicsPipeline', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>pipeline</a>::<wbr><a class='struct' href=''>GraphicsPipeline</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-16028' class='srclink' href='../../src/vulkano/vulkano/src/pipeline/graphics_pipeline.rs.html#72-93' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct GraphicsPipeline&lt;VertexDefinition, Layout, RenderP&gt; {
+    // some fields omitted
+}</pre><div class='docblock'><p>The template parameter contains the descriptor set to use with this pipeline, and the
+renderpass layout.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;Vdef, L, Rp&gt; <a class='struct' href='../../vulkano/pipeline/struct.GraphicsPipeline.html' title='vulkano::pipeline::GraphicsPipeline'>GraphicsPipeline</a>&lt;Vdef, L, Rp&gt; <span class='where'>where L: <a class='trait' href='../../vulkano/descriptor/pipeline_layout/trait.PipelineLayout.html' title='vulkano::descriptor::pipeline_layout::PipelineLayout'>PipelineLayout</a>, Rp: <a class='trait' href='../../vulkano/framebuffer/trait.RenderPass.html' title='vulkano::framebuffer::RenderPass'>RenderPass</a> + <a class='trait' href='../../vulkano/framebuffer/trait.RenderPassDesc.html' title='vulkano::framebuffer::RenderPassDesc'>RenderPassDesc</a></span></code></span><span class='out-of-band'><a id='src-16048' class='srclink' href='../../src/vulkano/vulkano/src/pipeline/graphics_pipeline.rs.html#95-655' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;'a, Vsp, Vi, Vo, Vl, Fs, Fi, Fo, Fl&gt;(device: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;, params: <a class='struct' href='../../vulkano/pipeline/struct.GraphicsPipelineParams.html' title='vulkano::pipeline::GraphicsPipelineParams'>GraphicsPipelineParams</a>&lt;'a, Vdef, Vsp, Vi, Vo, Vl, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, Fs, Fi, Fo, Fl, L, Rp&gt;) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/pipeline/struct.GraphicsPipeline.html' title='vulkano::pipeline::GraphicsPipeline'>GraphicsPipeline</a>&lt;Vdef, L, Rp&gt;&gt;, GraphicsPipelineCreationError&gt; <span class='where'>where Vdef: <a class='trait' href='../../vulkano/pipeline/vertex/trait.Definition.html' title='vulkano::pipeline::vertex::Definition'>VertexDefinition</a>&lt;Vi&gt;, L: <a class='trait' href='../../vulkano/descriptor/pipeline_layout/trait.PipelineLayout.html' title='vulkano::descriptor::pipeline_layout::PipelineLayout'>PipelineLayout</a> + <a class='trait' href='../../vulkano/descriptor/pipeline_layout/trait.PipelineLayoutSuperset.html' title='vulkano::descriptor::pipeline_layout::PipelineLayoutSuperset'>PipelineLayoutSuperset</a>&lt;Vl&gt; + <a class='trait' href='../../vulkano/descriptor/pipeline_layout/trait.PipelineLayoutSuperset.html' title='vulkano::descriptor::pipeline_layout::PipelineLayoutSuperset'>PipelineLayoutSuperset</a>&lt;Fl&gt;, Vl: <a class='trait' href='../../vulkano/descriptor/pipeline_layout/trait.PipelineLayoutDesc.html' title='vulkano::descriptor::pipeline_layout::PipelineLayoutDesc'>PipelineLayoutDesc</a>, Fl: <a class='trait' href='../../vulkano/descriptor/pipeline_layout/trait.PipelineLayoutDesc.html' title='vulkano::descriptor::pipeline_layout::PipelineLayoutDesc'>PipelineLayoutDesc</a>, Fi: <a class='trait' href='../../vulkano/pipeline/shader/trait.ShaderInterfaceDefMatch.html' title='vulkano::pipeline::shader::ShaderInterfaceDefMatch'>ShaderInterfaceDefMatch</a>&lt;Vo&gt;, Fo: <a class='trait' href='../../vulkano/pipeline/shader/trait.ShaderInterfaceDef.html' title='vulkano::pipeline::shader::ShaderInterfaceDef'>ShaderInterfaceDef</a>, Vo: <a class='trait' href='../../vulkano/pipeline/shader/trait.ShaderInterfaceDef.html' title='vulkano::pipeline::shader::ShaderInterfaceDef'>ShaderInterfaceDef</a>, Rp: <a class='trait' href='../../vulkano/framebuffer/trait.RenderPassSubpassInterface.html' title='vulkano::framebuffer::RenderPassSubpassInterface'>RenderPassSubpassInterface</a>&lt;Fo&gt;</span></code></h4>
+<div class='docblock'><p>Builds a new graphics pipeline object.</p>
+</div><h4 id='method.with_geometry_shader' class='method'><code>fn <a href='#method.with_geometry_shader' class='fnname'>with_geometry_shader</a>&lt;'a, Vsp, Vi, Vo, Vl, Gsp, Gi, Go, Gl, Fs, Fi, Fo, Fl&gt;(device: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;, params: <a class='struct' href='../../vulkano/pipeline/struct.GraphicsPipelineParams.html' title='vulkano::pipeline::GraphicsPipelineParams'>GraphicsPipelineParams</a>&lt;'a, Vdef, Vsp, Vi, Vo, Vl, Gsp, Gi, Go, Gl, Fs, Fi, Fo, Fl, L, Rp&gt;) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/pipeline/struct.GraphicsPipeline.html' title='vulkano::pipeline::GraphicsPipeline'>GraphicsPipeline</a>&lt;Vdef, L, Rp&gt;&gt;, GraphicsPipelineCreationError&gt; <span class='where'>where Vdef: <a class='trait' href='../../vulkano/pipeline/vertex/trait.Definition.html' title='vulkano::pipeline::vertex::Definition'>VertexDefinition</a>&lt;Vi&gt;, L: <a class='trait' href='../../vulkano/descriptor/pipeline_layout/trait.PipelineLayout.html' title='vulkano::descriptor::pipeline_layout::PipelineLayout'>PipelineLayout</a> + <a class='trait' href='../../vulkano/descriptor/pipeline_layout/trait.PipelineLayoutSuperset.html' title='vulkano::descriptor::pipeline_layout::PipelineLayoutSuperset'>PipelineLayoutSuperset</a>&lt;Vl&gt; + <a class='trait' href='../../vulkano/descriptor/pipeline_layout/trait.PipelineLayoutSuperset.html' title='vulkano::descriptor::pipeline_layout::PipelineLayoutSuperset'>PipelineLayoutSuperset</a>&lt;Fl&gt;, Vl: <a class='trait' href='../../vulkano/descriptor/pipeline_layout/trait.PipelineLayoutDesc.html' title='vulkano::descriptor::pipeline_layout::PipelineLayoutDesc'>PipelineLayoutDesc</a>, Fl: <a class='trait' href='../../vulkano/descriptor/pipeline_layout/trait.PipelineLayoutDesc.html' title='vulkano::descriptor::pipeline_layout::PipelineLayoutDesc'>PipelineLayoutDesc</a>, Gi: <a class='trait' href='../../vulkano/pipeline/shader/trait.ShaderInterfaceDefMatch.html' title='vulkano::pipeline::shader::ShaderInterfaceDefMatch'>ShaderInterfaceDefMatch</a>&lt;Vo&gt;, Vo: <a class='trait' href='../../vulkano/pipeline/shader/trait.ShaderInterfaceDef.html' title='vulkano::pipeline::shader::ShaderInterfaceDef'>ShaderInterfaceDef</a>, Fi: <a class='trait' href='../../vulkano/pipeline/shader/trait.ShaderInterfaceDefMatch.html' title='vulkano::pipeline::shader::ShaderInterfaceDefMatch'>ShaderInterfaceDefMatch</a>&lt;Go&gt; + <a class='trait' href='../../vulkano/pipeline/shader/trait.ShaderInterfaceDefMatch.html' title='vulkano::pipeline::shader::ShaderInterfaceDefMatch'>ShaderInterfaceDefMatch</a>&lt;Vo&gt;, Fo: <a class='trait' href='../../vulkano/pipeline/shader/trait.ShaderInterfaceDef.html' title='vulkano::pipeline::shader::ShaderInterfaceDef'>ShaderInterfaceDef</a>, Go: <a class='trait' href='../../vulkano/pipeline/shader/trait.ShaderInterfaceDef.html' title='vulkano::pipeline::shader::ShaderInterfaceDef'>ShaderInterfaceDef</a>, Rp: <a class='trait' href='../../vulkano/framebuffer/trait.RenderPassSubpassInterface.html' title='vulkano::framebuffer::RenderPassSubpassInterface'>RenderPassSubpassInterface</a>&lt;Fo&gt;</span></code></h4>
+<div class='docblock'><p>Builds a new graphics pipeline object with a geometry shader.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;Mv, L, Rp&gt; <a class='struct' href='../../vulkano/pipeline/struct.GraphicsPipeline.html' title='vulkano::pipeline::GraphicsPipeline'>GraphicsPipeline</a>&lt;Mv, L, Rp&gt;</code></span><span class='out-of-band'><a id='src-16180' class='srclink' href='../../src/vulkano/vulkano/src/pipeline/graphics_pipeline.rs.html#657-663' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.vertex_definition' class='method'><code>fn <a href='#method.vertex_definition' class='fnname'>vertex_definition</a>(&amp;self) -&gt; &amp;Mv</code></h4>
+<div class='docblock'><p>Returns the vertex definition used in the constructor.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;Mv, L, Rp&gt; <a class='struct' href='../../vulkano/pipeline/struct.GraphicsPipeline.html' title='vulkano::pipeline::GraphicsPipeline'>GraphicsPipeline</a>&lt;Mv, L, Rp&gt; <span class='where'>where L: <a class='trait' href='../../vulkano/descriptor/pipeline_layout/trait.PipelineLayout.html' title='vulkano::descriptor::pipeline_layout::PipelineLayout'>PipelineLayout</a></span></code></span><span class='out-of-band'><a id='src-16186' class='srclink' href='../../src/vulkano/vulkano/src/pipeline/graphics_pipeline.rs.html#665-673' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.layout' class='method'><code>fn <a href='#method.layout' class='fnname'>layout</a>(&amp;self) -&gt; &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;L&gt;</code></h4>
+<div class='docblock'><p>Returns the pipeline layout used in the constructor.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;Mv, L, Rp&gt; <a class='struct' href='../../vulkano/pipeline/struct.GraphicsPipeline.html' title='vulkano::pipeline::GraphicsPipeline'>GraphicsPipeline</a>&lt;Mv, L, Rp&gt; <span class='where'>where Rp: <a class='trait' href='../../vulkano/framebuffer/trait.RenderPass.html' title='vulkano::framebuffer::RenderPass'>RenderPass</a> + <a class='trait' href='../../vulkano/framebuffer/trait.RenderPassDesc.html' title='vulkano::framebuffer::RenderPassDesc'>RenderPassDesc</a></span></code></span><span class='out-of-band'><a id='src-16192' class='srclink' href='../../src/vulkano/vulkano/src/pipeline/graphics_pipeline.rs.html#675-689' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.render_pass' class='method'><code>fn <a href='#method.render_pass' class='fnname'>render_pass</a>(&amp;self) -&gt; &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;Rp&gt;</code></h4>
+<div class='docblock'><p>Returns the render pass used in the constructor.</p>
+</div><h4 id='method.subpass' class='method'><code>fn <a href='#method.subpass' class='fnname'>subpass</a>(&amp;self) -&gt; <a class='struct' href='../../vulkano/framebuffer/struct.Subpass.html' title='vulkano::framebuffer::Subpass'>Subpass</a>&lt;Rp&gt;</code></h4>
+<div class='docblock'><p>Returns the pass used in the constructor.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;Mv, L, Rp&gt; <a class='struct' href='../../vulkano/pipeline/struct.GraphicsPipeline.html' title='vulkano::pipeline::GraphicsPipeline'>GraphicsPipeline</a>&lt;Mv, L, Rp&gt;</code></span><span class='out-of-band'><a id='src-16200' class='srclink' href='../../src/vulkano/vulkano/src/pipeline/graphics_pipeline.rs.html#691-739' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.has_dynamic_line_width' class='method'><code>fn <a href='#method.has_dynamic_line_width' class='fnname'>has_dynamic_line_width</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Returns true if the line width used by this pipeline is dynamic.</p>
+</div><h4 id='method.num_viewports' class='method'><code>fn <a href='#method.num_viewports' class='fnname'>num_viewports</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
+<div class='docblock'><p>Returns the number of viewports and scissors of this pipeline.</p>
+</div><h4 id='method.has_dynamic_viewports' class='method'><code>fn <a href='#method.has_dynamic_viewports' class='fnname'>has_dynamic_viewports</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Returns true if the viewports used by this pipeline are dynamic.</p>
+</div><h4 id='method.has_dynamic_scissors' class='method'><code>fn <a href='#method.has_dynamic_scissors' class='fnname'>has_dynamic_scissors</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Returns true if the scissors used by this pipeline are dynamic.</p>
+</div><h4 id='method.has_dynamic_depth_bounds' class='method'><code>fn <a href='#method.has_dynamic_depth_bounds' class='fnname'>has_dynamic_depth_bounds</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Returns true if the depth bounds used by this pipeline are dynamic.</p>
+</div><h4 id='method.has_dynamic_stencil_compare_mask' class='method'><code>fn <a href='#method.has_dynamic_stencil_compare_mask' class='fnname'>has_dynamic_stencil_compare_mask</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Returns true if the stencil compare masks used by this pipeline are dynamic.</p>
+</div><h4 id='method.has_dynamic_stencil_write_mask' class='method'><code>fn <a href='#method.has_dynamic_stencil_write_mask' class='fnname'>has_dynamic_stencil_write_mask</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Returns true if the stencil write masks used by this pipeline are dynamic.</p>
+</div><h4 id='method.has_dynamic_stencil_reference' class='method'><code>fn <a href='#method.has_dynamic_stencil_reference' class='fnname'>has_dynamic_stencil_reference</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Returns true if the stencil references used by this pipeline are dynamic.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;Mv, L, Rp&gt; <a class='trait' href='../../vulkano/trait.VulkanObject.html' title='vulkano::VulkanObject'>VulkanObject</a> for <a class='struct' href='../../vulkano/pipeline/struct.GraphicsPipeline.html' title='vulkano::pipeline::GraphicsPipeline'>GraphicsPipeline</a>&lt;Mv, L, Rp&gt;</code></span><span class='out-of-band'><a id='src-16220' class='srclink' href='../../src/vulkano/vulkano/src/pipeline/graphics_pipeline.rs.html#741-748' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Object' class='type'><code>type <a href='../../vulkano/trait.VulkanObject.html#associatedtype.Object' class='type'>Object</a> = <a class='type' href='../../vk_sys/type.Pipeline.html' title='vk_sys::Pipeline'>Pipeline</a></code></h4>
+<h4 id='method.internal_object' class='method'><code>fn <a href='../../vulkano/trait.VulkanObject.html#tymethod.internal_object' class='fnname'>internal_object</a>(&amp;self) -&gt; <a class='type' href='../../vk_sys/type.Pipeline.html' title='vk_sys::Pipeline'>Pipeline</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;Mv, L, Rp&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../vulkano/pipeline/struct.GraphicsPipeline.html' title='vulkano::pipeline::GraphicsPipeline'>GraphicsPipeline</a>&lt;Mv, L, Rp&gt;</code></span><span class='out-of-band'><a id='src-16227' class='srclink' href='../../src/vulkano/vulkano/src/pipeline/graphics_pipeline.rs.html#750-758' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

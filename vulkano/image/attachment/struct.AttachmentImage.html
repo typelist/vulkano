@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `AttachmentImage` struct in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, AttachmentImage">
+
+    <title>vulkano::image::attachment::AttachmentImage - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>image</a>::<wbr><a href='index.html'>attachment</a></p><script>window.sidebarCurrent = {name: 'AttachmentImage', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>image</a>::<wbr><a href='index.html'>attachment</a>::<wbr><a class='struct' href=''>AttachmentImage</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-12727' class='srclink' href='../../../src/vulkano/vulkano/src/image/attachment.rs.html#70-89' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct AttachmentImage&lt;F, A = <a class='struct' href='../../../vulkano/memory/pool/struct.StdMemoryPool.html' title='vulkano::memory::pool::StdMemoryPool'>StdMemoryPool</a>&gt; <span class='where'>where A: <a class='trait' href='../../../vulkano/memory/pool/trait.MemoryPool.html' title='vulkano::memory::pool::MemoryPool'>MemoryPool</a></span> {
+    // some fields omitted
+}</pre><div class='docblock'><p>Image whose purpose is to be used as a framebuffer attachment.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;F&gt; <a class='struct' href='../../../vulkano/image/attachment/struct.AttachmentImage.html' title='vulkano::image::attachment::AttachmentImage'>AttachmentImage</a>&lt;F&gt;</code></span><span class='out-of-band'><a id='src-12759' class='srclink' href='../../../src/vulkano/vulkano/src/image/attachment.rs.html#100-190' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(device: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;, dimensions: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 2]</a>, format: F) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../../vulkano/image/attachment/struct.AttachmentImage.html' title='vulkano::image::attachment::AttachmentImage'>AttachmentImage</a>&lt;F&gt;&gt;, <a class='enum' href='../../../vulkano/image/sys/enum.ImageCreationError.html' title='vulkano::image::sys::ImageCreationError'>ImageCreationError</a>&gt; <span class='where'>where F: <a class='trait' href='../../../vulkano/format/trait.FormatDesc.html' title='vulkano::format::FormatDesc'>FormatDesc</a></span></code></h4>
+<div class='docblock'><p>Creates a new image with the given dimensions and format.</p>
+
+<p>Returns an error if the dimensions are too large or if the backend doesn&#39;t support this
+format as a framebuffer attachment.</p>
+</div><h4 id='method.transient' class='method'><code>fn <a href='#method.transient' class='fnname'>transient</a>(device: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;, dimensions: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 2]</a>, format: F) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../../vulkano/image/attachment/struct.AttachmentImage.html' title='vulkano::image::attachment::AttachmentImage'>AttachmentImage</a>&lt;F&gt;&gt;, <a class='enum' href='../../../vulkano/image/sys/enum.ImageCreationError.html' title='vulkano::image::sys::ImageCreationError'>ImageCreationError</a>&gt; <span class='where'>where F: <a class='trait' href='../../../vulkano/format/trait.FormatDesc.html' title='vulkano::format::FormatDesc'>FormatDesc</a></span></code></h4>
+<div class='docblock'><p>Same as <code>new</code>, except that the image will be transient.</p>
+
+<p>A transient image is special because its content is undefined outside of a render pass.
+This means that the implementation has the possibility to not allocate any memory for it.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;F, A&gt; <a class='struct' href='../../../vulkano/image/attachment/struct.AttachmentImage.html' title='vulkano::image::attachment::AttachmentImage'>AttachmentImage</a>&lt;F, A&gt; <span class='where'>where A: <a class='trait' href='../../../vulkano/memory/pool/trait.MemoryPool.html' title='vulkano::memory::pool::MemoryPool'>MemoryPool</a></span></code></span><span class='out-of-band'><a id='src-12801' class='srclink' href='../../../src/vulkano/vulkano/src/image/attachment.rs.html#192-199' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.dimensions' class='method'><code>fn <a href='#method.dimensions' class='fnname'>dimensions</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 2]</a></code></h4>
+<div class='docblock'><p>Returns the dimensions of the image.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;F, A&gt; <a class='trait' href='../../../vulkano/image/traits/trait.Image.html' title='vulkano::image::traits::Image'>Image</a> for <a class='struct' href='../../../vulkano/image/attachment/struct.AttachmentImage.html' title='vulkano::image::attachment::AttachmentImage'>AttachmentImage</a>&lt;F, A&gt; <span class='where'>where F: 'static + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Send.html' title='core::marker::Send'>Send</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html' title='core::marker::Sync'>Sync</a>, A: <a class='trait' href='../../../vulkano/memory/pool/trait.MemoryPool.html' title='vulkano::memory::pool::MemoryPool'>MemoryPool</a></span></code></span><span class='out-of-band'><a id='src-12807' class='srclink' href='../../../src/vulkano/vulkano/src/image/attachment.rs.html#201-268' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.inner_image' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.Image.html#tymethod.inner_image' class='fnname'>inner_image</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../../vulkano/image/sys/struct.UnsafeImage.html' title='vulkano::image::sys::UnsafeImage'>UnsafeImage</a></code></h4>
+<h4 id='method.blocks' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.Image.html#tymethod.blocks' class='fnname'>blocks</a>(&amp;self, _: <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;, _: <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;</code></h4>
+<h4 id='method.block_mipmap_levels_range' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.Image.html#tymethod.block_mipmap_levels_range' class='fnname'>block_mipmap_levels_range</a>(&amp;self, block: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;</code></h4>
+<h4 id='method.block_array_layers_range' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.Image.html#tymethod.block_array_layers_range' class='fnname'>block_array_layers_range</a>(&amp;self, block: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;</code></h4>
+<h4 id='method.initial_layout' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.Image.html#tymethod.initial_layout' class='fnname'>initial_layout</a>(&amp;self, _: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>, _: <a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a></code></h4>
+<h4 id='method.final_layout' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.Image.html#tymethod.final_layout' class='fnname'>final_layout</a>(&amp;self, _: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>, _: <a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a></code></h4>
+<h4 id='method.needs_fence' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.Image.html#tymethod.needs_fence' class='fnname'>needs_fence</a>(&amp;self, access: &amp;mut <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html' title='core::iter::iterator::Iterator'>Iterator</a>&lt;Item=<a class='struct' href='../../../vulkano/image/traits/struct.AccessRange.html' title='vulkano::image::traits::AccessRange'>AccessRange</a>&gt;) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>&gt;</code></h4>
+<h4 id='method.gpu_access' class='method'><code>unsafe fn <a href='../../../vulkano/image/traits/trait.Image.html#tymethod.gpu_access' class='fnname'>gpu_access</a>(&amp;self, _: &amp;mut <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html' title='core::iter::iterator::Iterator'>Iterator</a>&lt;Item=<a class='struct' href='../../../vulkano/image/traits/struct.AccessRange.html' title='vulkano::image::traits::AccessRange'>AccessRange</a>&gt;, submission: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../../vulkano/command_buffer/struct.Submission.html' title='vulkano::command_buffer::Submission'>Submission</a>&gt;) -&gt; <a class='struct' href='../../../vulkano/image/traits/struct.GpuAccessResult.html' title='vulkano::image::traits::GpuAccessResult'>GpuAccessResult</a></code></h4>
+<h4 id='method.format' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.Image.html#method.format' class='fnname'>format</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></h4>
+<h4 id='method.samples' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.Image.html#method.samples' class='fnname'>samples</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
+<h4 id='method.dimensions-1' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.Image.html#method.dimensions' class='fnname'>dimensions</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/image/sys/enum.Dimensions.html' title='vulkano::image::sys::Dimensions'>Dimensions</a></code></h4>
+<h4 id='method.supports_blit_source' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.Image.html#method.supports_blit_source' class='fnname'>supports_blit_source</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.supports_blit_destination' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.Image.html#method.supports_blit_destination' class='fnname'>supports_blit_destination</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;F, A&gt; <a class='trait' href='../../../vulkano/image/traits/trait.ImageClearValue.html' title='vulkano::image::traits::ImageClearValue'>ImageClearValue</a>&lt;F::ClearValue&gt; for <a class='struct' href='../../../vulkano/image/attachment/struct.AttachmentImage.html' title='vulkano::image::attachment::AttachmentImage'>AttachmentImage</a>&lt;F, A&gt; <span class='where'>where F: <a class='trait' href='../../../vulkano/format/trait.FormatDesc.html' title='vulkano::format::FormatDesc'>FormatDesc</a> + 'static + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Send.html' title='core::marker::Send'>Send</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html' title='core::marker::Sync'>Sync</a>, A: <a class='trait' href='../../../vulkano/memory/pool/trait.MemoryPool.html' title='vulkano::memory::pool::MemoryPool'>MemoryPool</a></span></code></span><span class='out-of-band'><a id='src-12837' class='srclink' href='../../../src/vulkano/vulkano/src/image/attachment.rs.html#270-277' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.decode' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.ImageClearValue.html#tymethod.decode' class='fnname'>decode</a>(&amp;self, value: F::ClearValue) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='enum' href='../../../vulkano/format/enum.ClearValue.html' title='vulkano::format::ClearValue'>ClearValue</a>&gt;</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;P, F, A&gt; <a class='trait' href='../../../vulkano/image/traits/trait.ImageContent.html' title='vulkano::image::traits::ImageContent'>ImageContent</a>&lt;P&gt; for <a class='struct' href='../../../vulkano/image/attachment/struct.AttachmentImage.html' title='vulkano::image::attachment::AttachmentImage'>AttachmentImage</a>&lt;F, A&gt; <span class='where'>where F: 'static + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Send.html' title='core::marker::Send'>Send</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html' title='core::marker::Sync'>Sync</a>, A: <a class='trait' href='../../../vulkano/memory/pool/trait.MemoryPool.html' title='vulkano::memory::pool::MemoryPool'>MemoryPool</a></span></code></span><span class='out-of-band'><a id='src-12843' class='srclink' href='../../../src/vulkano/vulkano/src/image/attachment.rs.html#279-286' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.matches_format' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.ImageContent.html#tymethod.matches_format' class='fnname'>matches_format</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;F, A&gt; <a class='trait' href='../../../vulkano/image/traits/trait.ImageView.html' title='vulkano::image::traits::ImageView'>ImageView</a> for <a class='struct' href='../../../vulkano/image/attachment/struct.AttachmentImage.html' title='vulkano::image::attachment::AttachmentImage'>AttachmentImage</a>&lt;F, A&gt; <span class='where'>where F: 'static + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Send.html' title='core::marker::Send'>Send</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html' title='core::marker::Sync'>Sync</a>, A: <a class='trait' href='../../../vulkano/memory/pool/trait.MemoryPool.html' title='vulkano::memory::pool::MemoryPool'>MemoryPool</a></span></code></span><span class='out-of-band'><a id='src-12849' class='srclink' href='../../../src/vulkano/vulkano/src/image/attachment.rs.html#288-335' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.parent' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.ImageView.html#tymethod.parent' class='fnname'>parent</a>(&amp;self) -&gt; &amp;<a class='trait' href='../../../vulkano/image/traits/trait.Image.html' title='vulkano::image::traits::Image'>Image</a></code></h4>
+<h4 id='method.parent_arc' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.ImageView.html#tymethod.parent_arc' class='fnname'>parent_arc</a>(me: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;Self&gt;) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='trait' href='../../../vulkano/image/traits/trait.Image.html' title='vulkano::image::traits::Image'>Image</a>&gt; <span class='where'>where Self: <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a></span></code></h4>
+<h4 id='method.blocks-1' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.ImageView.html#tymethod.blocks' class='fnname'>blocks</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;</code></h4>
+<h4 id='method.inner_view' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.ImageView.html#tymethod.inner_view' class='fnname'>inner_view</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../../vulkano/image/sys/struct.UnsafeImageView.html' title='vulkano::image::sys::UnsafeImageView'>UnsafeImageView</a></code></h4>
+<h4 id='method.descriptor_set_storage_image_layout' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.ImageView.html#tymethod.descriptor_set_storage_image_layout' class='fnname'>descriptor_set_storage_image_layout</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a></code></h4>
+<h4 id='method.descriptor_set_combined_image_sampler_layout' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.ImageView.html#tymethod.descriptor_set_combined_image_sampler_layout' class='fnname'>descriptor_set_combined_image_sampler_layout</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a></code></h4>
+<h4 id='method.descriptor_set_sampled_image_layout' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.ImageView.html#tymethod.descriptor_set_sampled_image_layout' class='fnname'>descriptor_set_sampled_image_layout</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a></code></h4>
+<h4 id='method.descriptor_set_input_attachment_layout' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.ImageView.html#tymethod.descriptor_set_input_attachment_layout' class='fnname'>descriptor_set_input_attachment_layout</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>Layout</a></code></h4>
+<h4 id='method.identity_swizzle' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.ImageView.html#tymethod.identity_swizzle' class='fnname'>identity_swizzle</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.format-1' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.ImageView.html#method.format' class='fnname'>format</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></h4>
+<h4 id='method.samples-1' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.ImageView.html#method.samples' class='fnname'>samples</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
+<h4 id='method.can_be_sampled' class='method'><code>fn <a href='../../../vulkano/image/traits/trait.ImageView.html#method.can_be_sampled' class='fnname'>can_be_sampled</a>(&amp;self, sampler: &amp;<a class='struct' href='../../../vulkano/sampler/struct.Sampler.html' title='vulkano::sampler::Sampler'>Sampler</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><span class='in-band'><code>impl&lt;F: <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a>, A: <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a>&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../../vulkano/image/attachment/struct.AttachmentImage.html' title='vulkano::image::attachment::AttachmentImage'>AttachmentImage</a>&lt;F, A&gt; <span class='where'>where A: <a class='trait' href='../../../vulkano/memory/pool/trait.MemoryPool.html' title='vulkano::memory::pool::MemoryPool'>MemoryPool</a>, A::Alloc: <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a></span></code></span><span class='out-of-band'><a id='src-12736' class='srclink' href='../../../src/vulkano/vulkano/src/image/attachment.rs.html#69' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `SamplerCreateInfo` struct in crate `vk_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, SamplerCreateInfo">
+
+    <title>vk_sys::SamplerCreateInfo - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>vk_sys</a></p><script>window.sidebarCurrent = {name: 'SamplerCreateInfo', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>vk_sys</a>::<wbr><a class='struct' href=''>SamplerCreateInfo</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1479' class='srclink' href='../src/vk_sys/vk-sys/src/lib.rs.html#1782-1801' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct SamplerCreateInfo {
+    pub sType: <a class='type' href='../vk_sys/type.StructureType.html' title='vk_sys::StructureType'>StructureType</a>,
+    pub pNext: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='https://doc.rust-lang.org/nightly/std/os/raw/enum.c_void.html' title='std::os::raw::c_void'>c_void</a>,
+    pub flags: <a class='type' href='../vk_sys/type.SamplerCreateFlags.html' title='vk_sys::SamplerCreateFlags'>SamplerCreateFlags</a>,
+    pub magFilter: <a class='type' href='../vk_sys/type.Filter.html' title='vk_sys::Filter'>Filter</a>,
+    pub minFilter: <a class='type' href='../vk_sys/type.Filter.html' title='vk_sys::Filter'>Filter</a>,
+    pub mipmapMode: <a class='type' href='../vk_sys/type.SamplerMipmapMode.html' title='vk_sys::SamplerMipmapMode'>SamplerMipmapMode</a>,
+    pub addressModeU: <a class='type' href='../vk_sys/type.SamplerAddressMode.html' title='vk_sys::SamplerAddressMode'>SamplerAddressMode</a>,
+    pub addressModeV: <a class='type' href='../vk_sys/type.SamplerAddressMode.html' title='vk_sys::SamplerAddressMode'>SamplerAddressMode</a>,
+    pub addressModeW: <a class='type' href='../vk_sys/type.SamplerAddressMode.html' title='vk_sys::SamplerAddressMode'>SamplerAddressMode</a>,
+    pub mipLodBias: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub anisotropyEnable: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub maxAnisotropy: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub compareEnable: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub compareOp: <a class='type' href='../vk_sys/type.CompareOp.html' title='vk_sys::CompareOp'>CompareOp</a>,
+    pub minLod: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub maxLod: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub borderColor: <a class='type' href='../vk_sys/type.BorderColor.html' title='vk_sys::BorderColor'>BorderColor</a>,
+    pub unnormalizedCoordinates: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+}</pre><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                             <td id='structfield.sType'><code>sType</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.pNext'><code>pNext</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.flags'><code>flags</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.magFilter'><code>magFilter</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.minFilter'><code>minFilter</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.mipmapMode'><code>mipmapMode</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.addressModeU'><code>addressModeU</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.addressModeV'><code>addressModeV</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.addressModeW'><code>addressModeW</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.mipLodBias'><code>mipLodBias</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.anisotropyEnable'><code>anisotropyEnable</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxAnisotropy'><code>maxAnisotropy</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.compareEnable'><code>compareEnable</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.compareOp'><code>compareOp</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.minLod'><code>minLod</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.maxLod'><code>maxLod</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.borderColor'><code>borderColor</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.unnormalizedCoordinates'><code>unnormalizedCoordinates</code></td><td></td></tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "vk_sys";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

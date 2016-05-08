@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AttachmentImage","Image whose purpose is to be used as a framebuffer attachment."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Dimensions",""],["ImageCreationError","Error that can happen when creating an instance."],["Layout",""]],"struct":[["UnsafeImage","A storage for pixels or arbitrary data."],["UnsafeImageView",""],["Usage","Describes how an image is going to be used. This is **not** an optimization."]]});

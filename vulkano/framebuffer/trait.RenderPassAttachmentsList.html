@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RenderPassAttachmentsList` trait in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RenderPassAttachmentsList">
+
+    <title>vulkano::framebuffer::RenderPassAttachmentsList - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>framebuffer</a></p><script>window.sidebarCurrent = {name: 'RenderPassAttachmentsList', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content trait">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>framebuffer</a>::<wbr><a class='trait' href=''>RenderPassAttachmentsList</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-12475' class='srclink' href='../../src/vulkano/vulkano/src/framebuffer/traits.rs.html#194-204' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub unsafe trait RenderPassAttachmentsList&lt;A&gt;: <a class='trait' href='../../vulkano/framebuffer/trait.RenderPass.html' title='vulkano::framebuffer::RenderPass'>RenderPass</a> {
+    type <a href='#associatedtype.AttachmentsIter' class='type'>AttachmentsIter</a>: <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.ExactSizeIterator.html' title='core::iter::traits::ExactSizeIterator'>ExactSizeIterator</a>&lt;Item=<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='trait' href='../../vulkano/image/traits/trait.ImageView.html' title='vulkano::image::traits::ImageView'>ImageView</a>&gt;, <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='trait' href='../../vulkano/image/traits/trait.Image.html' title='vulkano::image::traits::Image'>Image</a>&gt;, <a class='enum' href='../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>ImageLayout</a>, <a class='enum' href='../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>ImageLayout</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;;
+    fn <a href='#tymethod.convert_attachments_list' class='fnname'>convert_attachments_list</a>(&amp;self, A) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;Self::<a class='trait' href='../../vulkano/framebuffer/trait.RenderPassAttachmentsList.html' title='vulkano::framebuffer::RenderPassAttachmentsList'>AttachmentsIter</a>, <a class='enum' href='../../vulkano/framebuffer/enum.FramebufferCreationError.html' title='vulkano::framebuffer::FramebufferCreationError'>FramebufferCreationError</a>&gt;;
+}</pre><div class='docblock'><p>Extension trait for <code>RenderPass</code>. Defines which types are allowed as an attachments list.</p>
+
+<h1 id='safety' class='section-header'><a href='#safety'>Safety</a></h1>
+<p>This trait is unsafe because it&#39;s the job of the implementation to check whether the
+attachments list is correct. What needs to be checked:</p>
+
+<ul>
+<li>That the attachments&#39; format and samples count match the render pass layout.</li>
+<li>That the attachments have been created with the proper usage flags.</li>
+<li>That the attachments only expose one mipmap.</li>
+<li>That the attachments use identity components swizzling.
+TODO: more stuff with aliasing</li>
+</ul>
+</div>
+            <h2 id='associated-types'>Associated Types</h2>
+            <div class='methods'>
+        <h3 id='associatedtype.AttachmentsIter' class='method stab '><code>type <a href='#associatedtype.AttachmentsIter' class='type'>AttachmentsIter</a>: <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.ExactSizeIterator.html' title='core::iter::traits::ExactSizeIterator'>ExactSizeIterator</a>&lt;Item=<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='trait' href='../../vulkano/image/traits/trait.ImageView.html' title='vulkano::image::traits::ImageView'>ImageView</a>&gt;, <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='trait' href='../../vulkano/image/traits/trait.Image.html' title='vulkano::image::traits::Image'>Image</a>&gt;, <a class='enum' href='../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>ImageLayout</a>, <a class='enum' href='../../vulkano/image/sys/enum.Layout.html' title='vulkano::image::sys::Layout'>ImageLayout</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;</code></h3><div class='docblock'><p>A decoded <code>A</code>.</p>
+</div></div>
+            <h2 id='required-methods'>Required Methods</h2>
+            <div class='methods'>
+        <h3 id='tymethod.convert_attachments_list' class='method stab '><code>fn <a href='#tymethod.convert_attachments_list' class='fnname'>convert_attachments_list</a>(&amp;self, A) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;Self::<a class='trait' href='../../vulkano/framebuffer/trait.RenderPassAttachmentsList.html' title='vulkano::framebuffer::RenderPassAttachmentsList'>AttachmentsIter</a>, <a class='enum' href='../../vulkano/framebuffer/enum.FramebufferCreationError.html' title='vulkano::framebuffer::FramebufferCreationError'>FramebufferCreationError</a>&gt;</code></h3><div class='docblock'><p>Decodes a <code>A</code> into a list of attachments.</p>
+
+<p>Returns an error if one of the attachments is wrong.</p>
+</div></div>
+        <h2 id='implementors'>Implementors</h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><code>impl RenderPassAttachmentsList for <a class='struct' href='../../vulkano/framebuffer/struct.EmptySinglePassRenderPass.html' title='vulkano::framebuffer::EmptySinglePassRenderPass'>EmptySinglePassRenderPass</a></code></li>
+</ul><script type="text/javascript" async
+                         src="../../implementors/vulkano/framebuffer/trait.RenderPassAttachmentsList.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

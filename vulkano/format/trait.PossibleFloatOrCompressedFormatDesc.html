@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PossibleFloatOrCompressedFormatDesc` trait in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PossibleFloatOrCompressedFormatDesc">
+
+    <title>vulkano::format::PossibleFloatOrCompressedFormatDesc - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>format</a></p><script>window.sidebarCurrent = {name: 'PossibleFloatOrCompressedFormatDesc', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content trait">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>format</a>::<wbr><a class='trait' href=''>PossibleFloatOrCompressedFormatDesc</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-10984' class='srclink' href='../../src/vulkano/vulkano/src/format.rs.html#646-649' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub unsafe trait PossibleFloatOrCompressedFormatDesc: <a class='trait' href='../../vulkano/format/trait.FormatDesc.html' title='vulkano::format::FormatDesc'>FormatDesc</a> {
+    fn <a href='#tymethod.is_float_or_compressed' class='fnname'>is_float_or_compressed</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>;
+}</pre><div class='docblock'><p>Trait for types that can possibly describe a float or compressed attachment.</p>
+</div>
+            <h2 id='required-methods'>Required Methods</h2>
+            <div class='methods'>
+        <h3 id='tymethod.is_float_or_compressed' class='method stab '><code>fn <a href='#tymethod.is_float_or_compressed' class='fnname'>is_float_or_compressed</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h3><div class='docblock'><p>Returns true if the format is a float or compressed format.</p>
+</div></div>
+        <h2 id='implementors'>Implementors</h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R4G4UnormPack8.html' title='vulkano::format::R4G4UnormPack8'>R4G4UnormPack8</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R4G4B4A4UnormPack16.html' title='vulkano::format::R4G4B4A4UnormPack16'>R4G4B4A4UnormPack16</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.B4G4R4A4UnormPack16.html' title='vulkano::format::B4G4R4A4UnormPack16'>B4G4R4A4UnormPack16</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R5G6B5UnormPack16.html' title='vulkano::format::R5G6B5UnormPack16'>R5G6B5UnormPack16</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.B5G6R5UnormPack16.html' title='vulkano::format::B5G6R5UnormPack16'>B5G6R5UnormPack16</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R5G5B5A1UnormPack16.html' title='vulkano::format::R5G5B5A1UnormPack16'>R5G5B5A1UnormPack16</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.B5G5R5A1UnormPack16.html' title='vulkano::format::B5G5R5A1UnormPack16'>B5G5R5A1UnormPack16</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.A1R5G5B5UnormPack16.html' title='vulkano::format::A1R5G5B5UnormPack16'>A1R5G5B5UnormPack16</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8Unorm.html' title='vulkano::format::R8Unorm'>R8Unorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8Snorm.html' title='vulkano::format::R8Snorm'>R8Snorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8Uscaled.html' title='vulkano::format::R8Uscaled'>R8Uscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8Sscaled.html' title='vulkano::format::R8Sscaled'>R8Sscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8Srgb.html' title='vulkano::format::R8Srgb'>R8Srgb</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8G8Unorm.html' title='vulkano::format::R8G8Unorm'>R8G8Unorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8G8Snorm.html' title='vulkano::format::R8G8Snorm'>R8G8Snorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8G8Uscaled.html' title='vulkano::format::R8G8Uscaled'>R8G8Uscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8G8Sscaled.html' title='vulkano::format::R8G8Sscaled'>R8G8Sscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8G8Srgb.html' title='vulkano::format::R8G8Srgb'>R8G8Srgb</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8G8B8Unorm.html' title='vulkano::format::R8G8B8Unorm'>R8G8B8Unorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8G8B8Snorm.html' title='vulkano::format::R8G8B8Snorm'>R8G8B8Snorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8G8B8Uscaled.html' title='vulkano::format::R8G8B8Uscaled'>R8G8B8Uscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8G8B8Sscaled.html' title='vulkano::format::R8G8B8Sscaled'>R8G8B8Sscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8G8B8Srgb.html' title='vulkano::format::R8G8B8Srgb'>R8G8B8Srgb</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.B8G8R8Unorm.html' title='vulkano::format::B8G8R8Unorm'>B8G8R8Unorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.B8G8R8Snorm.html' title='vulkano::format::B8G8R8Snorm'>B8G8R8Snorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.B8G8R8Uscaled.html' title='vulkano::format::B8G8R8Uscaled'>B8G8R8Uscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.B8G8R8Sscaled.html' title='vulkano::format::B8G8R8Sscaled'>B8G8R8Sscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.B8G8R8Srgb.html' title='vulkano::format::B8G8R8Srgb'>B8G8R8Srgb</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8G8B8A8Unorm.html' title='vulkano::format::R8G8B8A8Unorm'>R8G8B8A8Unorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8G8B8A8Snorm.html' title='vulkano::format::R8G8B8A8Snorm'>R8G8B8A8Snorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8G8B8A8Uscaled.html' title='vulkano::format::R8G8B8A8Uscaled'>R8G8B8A8Uscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8G8B8A8Sscaled.html' title='vulkano::format::R8G8B8A8Sscaled'>R8G8B8A8Sscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R8G8B8A8Srgb.html' title='vulkano::format::R8G8B8A8Srgb'>R8G8B8A8Srgb</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.B8G8R8A8Unorm.html' title='vulkano::format::B8G8R8A8Unorm'>B8G8R8A8Unorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.B8G8R8A8Snorm.html' title='vulkano::format::B8G8R8A8Snorm'>B8G8R8A8Snorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.B8G8R8A8Uscaled.html' title='vulkano::format::B8G8R8A8Uscaled'>B8G8R8A8Uscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.B8G8R8A8Sscaled.html' title='vulkano::format::B8G8R8A8Sscaled'>B8G8R8A8Sscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.B8G8R8A8Srgb.html' title='vulkano::format::B8G8R8A8Srgb'>B8G8R8A8Srgb</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.A8B8G8R8UnormPack32.html' title='vulkano::format::A8B8G8R8UnormPack32'>A8B8G8R8UnormPack32</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.A8B8G8R8SnormPack32.html' title='vulkano::format::A8B8G8R8SnormPack32'>A8B8G8R8SnormPack32</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.A8B8G8R8UscaledPack32.html' title='vulkano::format::A8B8G8R8UscaledPack32'>A8B8G8R8UscaledPack32</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.A8B8G8R8SscaledPack32.html' title='vulkano::format::A8B8G8R8SscaledPack32'>A8B8G8R8SscaledPack32</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.A8B8G8R8SrgbPack32.html' title='vulkano::format::A8B8G8R8SrgbPack32'>A8B8G8R8SrgbPack32</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.A2R10G10B10UnormPack32.html' title='vulkano::format::A2R10G10B10UnormPack32'>A2R10G10B10UnormPack32</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.A2R10G10B10SnormPack32.html' title='vulkano::format::A2R10G10B10SnormPack32'>A2R10G10B10SnormPack32</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.A2R10G10B10UscaledPack32.html' title='vulkano::format::A2R10G10B10UscaledPack32'>A2R10G10B10UscaledPack32</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.A2R10G10B10SscaledPack32.html' title='vulkano::format::A2R10G10B10SscaledPack32'>A2R10G10B10SscaledPack32</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.A2B10G10R10UnormPack32.html' title='vulkano::format::A2B10G10R10UnormPack32'>A2B10G10R10UnormPack32</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.A2B10G10R10SnormPack32.html' title='vulkano::format::A2B10G10R10SnormPack32'>A2B10G10R10SnormPack32</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.A2B10G10R10UscaledPack32.html' title='vulkano::format::A2B10G10R10UscaledPack32'>A2B10G10R10UscaledPack32</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.A2B10G10R10SscaledPack32.html' title='vulkano::format::A2B10G10R10SscaledPack32'>A2B10G10R10SscaledPack32</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16Unorm.html' title='vulkano::format::R16Unorm'>R16Unorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16Snorm.html' title='vulkano::format::R16Snorm'>R16Snorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16Uscaled.html' title='vulkano::format::R16Uscaled'>R16Uscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16Sscaled.html' title='vulkano::format::R16Sscaled'>R16Sscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16Sfloat.html' title='vulkano::format::R16Sfloat'>R16Sfloat</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16G16Unorm.html' title='vulkano::format::R16G16Unorm'>R16G16Unorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16G16Snorm.html' title='vulkano::format::R16G16Snorm'>R16G16Snorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16G16Uscaled.html' title='vulkano::format::R16G16Uscaled'>R16G16Uscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16G16Sscaled.html' title='vulkano::format::R16G16Sscaled'>R16G16Sscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16G16Sfloat.html' title='vulkano::format::R16G16Sfloat'>R16G16Sfloat</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16G16B16Unorm.html' title='vulkano::format::R16G16B16Unorm'>R16G16B16Unorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16G16B16Snorm.html' title='vulkano::format::R16G16B16Snorm'>R16G16B16Snorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16G16B16Uscaled.html' title='vulkano::format::R16G16B16Uscaled'>R16G16B16Uscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16G16B16Sscaled.html' title='vulkano::format::R16G16B16Sscaled'>R16G16B16Sscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16G16B16Sfloat.html' title='vulkano::format::R16G16B16Sfloat'>R16G16B16Sfloat</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16G16B16A16Unorm.html' title='vulkano::format::R16G16B16A16Unorm'>R16G16B16A16Unorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16G16B16A16Snorm.html' title='vulkano::format::R16G16B16A16Snorm'>R16G16B16A16Snorm</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16G16B16A16Uscaled.html' title='vulkano::format::R16G16B16A16Uscaled'>R16G16B16A16Uscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16G16B16A16Sscaled.html' title='vulkano::format::R16G16B16A16Sscaled'>R16G16B16A16Sscaled</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R16G16B16A16Sfloat.html' title='vulkano::format::R16G16B16A16Sfloat'>R16G16B16A16Sfloat</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R32Sfloat.html' title='vulkano::format::R32Sfloat'>R32Sfloat</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R32G32Sfloat.html' title='vulkano::format::R32G32Sfloat'>R32G32Sfloat</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R32G32B32Sfloat.html' title='vulkano::format::R32G32B32Sfloat'>R32G32B32Sfloat</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R32G32B32A32Sfloat.html' title='vulkano::format::R32G32B32A32Sfloat'>R32G32B32A32Sfloat</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R64Sfloat.html' title='vulkano::format::R64Sfloat'>R64Sfloat</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R64G64Sfloat.html' title='vulkano::format::R64G64Sfloat'>R64G64Sfloat</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R64G64B64Sfloat.html' title='vulkano::format::R64G64B64Sfloat'>R64G64B64Sfloat</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.R64G64B64A64Sfloat.html' title='vulkano::format::R64G64B64A64Sfloat'>R64G64B64A64Sfloat</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.B10G11R11UfloatPack32.html' title='vulkano::format::B10G11R11UfloatPack32'>B10G11R11UfloatPack32</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.E5B9G9R9UfloatPack32.html' title='vulkano::format::E5B9G9R9UfloatPack32'>E5B9G9R9UfloatPack32</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.BC1_RGBUnormBlock.html' title='vulkano::format::BC1_RGBUnormBlock'>BC1_RGBUnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.BC1_RGBSrgbBlock.html' title='vulkano::format::BC1_RGBSrgbBlock'>BC1_RGBSrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.BC1_RGBAUnormBlock.html' title='vulkano::format::BC1_RGBAUnormBlock'>BC1_RGBAUnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.BC1_RGBASrgbBlock.html' title='vulkano::format::BC1_RGBASrgbBlock'>BC1_RGBASrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.BC2UnormBlock.html' title='vulkano::format::BC2UnormBlock'>BC2UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.BC2SrgbBlock.html' title='vulkano::format::BC2SrgbBlock'>BC2SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.BC3UnormBlock.html' title='vulkano::format::BC3UnormBlock'>BC3UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.BC3SrgbBlock.html' title='vulkano::format::BC3SrgbBlock'>BC3SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.BC4UnormBlock.html' title='vulkano::format::BC4UnormBlock'>BC4UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.BC4SnormBlock.html' title='vulkano::format::BC4SnormBlock'>BC4SnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.BC5UnormBlock.html' title='vulkano::format::BC5UnormBlock'>BC5UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.BC5SnormBlock.html' title='vulkano::format::BC5SnormBlock'>BC5SnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.BC6HUfloatBlock.html' title='vulkano::format::BC6HUfloatBlock'>BC6HUfloatBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.BC6HSfloatBlock.html' title='vulkano::format::BC6HSfloatBlock'>BC6HSfloatBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.BC7UnormBlock.html' title='vulkano::format::BC7UnormBlock'>BC7UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.BC7SrgbBlock.html' title='vulkano::format::BC7SrgbBlock'>BC7SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ETC2_R8G8B8UnormBlock.html' title='vulkano::format::ETC2_R8G8B8UnormBlock'>ETC2_R8G8B8UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ETC2_R8G8B8SrgbBlock.html' title='vulkano::format::ETC2_R8G8B8SrgbBlock'>ETC2_R8G8B8SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ETC2_R8G8B8A1UnormBlock.html' title='vulkano::format::ETC2_R8G8B8A1UnormBlock'>ETC2_R8G8B8A1UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ETC2_R8G8B8A1SrgbBlock.html' title='vulkano::format::ETC2_R8G8B8A1SrgbBlock'>ETC2_R8G8B8A1SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ETC2_R8G8B8A8UnormBlock.html' title='vulkano::format::ETC2_R8G8B8A8UnormBlock'>ETC2_R8G8B8A8UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ETC2_R8G8B8A8SrgbBlock.html' title='vulkano::format::ETC2_R8G8B8A8SrgbBlock'>ETC2_R8G8B8A8SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.EAC_R11UnormBlock.html' title='vulkano::format::EAC_R11UnormBlock'>EAC_R11UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.EAC_R11SnormBlock.html' title='vulkano::format::EAC_R11SnormBlock'>EAC_R11SnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.EAC_R11G11UnormBlock.html' title='vulkano::format::EAC_R11G11UnormBlock'>EAC_R11G11UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.EAC_R11G11SnormBlock.html' title='vulkano::format::EAC_R11G11SnormBlock'>EAC_R11G11SnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_4x4UnormBlock.html' title='vulkano::format::ASTC_4x4UnormBlock'>ASTC_4x4UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_4x4SrgbBlock.html' title='vulkano::format::ASTC_4x4SrgbBlock'>ASTC_4x4SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_5x4UnormBlock.html' title='vulkano::format::ASTC_5x4UnormBlock'>ASTC_5x4UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_5x4SrgbBlock.html' title='vulkano::format::ASTC_5x4SrgbBlock'>ASTC_5x4SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_5x5UnormBlock.html' title='vulkano::format::ASTC_5x5UnormBlock'>ASTC_5x5UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_5x5SrgbBlock.html' title='vulkano::format::ASTC_5x5SrgbBlock'>ASTC_5x5SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_6x5UnormBlock.html' title='vulkano::format::ASTC_6x5UnormBlock'>ASTC_6x5UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_6x5SrgbBlock.html' title='vulkano::format::ASTC_6x5SrgbBlock'>ASTC_6x5SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_6x6UnormBlock.html' title='vulkano::format::ASTC_6x6UnormBlock'>ASTC_6x6UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_6x6SrgbBlock.html' title='vulkano::format::ASTC_6x6SrgbBlock'>ASTC_6x6SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_8x5UnormBlock.html' title='vulkano::format::ASTC_8x5UnormBlock'>ASTC_8x5UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_8x5SrgbBlock.html' title='vulkano::format::ASTC_8x5SrgbBlock'>ASTC_8x5SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_8x6UnormBlock.html' title='vulkano::format::ASTC_8x6UnormBlock'>ASTC_8x6UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_8x6SrgbBlock.html' title='vulkano::format::ASTC_8x6SrgbBlock'>ASTC_8x6SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_8x8UnormBlock.html' title='vulkano::format::ASTC_8x8UnormBlock'>ASTC_8x8UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_8x8SrgbBlock.html' title='vulkano::format::ASTC_8x8SrgbBlock'>ASTC_8x8SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_10x5UnormBlock.html' title='vulkano::format::ASTC_10x5UnormBlock'>ASTC_10x5UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_10x5SrgbBlock.html' title='vulkano::format::ASTC_10x5SrgbBlock'>ASTC_10x5SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_10x6UnormBlock.html' title='vulkano::format::ASTC_10x6UnormBlock'>ASTC_10x6UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_10x6SrgbBlock.html' title='vulkano::format::ASTC_10x6SrgbBlock'>ASTC_10x6SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_10x8UnormBlock.html' title='vulkano::format::ASTC_10x8UnormBlock'>ASTC_10x8UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_10x8SrgbBlock.html' title='vulkano::format::ASTC_10x8SrgbBlock'>ASTC_10x8SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_10x10UnormBlock.html' title='vulkano::format::ASTC_10x10UnormBlock'>ASTC_10x10UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_10x10SrgbBlock.html' title='vulkano::format::ASTC_10x10SrgbBlock'>ASTC_10x10SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_12x10UnormBlock.html' title='vulkano::format::ASTC_12x10UnormBlock'>ASTC_12x10UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_12x10SrgbBlock.html' title='vulkano::format::ASTC_12x10SrgbBlock'>ASTC_12x10SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_12x12UnormBlock.html' title='vulkano::format::ASTC_12x12UnormBlock'>ASTC_12x12UnormBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='struct' href='../../vulkano/format/struct.ASTC_12x12SrgbBlock.html' title='vulkano::format::ASTC_12x12SrgbBlock'>ASTC_12x12SrgbBlock</a></code></li>
+<li><code>impl PossibleFloatOrCompressedFormatDesc for <a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a></code></li>
+</ul><script type="text/javascript" async
+                         src="../../implementors/vulkano/format/trait.PossibleFloatOrCompressedFormatDesc.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

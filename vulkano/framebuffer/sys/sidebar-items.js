@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["RenderPassCreationError","Error that can happen when creating a compute pipeline."]],"struct":[["UnsafeRenderPass","Defines the layout of multiple subpasses."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["DescriptorType","Describes what kind of resource may later be bound to a descriptor."]],"struct":[["DescriptorDesc","Describes a single descriptor."],["ShaderStages","Describes which shader stages have access to a descriptor."]]});

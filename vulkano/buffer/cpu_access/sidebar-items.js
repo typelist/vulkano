@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CpuAccessibleBuffer","Buffer whose content is accessible by the CPU."],["ReadLock","Object that can be used to read or write the content of a `CpuAccessBuffer`."],["WriteLock","Object that can be used to read or write the content of a `CpuAccessBuffer`."]]});

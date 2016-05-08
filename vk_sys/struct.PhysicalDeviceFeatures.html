@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PhysicalDeviceFeatures` struct in crate `vk_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PhysicalDeviceFeatures">
+
+    <title>vk_sys::PhysicalDeviceFeatures - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>vk_sys</a></p><script>window.sidebarCurrent = {name: 'PhysicalDeviceFeatures', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>vk_sys</a>::<wbr><a class='struct' href=''>PhysicalDeviceFeatures</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-895' class='srclink' href='../src/vk_sys/vk-sys/src/lib.rs.html#1000-1056' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct PhysicalDeviceFeatures {
+    pub robustBufferAccess: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub fullDrawIndexUint32: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub imageCubeArray: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub independentBlend: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub geometryShader: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub tessellationShader: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub sampleRateShading: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub dualSrcBlend: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub logicOp: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub multiDrawIndirect: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub drawIndirectFirstInstance: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub depthClamp: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub depthBiasClamp: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub fillModeNonSolid: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub depthBounds: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub wideLines: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub largePoints: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub alphaToOne: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub multiViewport: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub samplerAnisotropy: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub textureCompressionETC2: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub textureCompressionASTC_LDR: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub textureCompressionBC: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub occlusionQueryPrecise: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub pipelineStatisticsQuery: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub vertexPipelineStoresAndAtomics: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub fragmentStoresAndAtomics: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub shaderTessellationAndGeometryPointSize: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub shaderImageGatherExtended: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub shaderStorageImageExtendedFormats: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub shaderStorageImageMultisample: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub shaderStorageImageReadWithoutFormat: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub shaderStorageImageWriteWithoutFormat: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub shaderUniformBufferArrayDynamicIndexing: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub shaderSampledImageArrayDynamicIndexing: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub shaderStorageBufferArrayDynamicIndexing: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub shaderStorageImageArrayDynamicIndexing: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub shaderClipDistance: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub shaderCullDistance: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub shaderf3264: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub shaderInt64: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub shaderInt16: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub shaderResourceResidency: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub shaderResourceMinLod: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub sparseBinding: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub sparseResidencyBuffer: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub sparseResidencyImage2D: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub sparseResidencyImage3D: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub sparseResidency2Samples: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub sparseResidency4Samples: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub sparseResidency8Samples: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub sparseResidency16Samples: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub sparseResidencyAliased: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub variableMultisampleRate: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+    pub inheritedQueries: <a class='type' href='../vk_sys/type.Bool32.html' title='vk_sys::Bool32'>Bool32</a>,
+}</pre><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                             <td id='structfield.robustBufferAccess'><code>robustBufferAccess</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.fullDrawIndexUint32'><code>fullDrawIndexUint32</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.imageCubeArray'><code>imageCubeArray</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.independentBlend'><code>independentBlend</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.geometryShader'><code>geometryShader</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.tessellationShader'><code>tessellationShader</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.sampleRateShading'><code>sampleRateShading</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.dualSrcBlend'><code>dualSrcBlend</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.logicOp'><code>logicOp</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.multiDrawIndirect'><code>multiDrawIndirect</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.drawIndirectFirstInstance'><code>drawIndirectFirstInstance</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.depthClamp'><code>depthClamp</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.depthBiasClamp'><code>depthBiasClamp</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.fillModeNonSolid'><code>fillModeNonSolid</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.depthBounds'><code>depthBounds</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.wideLines'><code>wideLines</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.largePoints'><code>largePoints</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.alphaToOne'><code>alphaToOne</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.multiViewport'><code>multiViewport</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.samplerAnisotropy'><code>samplerAnisotropy</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.textureCompressionETC2'><code>textureCompressionETC2</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.textureCompressionASTC_LDR'><code>textureCompressionASTC_LDR</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.textureCompressionBC'><code>textureCompressionBC</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.occlusionQueryPrecise'><code>occlusionQueryPrecise</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.pipelineStatisticsQuery'><code>pipelineStatisticsQuery</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.vertexPipelineStoresAndAtomics'><code>vertexPipelineStoresAndAtomics</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.fragmentStoresAndAtomics'><code>fragmentStoresAndAtomics</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.shaderTessellationAndGeometryPointSize'><code>shaderTessellationAndGeometryPointSize</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.shaderImageGatherExtended'><code>shaderImageGatherExtended</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.shaderStorageImageExtendedFormats'><code>shaderStorageImageExtendedFormats</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.shaderStorageImageMultisample'><code>shaderStorageImageMultisample</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.shaderStorageImageReadWithoutFormat'><code>shaderStorageImageReadWithoutFormat</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.shaderStorageImageWriteWithoutFormat'><code>shaderStorageImageWriteWithoutFormat</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.shaderUniformBufferArrayDynamicIndexing'><code>shaderUniformBufferArrayDynamicIndexing</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.shaderSampledImageArrayDynamicIndexing'><code>shaderSampledImageArrayDynamicIndexing</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.shaderStorageBufferArrayDynamicIndexing'><code>shaderStorageBufferArrayDynamicIndexing</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.shaderStorageImageArrayDynamicIndexing'><code>shaderStorageImageArrayDynamicIndexing</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.shaderClipDistance'><code>shaderClipDistance</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.shaderCullDistance'><code>shaderCullDistance</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.shaderf3264'><code>shaderf3264</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.shaderInt64'><code>shaderInt64</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.shaderInt16'><code>shaderInt16</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.shaderResourceResidency'><code>shaderResourceResidency</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.shaderResourceMinLod'><code>shaderResourceMinLod</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.sparseBinding'><code>sparseBinding</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.sparseResidencyBuffer'><code>sparseResidencyBuffer</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.sparseResidencyImage2D'><code>sparseResidencyImage2D</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.sparseResidencyImage3D'><code>sparseResidencyImage3D</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.sparseResidency2Samples'><code>sparseResidency2Samples</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.sparseResidency4Samples'><code>sparseResidency4Samples</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.sparseResidency8Samples'><code>sparseResidency8Samples</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.sparseResidency16Samples'><code>sparseResidency16Samples</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.sparseResidencyAliased'><code>sparseResidencyAliased</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.variableMultisampleRate'><code>variableMultisampleRate</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.inheritedQueries'><code>inheritedQueries</code></td><td></td></tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "vk_sys";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

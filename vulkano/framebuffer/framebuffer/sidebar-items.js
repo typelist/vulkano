@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["FramebufferCreationError","Error that can happen when creating a framebuffer object."]],"struct":[["Framebuffer","Contains the list of images attached to a render pass."]]});

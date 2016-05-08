@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["AcquireError","Error that can happen when calling `acquire_next_image`."],["PresentError","Error that can happen when calling `acquire_next_image`."]],"struct":[["Swapchain","Contains the swapping system and the images that can be shown on a surface."]]});

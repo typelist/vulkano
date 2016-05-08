@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PipelineCache` struct in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PipelineCache">
+
+    <title>vulkano::pipeline::cache::PipelineCache - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>pipeline</a>::<wbr><a href='index.html'>cache</a></p><script>window.sidebarCurrent = {name: 'PipelineCache', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>pipeline</a>::<wbr><a href='index.html'>cache</a>::<wbr><a class='struct' href=''>PipelineCache</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-16786' class='srclink' href='../../../src/vulkano/vulkano/src/pipeline/cache.rs.html#35-38' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct PipelineCache {
+    // some fields omitted
+}</pre><div class='docblock'><p>Opaque cache that contains pipeline objects.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../../vulkano/pipeline/cache/struct.PipelineCache.html' title='vulkano::pipeline::cache::PipelineCache'>PipelineCache</a></code></span><span class='out-of-band'><a id='src-16789' class='srclink' href='../../../src/vulkano/vulkano/src/pipeline/cache.rs.html#40-126' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.with_data' class='method'><code>unsafe fn <a href='#method.with_data' class='fnname'>with_data</a>(device: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;, initial_data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../../vulkano/pipeline/cache/struct.PipelineCache.html' title='vulkano::pipeline::cache::PipelineCache'>PipelineCache</a>&gt;, <a class='enum' href='../../../vulkano/enum.OomError.html' title='vulkano::OomError'>OomError</a>&gt;</code></h4>
+<div class='docblock'><p>Builds a new pipeline cache from existing data.</p>
+
+<p>The data must have been previously obtained with <code>get_data</code>.</p>
+</div><h4 id='method.empty' class='method'><code>fn <a href='#method.empty' class='fnname'>empty</a>(device: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../../vulkano/pipeline/cache/struct.PipelineCache.html' title='vulkano::pipeline::cache::PipelineCache'>PipelineCache</a>&gt;, <a class='enum' href='../../../vulkano/enum.OomError.html' title='vulkano::OomError'>OomError</a>&gt;</code></h4>
+<div class='docblock'><p>Builds a new empty pipeline cache.</p>
+</div><h4 id='method.merge' class='method'><code>fn <a href='#method.merge' class='fnname'>merge</a>&lt;'a, I&gt;(&amp;self, pipelines: I) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../../../vulkano/enum.OomError.html' title='vulkano::OomError'>OomError</a>&gt; <span class='where'>where I: <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.IntoIterator.html' title='core::iter::traits::IntoIterator'>IntoIterator</a>&lt;Item=&amp;'a &amp;'a <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../../vulkano/pipeline/cache/struct.PipelineCache.html' title='vulkano::pipeline::cache::PipelineCache'>PipelineCache</a>&gt;&gt;</span></code></h4>
+<div class='docblock'><p>Merges other pipeline caches into this one.</p>
+
+<h1 id='panic' class='section-header'><a href='#panic'>Panic</a></h1>
+<ul>
+<li>Panicks if <code>self</code> is included in the list of other pipelines.</li>
+</ul>
+</div><h4 id='method.get_data' class='method'><code>fn <a href='#method.get_data' class='fnname'>get_data</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>&gt;, <a class='enum' href='../../../vulkano/enum.OomError.html' title='vulkano::OomError'>OomError</a>&gt;</code></h4>
+<div class='docblock'><p>Obtains the data from the cache.</p>
+
+<p>This data can be stored and then reloaded and passed to <code>PipelineCache::new</code>.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../../vulkano/trait.VulkanObject.html' title='vulkano::VulkanObject'>VulkanObject</a> for <a class='struct' href='../../../vulkano/pipeline/cache/struct.PipelineCache.html' title='vulkano::pipeline::cache::PipelineCache'>PipelineCache</a></code></span><span class='out-of-band'><a id='src-16829' class='srclink' href='../../../src/vulkano/vulkano/src/pipeline/cache.rs.html#128-135' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Object' class='type'><code>type <a href='../../../vulkano/trait.VulkanObject.html#associatedtype.Object' class='type'>Object</a> = <a class='type' href='../../../vk_sys/type.PipelineCache.html' title='vk_sys::PipelineCache'>PipelineCache</a></code></h4>
+<h4 id='method.internal_object' class='method'><code>fn <a href='../../../vulkano/trait.VulkanObject.html#tymethod.internal_object' class='fnname'>internal_object</a>(&amp;self) -&gt; <a class='type' href='../../../vk_sys/type.PipelineCache.html' title='vk_sys::PipelineCache'>PipelineCache</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../../vulkano/pipeline/cache/struct.PipelineCache.html' title='vulkano::pipeline::cache::PipelineCache'>PipelineCache</a></code></span><span class='out-of-band'><a id='src-16833' class='srclink' href='../../../src/vulkano/vulkano/src/pipeline/cache.rs.html#137-145' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ViewportsState` enum in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ViewportsState">
+
+    <title>vulkano::pipeline::viewport::ViewportsState - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>pipeline</a>::<wbr><a href='index.html'>viewport</a></p><script>window.sidebarCurrent = {name: 'ViewportsState', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>pipeline</a>::<wbr><a href='index.html'>viewport</a>::<wbr><a class='enum' href=''>ViewportsState</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-18109' class='srclink' href='../../../src/vulkano/vulkano/src/pipeline/viewport.rs.html#57-87' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum ViewportsState {
+    Fixed {
+        data: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='struct' href='../../../vulkano/pipeline/viewport/struct.Viewport.html' title='vulkano::pipeline::viewport::Viewport'>Viewport</a>, <a class='struct' href='../../../vulkano/pipeline/viewport/struct.Scissor.html' title='vulkano::pipeline::viewport::Scissor'>Scissor</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;,
+    },
+    DynamicViewports {
+        scissors: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../../../vulkano/pipeline/viewport/struct.Scissor.html' title='vulkano::pipeline::viewport::Scissor'>Scissor</a>&gt;,
+    },
+    DynamicScissors {
+        viewports: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../../../vulkano/pipeline/viewport/struct.Viewport.html' title='vulkano::pipeline::viewport::Viewport'>Viewport</a>&gt;,
+    },
+    Dynamic {
+        num: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    },
+}</pre><div class='docblock'><p>List of viewports and scissors that are used when creating a graphics pipeline object.</p>
+
+<p>Note that the number of viewports and scissors must be the same.</p>
+</div><h2 class='variants'>Variants</h2>
+<table class='variants_table'><tr><td id='variant.Fixed'><code>Fixed</code></td><td><div class='docblock'><p>The state is known in advance.</p>
+</div><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Fixed.field.data'><code>data</code></td><td><div class='docblock'><p>State of the viewports and scissors.</p>
+</div></td></tr></table></td><td></td></tr><tr><td id='variant.DynamicViewports'><code>DynamicViewports</code></td><td><div class='docblock'><p>The state of scissors is known in advance, but the state of viewports is dynamic and will
+bet set when drawing.</p>
+
+<p>Note that the number of viewports and scissors must be the same.</p>
+</div><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.DynamicViewports.field.scissors'><code>scissors</code></td><td><div class='docblock'><p>State of the scissors.</p>
+</div></td></tr></table></td><td></td></tr><tr><td id='variant.DynamicScissors'><code>DynamicScissors</code></td><td><div class='docblock'><p>The state of viewports is known in advance, but the state of scissors is dynamic and will
+bet set when drawing.</p>
+
+<p>Note that the number of viewports and scissors must be the same.</p>
+</div><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.DynamicScissors.field.viewports'><code>viewports</code></td><td><div class='docblock'><p>State of the viewports</p>
+</div></td></tr></table></td><td></td></tr><tr><td id='variant.Dynamic'><code>Dynamic</code></td><td><div class='docblock'><p>The state of both the viewports and scissors is dynamic and will be set when drawing.</p>
+</div><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Dynamic.field.num'><code>num</code></td><td><div class='docblock'><p>Number of viewports and scissors.</p>
+</div></td></tr></table></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='enum' href='../../../vulkano/pipeline/viewport/enum.ViewportsState.html' title='vulkano::pipeline::viewport::ViewportsState'>ViewportsState</a></code></span><span class='out-of-band'><a id='src-18137' class='srclink' href='../../../src/vulkano/vulkano/src/pipeline/viewport.rs.html#89-119' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.dynamic_viewports' class='method'><code>fn <a href='#method.dynamic_viewports' class='fnname'>dynamic_viewports</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Returns true if the state of the viewports is dynamic.</p>
+</div><h4 id='method.dynamic_scissors' class='method'><code>fn <a href='#method.dynamic_scissors' class='fnname'>dynamic_scissors</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Returns true if the state of the scissors is dynamic.</p>
+</div><h4 id='method.num_viewports' class='method'><code>fn <a href='#method.num_viewports' class='fnname'>num_viewports</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
+<div class='docblock'><p>Returns the number of viewports and scissors.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../../vulkano/pipeline/viewport/enum.ViewportsState.html' title='vulkano::pipeline::viewport::ViewportsState'>ViewportsState</a></code></span><span class='out-of-band'><a id='src-18118' class='srclink' href='../../../src/vulkano/vulkano/src/pipeline/viewport.rs.html#56' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../../vulkano/pipeline/viewport/enum.ViewportsState.html' title='vulkano::pipeline::viewport::ViewportsState'>ViewportsState</a></code></h4>
+<h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><span class="since">1.0.0</span></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../../vulkano/pipeline/viewport/enum.ViewportsState.html' title='vulkano::pipeline::viewport::ViewportsState'>ViewportsState</a></code></span><span class='out-of-band'><a id='src-18125' class='srclink' href='../../../src/vulkano/vulkano/src/pipeline/viewport.rs.html#56' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

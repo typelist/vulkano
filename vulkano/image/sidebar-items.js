@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ComponentSwizzle",""],["MipmapsCount","Specifies how many mipmaps must be allocated."]],"mod":[["attachment","Image whose purpose is to be used as a framebuffer attachment."],["immutable",""],["swapchain",""],["sys","Low-level implementation of images and images views."],["traits",""]],"struct":[["Swizzle",""]]});

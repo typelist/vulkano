@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Capabilities` struct in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Capabilities">
+
+    <title>vulkano::swapchain::Capabilities - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>swapchain</a></p><script>window.sidebarCurrent = {name: 'Capabilities', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>swapchain</a>::<wbr><a class='struct' href=''>Capabilities</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-18843' class='srclink' href='../../src/vulkano/vulkano/src/swapchain/surface.rs.html#499-539' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Capabilities {
+    pub min_image_count: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub max_image_count: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;,
+    pub current_extent: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 2]</a>&gt;,
+    pub min_image_extent: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 2]</a>,
+    pub max_image_extent: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 2]</a>,
+    pub max_image_array_layers: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    pub supported_transforms: SupportedSurfaceTransforms,
+    pub current_transform: <a class='enum' href='../../vulkano/swapchain/enum.SurfaceTransform.html' title='vulkano::swapchain::SurfaceTransform'>SurfaceTransform</a>,
+    pub supported_composite_alpha: SupportedCompositeAlpha,
+    pub supported_usage_flags: <a class='struct' href='../../vulkano/image/sys/struct.Usage.html' title='vulkano::image::sys::Usage'>ImageUsage</a>,
+    pub supported_formats: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='enum' href='../../vulkano/format/enum.Format.html' title='vulkano::format::Format'>Format</a>, <a class='enum' href='../../vulkano/swapchain/enum.ColorSpace.html' title='vulkano::swapchain::ColorSpace'>ColorSpace</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;,
+    pub present_modes: SupportedPresentModes,
+}</pre><div class='docblock'><p>The capabilities of a surface when used by a physical device.</p>
+
+<p>You have to match these capabilities when you create a swapchain.</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                             <td id='structfield.min_image_count'><code>min_image_count</code></td><td><div class='docblock'><p>Minimum number of images that must be present in the swapchain.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.max_image_count'><code>max_image_count</code></td><td><div class='docblock'><p>Maximum number of images that must be present in the swapchain, or <code>None</code> if there is no
+maximum value. Note that &quot;no maximum&quot; doesn&#39;t mean that you can set a very high value, as
+you may still get out of memory errors.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.current_extent'><code>current_extent</code></td><td><div class='docblock'><p>The current dimensions of the surface. <code>None</code> means that the surface&#39;s dimensions will
+depend on the dimensions of the swapchain that you are going to create.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.min_image_extent'><code>min_image_extent</code></td><td><div class='docblock'><p>Minimum width and height of a swapchain that uses this surface.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.max_image_extent'><code>max_image_extent</code></td><td><div class='docblock'><p>Maximum width and height of a swapchain that uses this surface.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.max_image_array_layers'><code>max_image_array_layers</code></td><td><div class='docblock'><p>Maximum number of image layers if you create an image array. The minimum is 1.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.supported_transforms'><code>supported_transforms</code></td><td><div class='docblock'><p>List of transforms supported for the swapchain.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.current_transform'><code>current_transform</code></td><td><div class='docblock'><p>Current transform used by the surface.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.supported_composite_alpha'><code>supported_composite_alpha</code></td><td><div class='docblock'><p>List of composite alpha modes supports for the swapchain.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.supported_usage_flags'><code>supported_usage_flags</code></td><td><div class='docblock'><p>List of image usages that are supported for images of the swapchain. Only
+the <code>color_attachment</code> usage is guaranteed to be supported.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.supported_formats'><code>supported_formats</code></td><td><div class='docblock'><p>List of formats supported for the swapchain.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.present_modes'><code>present_modes</code></td><td><div class='docblock'><p>List of present modes that are supported. <code>Fifo</code> is always guaranteed to be supported.</p>
+</div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../vulkano/swapchain/struct.Capabilities.html' title='vulkano::swapchain::Capabilities'>Capabilities</a></code></span><span class='out-of-band'><a id='src-18856' class='srclink' href='../../src/vulkano/vulkano/src/swapchain/surface.rs.html#498' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../vulkano/swapchain/struct.Capabilities.html' title='vulkano::swapchain::Capabilities'>Capabilities</a></code></span><span class='out-of-band'><a id='src-18873' class='srclink' href='../../src/vulkano/vulkano/src/swapchain/surface.rs.html#498' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../vulkano/swapchain/struct.Capabilities.html' title='vulkano::swapchain::Capabilities'>Capabilities</a></code></h4>
+<h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><span class="since">1.0.0</span></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

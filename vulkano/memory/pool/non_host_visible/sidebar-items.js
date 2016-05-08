@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["StdNonHostVisibleMemoryTypePool","Memory pool that operates on a given memory type."],["StdNonHostVisibleMemoryTypePoolAlloc",""]]});

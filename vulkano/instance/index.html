@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `instance` mod in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, instance">
+
+    <title>vulkano::instance - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vulkano</a></p><script>window.sidebarCurrent = {name: 'instance', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>vulkano</a>::<wbr><a class='mod' href=''>instance</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-14000' class='srclink' href='../../src/vulkano/vulkano/src/instance/mod.rs.html#10-72' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>API entry point.</p>
+
+<p>The first thing to do before you start using Vulkan is to create an <code>Instance</code> object.</p>
+
+<p>Creating an instance initializes everything and allows you to:</p>
+
+<ul>
+<li>Enumerate physical devices, ie. all the Vulkan implementations that are available on
+the system.</li>
+<li>Enumerate monitors.</li>
+<li>Create surfaces (fullscreen or windowed) which will later be drawn upon.</li>
+</ul>
+
+<p>Enumerating monitors and creating surfaces can only be done if the proper extensions are
+available and have been enabled. It is possible for a machine to support Vulkan without
+support for rendering on a screen.</p>
+
+<h1 id='application-info' class='section-header'><a href='#application-info'>Application info</a></h1>
+<p>When you create an instance, you have the possibility to pass an <code>ApplicationInfo</code> struct. This
+struct contains various information about your application, most notably its name and engine.</p>
+
+<p>Passing such a structure allows for example the driver to let the user configure the driver&#39;s
+behavior for your application alone through a control panel.</p>
+
+<h1 id='enumerating-physical-devices' class='section-header'><a href='#enumerating-physical-devices'>Enumerating physical devices</a></h1>
+<p>After you have created an instance, the next step is to enumerate the physical devices that
+are available on the system with <code>PhysicalDevice::enumerate()</code>.</p>
+
+<p>When choosing which physical device to use, keep in mind that physical devices may or may not
+be able to draw to a certain surface (ie. to a window or a monitor), or may even not be able
+to draw at all. See the <code>swapchain</code> module for more information about surfaces.</p>
+
+<p>A physical device can designate a video card, an integrated chip, but also multiple video
+cards working together or a software implementation. Once you have chosen a physical device,
+you can create a <code>Device</code> object from it. See the <code>device</code> module for more info.</p>
+</div><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='debug/index.html'
+                                  title='vulkano::instance::debug'>debug</a></td>
+                           <td class='docblock short'>
+                                <p>Debug callback called by validation layers.</p>
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.ApplicationInfo.html'
+                                  title='vulkano::instance::ApplicationInfo'>ApplicationInfo</a></td>
+                           <td class='docblock short'>
+                                <p>Information that can be given to the Vulkan driver so that it can identify your application.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.DeviceExtensions.html'
+                                  title='vulkano::instance::DeviceExtensions'>DeviceExtensions</a></td>
+                           <td class='docblock short'>
+                                <p>List of extensions that are enabled or available.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Features.html'
+                                  title='vulkano::instance::Features'>Features</a></td>
+                           <td class='docblock short'>
+                                <p>Represents all the features that are available on a physical device or enabled on
+a logical device.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Instance.html'
+                                  title='vulkano::instance::Instance'>Instance</a></td>
+                           <td class='docblock short'>
+                                <p>An instance of a Vulkan context. This is the main object that should be created by an
+application before everything else.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.InstanceExtensions.html'
+                                  title='vulkano::instance::InstanceExtensions'>InstanceExtensions</a></td>
+                           <td class='docblock short'>
+                                <p>List of extensions that are enabled or available.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.LayerProperties.html'
+                                  title='vulkano::instance::LayerProperties'>LayerProperties</a></td>
+                           <td class='docblock short'>
+                                <p>Properties of an available layer.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.LayersIterator.html'
+                                  title='vulkano::instance::LayersIterator'>LayersIterator</a></td>
+                           <td class='docblock short'>
+                                <p>Iterator that produces the list of layers that are available.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Limits.html'
+                                  title='vulkano::instance::Limits'>Limits</a></td>
+                           <td class='docblock short'>
+                                <p>Limits of a physical device.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.MemoryHeap.html'
+                                  title='vulkano::instance::MemoryHeap'>MemoryHeap</a></td>
+                           <td class='docblock short'>
+                                <p>Represents a memory heap in a physical device.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.MemoryHeapsIter.html'
+                                  title='vulkano::instance::MemoryHeapsIter'>MemoryHeapsIter</a></td>
+                           <td class='docblock short'>
+                                <p>Iterator for all the memory heaps available on a physical device.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.MemoryType.html'
+                                  title='vulkano::instance::MemoryType'>MemoryType</a></td>
+                           <td class='docblock short'>
+                                <p>Represents a memory type in a physical device.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.MemoryTypesIter.html'
+                                  title='vulkano::instance::MemoryTypesIter'>MemoryTypesIter</a></td>
+                           <td class='docblock short'>
+                                <p>Iterator for all the memory types available on a physical device.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.PhysicalDevice.html'
+                                  title='vulkano::instance::PhysicalDevice'>PhysicalDevice</a></td>
+                           <td class='docblock short'>
+                                <p>Represents one of the available devices on this machine.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.PhysicalDevicesIter.html'
+                                  title='vulkano::instance::PhysicalDevicesIter'>PhysicalDevicesIter</a></td>
+                           <td class='docblock short'>
+                                <p>Iterator for all the physical devices available on hardware.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.QueueFamiliesIter.html'
+                                  title='vulkano::instance::QueueFamiliesIter'>QueueFamiliesIter</a></td>
+                           <td class='docblock short'>
+                                <p>Iterator for all the queue families available on a physical device.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.QueueFamily.html'
+                                  title='vulkano::instance::QueueFamily'>QueueFamily</a></td>
+                           <td class='docblock short'>
+                                <p>Represents a queue family in a physical device.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InstanceCreationError.html'
+                                  title='vulkano::instance::InstanceCreationError'>InstanceCreationError</a></td>
+                           <td class='docblock short'>
+                                <p>Error that can happen when creating an instance.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.LoadingError.html'
+                                  title='vulkano::instance::LoadingError'>LoadingError</a></td>
+                           <td class='docblock short'>
+                                <p>Error that can happen when loading the Vulkan loader.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.PhysicalDeviceType.html'
+                                  title='vulkano::instance::PhysicalDeviceType'>PhysicalDeviceType</a></td>
+                           <td class='docblock short'>
+                                <p>Type of a physical device.</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.layers_list.html'
+                                  title='vulkano::instance::layers_list'>layers_list</a></td>
+                           <td class='docblock short'>
+                                <p>Queries the list of layers that are available when creating an instance.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

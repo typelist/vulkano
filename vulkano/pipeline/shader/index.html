@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `shader` mod in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, shader">
+
+    <title>vulkano::pipeline::shader - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>pipeline</a></p><script>window.sidebarCurrent = {name: 'shader', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>vulkano</a>::<wbr><a href='../index.html'>pipeline</a>::<wbr><a class='mod' href=''>shader</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-17238' class='srclink' href='../../../src/vulkano/vulkano/src/pipeline/shader.rs.html#10-654' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Stage of a graphics pipeline.</p>
+
+<p>In Vulkan, shaders are grouped in <em>shader modules</em>. Each shader module is built from SPIR-V
+code and can contain one or more entry points. Note that for the moment the official
+GLSL-to-SPIR-V compiler does not support multiple entry points.</p>
+
+<p>The vulkano library does not provide any functionnality that checks and introspects the SPIR-V
+code, therefore the whole shader-related API is unsafe. You are encouraged to use the
+<code>vulkano-shaders</code> crate that will generate Rust code that wraps around vulkano&#39;s shaders API.</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.ComputeShaderEntryPoint.html'
+                                  title='vulkano::pipeline::shader::ComputeShaderEntryPoint'>ComputeShaderEntryPoint</a></td>
+                           <td class='docblock short'>
+                                <p>Represents the entry point of a compute shader in a shader module.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.FragmentShaderEntryPoint.html'
+                                  title='vulkano::pipeline::shader::FragmentShaderEntryPoint'>FragmentShaderEntryPoint</a></td>
+                           <td class='docblock short'>
+                                <p>Represents the entry point of a fragment shader in a shader module.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.GeometryShaderEntryPoint.html'
+                                  title='vulkano::pipeline::shader::GeometryShaderEntryPoint'>GeometryShaderEntryPoint</a></td>
+                           <td class='docblock short'>
+                                <p>Represents the entry point of a geometry shader in a shader module.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.ShaderInterfaceDefEntry.html'
+                                  title='vulkano::pipeline::shader::ShaderInterfaceDefEntry'>ShaderInterfaceDefEntry</a></td>
+                           <td class='docblock short'>
+                                <p>Entry of a shader interface definition.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.ShaderModule.html'
+                                  title='vulkano::pipeline::shader::ShaderModule'>ShaderModule</a></td>
+                           <td class='docblock short'>
+                                <p>Contains SPIR-V code with one or more entry points.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.SpecializationMapEntry.html'
+                                  title='vulkano::pipeline::shader::SpecializationMapEntry'>SpecializationMapEntry</a></td>
+                           <td class='docblock short'>
+                                <p>Describes an indiviual constant to set in the shader. Also a field in the struct.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.TessControlShaderEntryPoint.html'
+                                  title='vulkano::pipeline::shader::TessControlShaderEntryPoint'>TessControlShaderEntryPoint</a></td>
+                           <td class='docblock short'>
+                                <p>Represents the entry point of a tessellation control shader in a shader module.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.TessEvaluationShaderEntryPoint.html'
+                                  title='vulkano::pipeline::shader::TessEvaluationShaderEntryPoint'>TessEvaluationShaderEntryPoint</a></td>
+                           <td class='docblock short'>
+                                <p>Represents the entry point of a tessellation evaluation shader in a shader module.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.VertexShaderEntryPoint.html'
+                                  title='vulkano::pipeline::shader::VertexShaderEntryPoint'>VertexShaderEntryPoint</a></td>
+                           <td class='docblock short'>
+                                <p>Represents the entry point of a vertex shader in a shader module.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.GeometryShaderExecutionMode.html'
+                                  title='vulkano::pipeline::shader::GeometryShaderExecutionMode'>GeometryShaderExecutionMode</a></td>
+                           <td class='docblock short'>
+                                <p>Declares which type of primitives are expected by the geometry shader.</p>
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='trait' href='trait.ShaderInterfaceDef.html'
+                                  title='vulkano::pipeline::shader::ShaderInterfaceDef'>ShaderInterfaceDef</a></td>
+                           <td class='docblock short'>
+                                <p>Types that contain the definition of an interface between two shader stages, or between
+the outside and a shader stage.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='trait' href='trait.ShaderInterfaceDefMatch.html'
+                                  title='vulkano::pipeline::shader::ShaderInterfaceDefMatch'>ShaderInterfaceDefMatch</a></td>
+                           <td class='docblock short'>
+                                <p>Extension trait for <code>ShaderInterfaceDef</code> that specifies that the interface is potentially
+compatible with another one.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='trait' href='trait.SpecializationConstants.html'
+                                  title='vulkano::pipeline::shader::SpecializationConstants'>SpecializationConstants</a></td>
+                           <td class='docblock short'>
+                                <p>Trait for types that contain specialization data for shaders.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

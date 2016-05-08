@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["EmptyPipeline","Implementation of `PipelineLayout` for an empty pipeline."]]});

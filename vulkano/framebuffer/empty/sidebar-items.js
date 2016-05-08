@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["EmptySinglePassRenderPass","Implementation of `RenderPass` with no attachment at all and a single pass."]]});

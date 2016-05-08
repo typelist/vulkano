@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Device` struct in crate `vulkano`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Device">
+
+    <title>vulkano::device::Device - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>device</a></p><script>window.sidebarCurrent = {name: 'Device', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>vulkano</a>::<wbr><a href='index.html'>device</a>::<wbr><a class='struct' href=''>Device</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-5467' class='srclink' href='../../src/vulkano/vulkano/src/device.rs.html#43-51' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Device {
+    // some fields omitted
+}</pre><div class='docblock'><p>Represents a Vulkan context.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a></code></span><span class='out-of-band'><a id='src-5475' class='srclink' href='../../src/vulkano/vulkano/src/device.rs.html#53-270' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;'a, I, L&gt;(phys: &amp;'a <a class='struct' href='../../vulkano/instance/struct.PhysicalDevice.html' title='vulkano::instance::PhysicalDevice'>PhysicalDevice</a>, requested_features: &amp;<a class='struct' href='../../vulkano/instance/struct.Features.html' title='vulkano::instance::Features'>Features</a>, extensions: &amp;<a class='struct' href='../../vulkano/device/struct.DeviceExtensions.html' title='vulkano::device::DeviceExtensions'>DeviceExtensions</a>, layers: L, queue_families: I) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a>&gt;, <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/device/struct.Queue.html' title='vulkano::device::Queue'>Queue</a>&gt;&gt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>, <a class='enum' href='../../vulkano/device/enum.DeviceCreationError.html' title='vulkano::device::DeviceCreationError'>DeviceCreationError</a>&gt; <span class='where'>where I: <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.IntoIterator.html' title='core::iter::traits::IntoIterator'>IntoIterator</a>&lt;Item=<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='struct' href='../../vulkano/instance/struct.QueueFamily.html' title='vulkano::instance::QueueFamily'>QueueFamily</a>&lt;'a&gt;, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;, L: <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.IntoIterator.html' title='core::iter::traits::IntoIterator'>IntoIterator</a>&lt;Item=&amp;'a &amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</span></code></h4>
+<div class='docblock'><p>Builds a new Vulkan device for the given physical device.</p>
+
+<p>You must pass two things when creating a logical device:</p>
+
+<ul>
+<li><p>A list of optional Vulkan features that must be enabled on the device. Note that if a
+feature is not enabled at device creation, you can&#39;t use it later even it it&#39;s supported
+by the physical device.</p></li>
+<li><p>An iterator to a list of queues to create. Each element of the iterator must indicate
+the family whose queue belongs to and a priority between 0.0 and 1.0 to assign to it.
+A queue with a higher value indicates that the commands will execute faster than on a
+queue with a lower value. Note however that no guarantee can be made on the way the
+priority value is handled by the implementation.</p></li>
+</ul>
+
+<h1 id='panic' class='section-header'><a href='#panic'>Panic</a></h1>
+<ul>
+<li>Panicks if one of the requested features is not supported by the physical device.</li>
+<li>Panicks if one of the queue families doesn&#39;t belong to the given device.</li>
+<li>Panicks if you request more queues from a family than available.</li>
+<li>Panicks if one of the priorities is outside of the <code>[0.0 ; 1.0]</code> range.</li>
+</ul>
+</div><h4 id='method.wait_raw' class='method'><code>fn <a href='#method.wait_raw' class='fnname'>wait_raw</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../../vulkano/enum.OomError.html' title='vulkano::OomError'>OomError</a>&gt;</code></h4>
+<div class='docblock'><p>See the docs of wait().</p>
+</div><h4 id='method.wait' class='method'><code>fn <a href='#method.wait' class='fnname'>wait</a>(&amp;self)</code></h4>
+<div class='docblock'><p>Waits until all work on this device has finished. You should never need to call
+this function, but it can be useful for debugging or benchmarking purposes.</p>
+
+<p>This is the Vulkan equivalent of <code>glFinish</code>.</p>
+
+<h1 id='panic-1' class='section-header'><a href='#panic-1'>Panic</a></h1>
+<ul>
+<li>Panicks if the device or host ran out of memory.</li>
+</ul>
+</div><h4 id='method.instance' class='method'><code>fn <a href='#method.instance' class='fnname'>instance</a>(&amp;self) -&gt; &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/instance/struct.Instance.html' title='vulkano::instance::Instance'>Instance</a>&gt;</code></h4>
+<div class='docblock'><p>Returns the instance used to create this device.</p>
+</div><h4 id='method.physical_device' class='method'><code>fn <a href='#method.physical_device' class='fnname'>physical_device</a>(&amp;self) -&gt; <a class='struct' href='../../vulkano/instance/struct.PhysicalDevice.html' title='vulkano::instance::PhysicalDevice'>PhysicalDevice</a></code></h4>
+<div class='docblock'><p>Returns the physical device that was used to create this device.</p>
+</div><h4 id='method.enabled_features' class='method'><code>fn <a href='#method.enabled_features' class='fnname'>enabled_features</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../vulkano/instance/struct.Features.html' title='vulkano::instance::Features'>Features</a></code></h4>
+<div class='docblock'><p>Returns the features that are enabled in the device.</p>
+</div><h4 id='method.loaded_extensions' class='method'><code>fn <a href='#method.loaded_extensions' class='fnname'>loaded_extensions</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../vulkano/device/struct.DeviceExtensions.html' title='vulkano::device::DeviceExtensions'>DeviceExtensions</a></code></h4>
+<div class='docblock'><p>Returns the list of extensions that have been loaded.</p>
+</div><h4 id='method.standard_pool' class='method'><code>fn <a href='#method.standard_pool' class='fnname'>standard_pool</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='struct' href='../../vulkano/memory/pool/struct.StdMemoryPool.html' title='vulkano::memory::pool::StdMemoryPool'>StdMemoryPool</a>&gt;</code></h4>
+<div class='docblock'><p>Returns the standard memory pool used by default if you don&#39;t provide any other pool.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a></code></span><span class='out-of-band'><a id='src-5550' class='srclink' href='../../src/vulkano/vulkano/src/device.rs.html#272-277' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, fmt: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Error.html' title='core::fmt::Error'>Error</a>&gt;</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../vulkano/trait.VulkanObject.html' title='vulkano::VulkanObject'>VulkanObject</a> for <a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a></code></span><span class='out-of-band'><a id='src-5555' class='srclink' href='../../src/vulkano/vulkano/src/device.rs.html#279-286' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Object' class='type'><code>type <a href='../../vulkano/trait.VulkanObject.html#associatedtype.Object' class='type'>Object</a> = <a class='type' href='../../vk_sys/type.Device.html' title='vk_sys::Device'>Device</a></code></h4>
+<h4 id='method.internal_object' class='method'><code>fn <a href='../../vulkano/trait.VulkanObject.html#tymethod.internal_object' class='fnname'>internal_object</a>(&amp;self) -&gt; <a class='type' href='../../vk_sys/type.Device.html' title='vk_sys::Device'>Device</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../vulkano/device/struct.Device.html' title='vulkano::device::Device'>Device</a></code></span><span class='out-of-band'><a id='src-5563' class='srclink' href='../../src/vulkano/vulkano/src/device.rs.html#297-307' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vulkano";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>
