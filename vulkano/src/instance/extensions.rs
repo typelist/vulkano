@@ -15,6 +15,9 @@ use instance::loader;
 use vk;
 use check_errors;
 
+#[cfg(feature = "use_glfw")] use glfw;
+#[cfg(feature = "use_glfw")] use std::ffi::CStr;
+
 macro_rules! extensions {
     ($sname:ident, $($ext:ident => $s:expr,)*) => (
         /// List of extensions that are enabled or available.
@@ -118,6 +121,47 @@ instance_extensions! {
     khr_android_surface => b"VK_KHR_android_surface",
     khr_win32_surface => b"VK_KHR_win32_surface",
     ext_debug_report => b"VK_EXT_debug_report",
+}
+
+#[cfg(feature = "use_glfw")]
+pub fn get_glfw_required_instance_extensions() -> InstanceExtensions {
+    let mut e = InstanceExtensions::none();
+    let mut glfw_exts: Vec<&'static CStr> =
+        glfw::get_required_instance_extensions().iter().map(|p| unsafe { CStr::from_ptr(*p) } ).collect();
+    glfw_exts.sort();
+
+    {
+        let mut ptrs: [(&mut bool, &'static CStr); 9] = [
+            (&mut e.khr_surface,         CStr::from_bytes_with_nul(b"VK_KHR_surface\0").unwrap()),
+            (&mut e.khr_display,         CStr::from_bytes_with_nul(b"VK_KHR_display\0").unwrap()),
+            (&mut e.khr_xlib_surface,    CStr::from_bytes_with_nul(b"VK_KHR_xlib_surface\0").unwrap()),
+            (&mut e.khr_xcb_surface,     CStr::from_bytes_with_nul(b"VK_KHR_xcb_surface\0").unwrap()),
+            (&mut e.khr_wayland_surface, CStr::from_bytes_with_nul(b"VK_KHR_wayland_surface\0").unwrap()),
+            (&mut e.khr_mir_surface,     CStr::from_bytes_with_nul(b"VK_KHR_mir_surface\0").unwrap()),
+            (&mut e.khr_android_surface, CStr::from_bytes_with_nul(b"VK_KHR_android_surface\0").unwrap()),
+            (&mut e.khr_win32_surface,   CStr::from_bytes_with_nul(b"VK_KHR_win32_surface\0").unwrap()),
+            (&mut e.ext_debug_report,    CStr::from_bytes_with_nul(b"VK_EXT_debug_report\0").unwrap()),
+        ];
+
+        for &mut (ref mut b, s) in ptrs.iter_mut() {
+            let mut opt: Option<usize> = Option::None;
+            match glfw_exts.binary_search(&s) {
+                Ok(idx) => {
+                    opt = Some(idx);
+                    **b = true;
+                }
+                Err(_) => {}
+            }
+            match opt {
+                Some(idx) => { glfw_exts.remove(idx); }
+                None => {}
+            }
+        }
+    }
+    // If GLFW needs other extensions, we can't use InstanceExtensions for this,
+    // as-is anyway.
+    assert!(glfw_exts.len() == 0);
+    e
 }
 
 extensions! {

@@ -28,6 +28,7 @@ use OomError;
 use VulkanObject;
 use VulkanPointers;
 use vk;
+#[cfg(feature = "use_glfw")] use glfw;
 
 /// Represents a surface on the screen.
 ///
@@ -39,6 +40,37 @@ pub struct Surface {
 }
 
 impl Surface {
+    /// Create a `Surface` by calling into GLFW.
+    ///
+    #[cfg(feature = "use_glfw")]
+    pub fn from_glfw_window(instance: &Arc<Instance>, window: &glfw::Window)
+        -> Result<Arc<Surface>, SurfaceCreationError>
+    {
+        if !glfw::vulkan_supported() {
+            return Err(SurfaceCreationError::PlatformError);
+        }
+
+        let internal_instance: vk::Instance = instance.internal_object();
+        let mut raw_surface: vk::SurfaceKHR = 0;
+        // FIXME: Should support custom allocation functions
+        let res: vk::Result = unsafe { glfw::ffi::glfwCreateWindowSurface(
+            internal_instance, window.ptr, ptr::null(),
+            &mut raw_surface as *mut vk::SurfaceKHR
+        )};
+        if vk::SUCCESS == res {
+            assert!(0 != raw_surface);
+            Ok(Arc::new(Surface { instance: instance.clone(),
+                                  surface: raw_surface }))
+// FIXME: Consider reporting missing extension(s) here
+//        } else if vk::ERROR_EXTENSION_NOT_PRESENT == res {
+//            let required: &'static [*const libc::c_char] =
+//                glfw::get_required_instance_extensions();
+//            MissingExtension { name: /* ... */ },
+        } else {
+            Err(SurfaceCreationError::PlatformError)
+        }
+    }
+
     /// Creates a `Surface` that covers a display mode.
     ///
     /// # Panic
@@ -438,7 +470,7 @@ impl Drop for Surface {
     }
 }
 
-/// Error that can happen when creating a debug callback.
+/// Error that can happen when creating a surface.
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
 pub enum SurfaceCreationError {
     /// Not enough memory.
@@ -446,6 +478,9 @@ pub enum SurfaceCreationError {
 
     /// The extension required for this function was not enabled.
     MissingExtension { name: &'static str },
+
+    /// Platform-specific error
+    PlatformError
 }
 
 impl error::Error for SurfaceCreationError {
@@ -455,6 +490,7 @@ impl error::Error for SurfaceCreationError {
             SurfaceCreationError::OomError(_) => "not enough memory available",
             SurfaceCreationError::MissingExtension { .. } => "the extension required for this \
                                                               function was not enabled",
+            SurfaceCreationError::PlatformError => "platform-specific error",
         }
     }
 

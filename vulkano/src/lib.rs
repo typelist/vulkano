@@ -48,6 +48,9 @@
 #![allow(dead_code)]            // TODO: remove
 #![allow(unused_variables)]     // TODO: remove
 
+//#[cfg(feature = "use_glfw")]
+#![feature(cstr_from_bytes)]
+
 extern crate crossbeam;
 extern crate fnv;
 #[macro_use]
@@ -55,6 +58,9 @@ extern crate lazy_static;
 extern crate shared_library;
 extern crate smallvec;
 extern crate vk_sys as vk;
+
+#[cfg(feature = "use_glfw")] extern crate glfw;
+#[cfg(feature = "use_glfw")] extern crate libc;
 
 #[macro_use]
 mod tests;

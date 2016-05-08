@@ -46,6 +46,7 @@
 pub use features::Features;
 pub use self::extensions::DeviceExtensions;
 pub use self::extensions::InstanceExtensions;
+#[cfg(feature = "use_glfw")] pub use self::extensions::get_glfw_required_instance_extensions;
 pub use self::instance::Instance;
 pub use self::instance::InstanceCreationError;
 pub use self::instance::ApplicationInfo;
